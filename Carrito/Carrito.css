@@ -6,8 +6,11 @@
     margin: 0;
     color: #1E1E1E;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c70d8d8e46a1b55814c5e47a275ac21c509b691d
 .--header {
     display: flex;
     flex-direction: row;
@@ -136,6 +139,7 @@ h1 {
   border-radius: 8px;
   align-items: stretch;
 }
+
 
 
 .article__div-img {
