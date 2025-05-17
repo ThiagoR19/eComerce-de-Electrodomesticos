@@ -1,102 +1,145 @@
 * {
-    font-family: 'Segoe UI';
-    text-decoration: none;
-    padding: 0;
-    box-sizing: border-box;
-    margin: 0;
+  font-family: 'Segoe UI';
+  text-decoration: none;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
+
 .--header {
-    display: flex;
-    flex-direction: row;
-    background-color: #F1F3F5;
-    height: 7.23vw; /* 125px */
-    /* width: 100vw; 1728px */
-    border-radius: 0 0 0 2.895vw; /* 50px */
+  display: flex;
+  flex-direction: row;
+  background-color: #F1F3F5;
+  height: 7.23vw;
+  /* 125px */
+  /* width: 100vw; 1728px */
+  border-radius: 0 0 0 2.895vw;
+  /* 50px */
 }
+
 .header__img {
-    margin-top: 1.075vh;     /* 12px */
-    margin-left: 3.24vw;     /* 56px */
-    margin-right: 2.256vw;   /* 39px */
-    height: 6.075vw;         /* 105px */
-    width: 6.075vw;          /* 105px */
-    border-radius: 0.868vw;  /* 15px */
+  margin-top: 1.075vh;
+  /* 12px */
+  margin-left: 3.24vw;
+  /* 56px */
+  margin-right: 2.256vw;
+  /* 39px */
+  height: 6.075vw;
+  /* 105px */
+  width: 6.075vw;
+  /* 105px */
+  border-radius: 0.868vw;
+  /* 15px */
 }
+
 .header__nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
+
 .header__nav-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+
 .header__nav-div-button {
-    height: 3.29vw;         /* 57px */
-    width: 2.837vw;          /* 49px */
-    border-radius: 1.736vw 0 0 1.736vw; /* 30px */
-    background-color: #003366;
-    border: none;
+  height: 3.29vw;
+  /* 57px */
+  width: 2.837vw;
+  /* 49px */
+  border-radius: 1.736vw 0 0 1.736vw;
+  /* 30px */
+  background-color: #003366;
+  border: none;
 }
-.header__nav-div-button-search{
-    width: 1.68vw;
-    height: 1.62vw;
+
+.header__nav-div-button-search {
+  width: 1.68vw;
+  height: 1.62vw;
 }
+
 .header__nav-div-input {
-    height: 3.29vw;        /* 57px */
-    width: 30.96vw;          /* 535px */
-    border: none;
-    border-radius: 0 1.736vw 1.736vw 0; /* 30px */
-    background-color: #D9D9D9;
-    font-size: 1.145vw;      /* 20px */
-    padding-left: 0.578vw;   /* 10px */
+  height: 3.29vw;
+  /* 57px */
+  width: 30.96vw;
+  /* 535px */
+  border: none;
+  border-radius: 0 1.736vw 1.736vw 0;
+  /* 30px */
+  background-color: #D9D9D9;
+  font-size: 1.145vw;
+  /* 20px */
+  padding-left: 0.578vw;
+  /* 10px */
 }
+
 .header__nav-div-input:focus {
-    outline: none;
+  outline: none;
 }
+
 .header__nav-div--links {
-    margin-left: 1.272vw;    /* 22px */
-    margin-right: 4.514vw;   /* 78px */
-    font-size: 1.736vw;      /* 30px */
-    color: #003366;
+  margin-left: 1.272vw;
+  /* 22px */
+  margin-right: 4.514vw;
+  /* 78px */
+  font-size: 1.736vw;
+  /* 30px */
+  color: #003366;
 }
+
 .header__nav-div-a {
-    margin-right: 2.256vw;   /* 39px */
-    color: #003366;
+  margin-right: 2.256vw;
+  /* 39px */
+  color: #003366;
 }
-.header__nav-div-button-img{
-    height: 0.85vw;
-    width: 1.39vw;
+
+.header__nav-div-button-img {
+  height: 0.85vw;
+  width: 1.39vw;
 }
 
 .header__nav-div--links-button {
-    font-size: 1.736vw;      /* 30px */
-    display: flex;
-    align-items: center;
-    gap: 0.578vw;            /* 10px */
-    margin-right: 1.851vw;   /* 32px */
-    background-color: #F1F3F5;
-    color: #003366;
-    border: none;
-    cursor: pointer;
+  font-size: 1.736vw;
+  /* 30px */
+  display: flex;
+  align-items: center;
+  gap: 0.578vw;
+  /* 10px */
+  margin-right: 1.851vw;
+  /* 32px */
+  background-color: #F1F3F5;
+  color: #003366;
+  border: none;
+  cursor: pointer;
 }
+
 .header__nav-div--login {
-    color: #003366;
-    font-size: 1.736vw;      /* 30px */
+  color: #003366;
+  font-size: 1.736vw;
+  /* 30px */
 }
-.header__nav-div--login--img{
-    width: 3.06vw;
-    height: 3.128vw;
+
+.header__nav-div--login--img {
+  width: 3.06vw;
+  height: 3.128vw;
 }
+
 .header__nav-div--login-a {
-    color: #003366;
-    margin-left: 0.984vw;    /* 17px */
-    margin-right: 1.099vw;   /* 19px */
+  color: #003366;
+  margin-left: 0.984vw;
+  /* 17px */
+  margin-right: 1.099vw;
+  /* 19px */
 }
+
 .header__nav-div--login-img {
-    margin-right: 1.099vw;   /* 19px */
-    margin-top: 0.895vh;     /* 10px */
-    width: 2.83vw;
+  margin-right: 1.099vw;
+  /* 19px */
+  margin-top: 0.895vh;
+  /* 10px */
+  width: 2.83vw;
 }
 
 main {
@@ -241,3 +284,6 @@ footer {
   margin: 0 0 40px 0;
   font-weight: 500;
 }
+
+
+prueba
