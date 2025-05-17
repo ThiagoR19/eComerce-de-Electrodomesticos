@@ -110,16 +110,38 @@ section {
   justify-content: center;
 }
 
-img {
-  
-}
-
 .section__div-div-div label {
   font-weight: bold;
   margin: 5px 0;
 }
 
 footer {
+  background: #003366;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer__div {
   display: flex;
-  height: 20vh;
+  height: 100%;
+  padding: 10px;
+}
+
+.footer__div-div {
+  margin: 0 120px 40px 20px;
+}
+
+.footer__div-div p {
+  margin: 5px 0;
+}
+
+.footer__div-div p a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__div-div h4 {
+  color: white;
+  margin: 0 0 40px 0;
+  font-weight: 500;
 }
