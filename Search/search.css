@@ -1,0 +1,290 @@
+* {
+  font-family: 'Segoe UI';
+  text-decoration: none;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.--header {
+  display: flex;
+  flex-direction: row;
+  background-color: #F1F3F5;
+  height: 7.23vw;
+  /* 125px */
+  /* width: 100vw; 1728px */
+  border-radius: 0 0 0 2.895vw;
+  /* 50px */
+}
+
+.header__img {
+  margin-top: 1.075vh;
+  /* 12px */
+  margin-left: 3.24vw;
+  /* 56px */
+  margin-right: 2.256vw;
+  /* 39px */
+  height: 6.075vw;
+  /* 105px */
+  width: 6.075vw;
+  /* 105px */
+  border-radius: 0.868vw;
+  /* 15px */
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+}
+
+.header__nav-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__nav-div-button {
+  height: 3.29vw;
+  /* 57px */
+  width: 2.837vw;
+  /* 49px */
+  border-radius: 1.736vw 0 0 1.736vw;
+  /* 30px */
+  background-color: #003366;
+  border: none;
+}
+
+.header__nav-div-button-search {
+  width: 1.68vw;
+  height: 1.62vw;
+}
+
+.header__nav-div-input {
+  height: 3.29vw;
+  /* 57px */
+  width: 30.96vw;
+  /* 535px */
+  border: none;
+  border-radius: 0 1.736vw 1.736vw 0;
+  /* 30px */
+  background-color: #D9D9D9;
+  font-size: 1.145vw;
+  /* 20px */
+  padding-left: 0.578vw;
+  /* 10px */
+}
+
+.header__nav-div-input:focus {
+  outline: none;
+}
+
+.header__nav-div--links {
+  margin-left: 1.272vw;
+  /* 22px */
+  margin-right: 4.514vw;
+  /* 78px */
+  font-size: 1.736vw;
+  /* 30px */
+  color: #003366;
+}
+
+.header__nav-div-a {
+  margin-right: 2.256vw;
+  /* 39px */
+  color: #003366;
+}
+
+.header__nav-div-button-img {
+  height: 0.85vw;
+  width: 1.39vw;
+}
+
+.header__nav-div--links-button {
+  font-size: 1.736vw;
+  /* 30px */
+  display: flex;
+  align-items: center;
+  gap: 0.578vw;
+  /* 10px */
+  margin-right: 1.851vw;
+  /* 32px */
+  background-color: #F1F3F5;
+  color: #003366;
+  border: none;
+  cursor: pointer;
+}
+
+.header__nav-div--login {
+  color: #003366;
+  font-size: 1.736vw;
+  /* 30px */
+}
+
+.header__nav-div--login--img {
+  width: 3.06vw;
+  height: 3.128vw;
+}
+
+.header__nav-div--login-a {
+  color: #003366;
+  margin-left: 0.984vw;
+  /* 17px */
+  margin-right: 1.099vw;
+  /* 19px */
+}
+
+.header__nav-div--login-img {
+  margin-right: 1.099vw;
+  /* 19px */
+  margin-top: 0.895vh;
+  /* 10px */
+  width: 2.83vw;
+}
+
+main {
+  display: flex;
+  height: 80vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 25%;
+  height: 80vh;
+}
+
+
+.aside__div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.aside__div-h4 {
+  padding: 10px;
+}
+
+.aside__div-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(189, 189, 189);
+}
+
+.aside__div:last-child {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.aside__div-div--last {
+  background-color: rgb(27, 27, 27);
+  height: 40px;
+  width: 3px;
+  border-radius: 8px;
+}
+
+.aside__div-input {
+  width: 30%;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgb(189, 189, 189);
+}
+
+.aside__div-input:focus {
+  outline: none;
+}
+
+.aside__div-input:hover {
+  text-decoration: none;
+}
+
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 75%;
+  height: 80vh;
+}
+
+.section__div {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow-y: auto
+}
+
+
+.section__div-div {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  margin: 8px;
+  border: 1px solid rgb(189, 189, 189);
+  padding: 15px;
+  width: 23%;
+  height: 500px;
+  border-radius: 8px;
+}
+
+
+
+.section__div-div-div {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  padding: 20px 5px;
+}
+
+.section__div-div-div--fc {
+  display: flex;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__div-div-div--fc img {
+  width: 100%;
+}
+
+.section__div-div-div label {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer__div {
+  display: flex;
+  height: 100%;
+  padding: 10px;
+}
+
+.footer__div-div {
+  margin: 0 120px 40px 20px;
+}
+
+.footer__div-div p {
+  margin: 5px 0;
+}
+
+.footer__div-div p a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__div-div h4 {
+  color: white;
+  margin: 0 0 40px 0;
+  font-weight: 500;
+}
