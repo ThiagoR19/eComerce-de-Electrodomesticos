@@ -249,6 +249,10 @@ section {
   justify-content: center;
 }
 
+.section__div-div-div--fc img {
+  width: 100%;
+}
+
 .section__div-div-div label {
   font-weight: bold;
   margin: 5px 0;
