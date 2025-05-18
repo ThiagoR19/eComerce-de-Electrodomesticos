@@ -166,7 +166,8 @@ aside {
 }
 
 .aside__div-h4 {
-  padding: 10px;
+  padding: 10px 0;
+  font-weight: 500;
 }
 
 .aside__div-select {
@@ -190,10 +191,18 @@ aside {
 }
 
 .aside__div-input {
-  width: 30%;
+  width: 35%;
   border-radius: 8px;
   padding: 5px 10px;
   border: 1px solid rgb(189, 189, 189);
+  box-shadow: 0 5px 8px rgb(109, 109, 109);
+}
+
+.aside__div-input:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.aside__div-input:last-child {
+  border-radius:0 8px 8px 0;
 }
 
 .aside__div-input:focus {
@@ -217,7 +226,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   height: 80vh;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 
@@ -226,7 +235,7 @@ section {
   align-items: start;
   flex-direction: column;
   margin: 8px;
-  border: 1px solid rgb(189, 189, 189);
+  border: 1px solid rgb(231, 231, 231);
   padding: 15px;
   width: 23%;
   height: 500px;
