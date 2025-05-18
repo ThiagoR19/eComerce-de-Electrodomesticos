@@ -325,7 +325,7 @@ footer {
   font-weight: 500;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
 
   main {
     flex-direction: column;
@@ -369,6 +369,14 @@ footer {
 
   .footer__div {
     flex-direction: column;
+  }
+
+  .header__nav-div--links, .header__nav-div--login {
+    display: none;
+  }  
+
+  article {
+    box-shadow: none;
   }
 
 }
