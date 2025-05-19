@@ -99,4 +99,371 @@ const button1 = document.getElementById('Cate');
       arrow2.style.transform = 'rotate(0deg)';
       button.style.borderRadius = '8px';
     }
-  });gggggggg
+  });
+
+  var aside = document.getElementById("aside")
+  var descripcion = document.getElementById("Descripcion")
+  
+  function vistaMovil() {
+    console.log("Vista móvil activa");
+    descripcion.innerHTML = `
+    <div class="cuotas">
+                        <div class="cuotas__label">
+                            <span class="cuotas__texto">Cuotas: <span class="cuotas__numero" id="cuotasElegidas">1</span></span>
+                            <span class="cuotas__valor">$12</span>
+                        </div>
+
+                        <div class="cuotas__slider-container">
+                            <div class="cuotas__slider-track"></div>
+                            <div class="cuotas__fixed-thumb"></div>
+                            <input type="range" id="slider" class="cuotas__range" min="1" max="12" value="1" step="1">
+                        </div>
+                        <div class="cuotas__descripcion">
+                            De 1 a 12 cuotas sin interés
+                        </div>
+                    </div>
+                    <div>
+                        <h2>
+                            $4.324
+                        </h2>
+                    </div>
+                    <div class="main-aside--stock">
+                        <h2>
+                            Stock
+                        </h2>
+                        <div class="comprar">
+                            <div class="main-aside--stock--button" id="dropdown-button">
+                                <h2>Comprar 1</h2>
+                                <span class="main-aside--stock--arrow" id="dropdown-arrow">
+                                <img src="img/abajo.png" alt="expandir">
+                                </span>
+                            </div>
+                            <div class="main-aside--stock--menu" id="dropdown-menu">
+                                <div class="main-aside--stock--option" data-value="1">Comprar 1</div>
+                                <div class="main-aside--stock--option" data-value="2">Comprar 2</div>
+                                <div class="main-aside--stock--option" data-value="3">Comprar 3</div>
+                                <div class="main-aside--stock--option" data-value="4">Comprar 4</div>
+                                <div class="main-aside--stock--option" data-value="5">Comprar 5</div>
+                                <div class="main-aside--stock--option" data-value="6">Comprar 6</div>
+                                <div class="main-aside--stock--option" data-value="7">Comprar 7</div>
+                                <div class="main-aside--stock--option" data-value="8">Comprar 8</div>
+                                <div class="main-aside--stock--option" data-value="9">Comprar 9</div>
+                                <div class="main-aside--stock--option" data-value="10">Comprar 10</div>
+                                <div class="main-aside--stock--option" data-value="stock">Todo el stock disponible</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>
+                                Producto disponible 25
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="main-aside--buttons">
+                        <button>
+                            Agregar al carrito
+                        </button>
+                        <button>
+                            Comprar ahora
+                        </button>
+                    </div>
+    `
+    aside.innerHTML = `
+    <div>
+                            <h2>
+                                Descripcion del producto
+                            </h2>
+                        </div>
+                        <div class="objeto__descrip--descrip">
+                            <div class="objeto__descrip--descrip-div">
+                                <p>
+                                    Características técnicas<br>
+                                    ● Capacidad de lavado: 8 kg<br>
+                                    ● Tipo de carga: Frontal<br>
+                                    ● Velocidad de centrifugado: 1200 RPM<br>
+                                    ● Programas de lavado: 15 (Rápido, Eco, Ropa delicada, Lana, Antialérgico, etc.)<br>
+                                    ● Tecnología de lavado: EcoWash con control automático de agua<br>
+                                    ● Nivel de ruido: 59 dB (lavado) / 76 dB (centrifugado)<br>
+                                    ● Eficiencia energética: A+++<br>
+                                    ● Funciones especiales: Bloqueo infantil, inicio diferido (hasta 24 hs), protección contra sobrecarga<br>
+                                    ● Pantalla: Display LED táctil
+                                </p>
+                            </div>
+                            <div class="objeto__descrip--descrip-div">
+                                <p>
+                                    El Lavarropas Automático de Carga Frontal 8 Kg está diseñado para brindarte eficiencia, practicidad y un lavado superior en cada uso.<br> 
+                                    Su capacidad de 8 kilos lo hace ideal para familias medianas, y gracias a su clasificación energética A+++, cuida tanto el ambiente como tu factura de luz.<br> 
+                                    Con un moderno display LED táctil, podrás elegir entre 15 programas de lavado según tus necesidades: desde ciclos rápidos hasta opciones delicadas y antialérgicas. Además, cuenta con funciones inteligentes como inicio diferido y bloqueo infantil, para que tengas el control total del lavado en cualquier momento del día.
+                                </p>
+                            </div>
+                        </div>
+                    <div class="main__aside--reseñas">
+                        <div class="main__aside--reseñas__container">
+                            <h2 class="main__aside--reseñas__titulo">Reseñas</h2>
+                            <div class="main__aside--reseñas__scroll-box">
+
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    `
+  }
+
+  function vistaEscritorio() {
+    console.log("Vista escritorio activa");
+    descripcion.innerHTML=`
+    <div>
+                            <h2>
+                                Descripcion del producto
+                            </h2>
+                        </div>
+                        <div class="objeto__descrip--descrip">
+                            <div class="objeto__descrip--descrip-div">
+                                <p>
+                                    Características técnicas<br>
+                                    ● Capacidad de lavado: 8 kg<br>
+                                    ● Tipo de carga: Frontal<br>
+                                    ● Velocidad de centrifugado: 1200 RPM<br>
+                                    ● Programas de lavado: 15 (Rápido, Eco, Ropa delicada, Lana, Antialérgico, etc.)<br>
+                                    ● Tecnología de lavado: EcoWash con control automático de agua<br>
+                                    ● Nivel de ruido: 59 dB (lavado) / 76 dB (centrifugado)<br>
+                                    ● Eficiencia energética: A+++<br>
+                                    ● Funciones especiales: Bloqueo infantil, inicio diferido (hasta 24 hs), protección contra sobrecarga<br>
+                                    ● Pantalla: Display LED táctil
+                                </p>
+                            </div>
+                            <div class="objeto__descrip--descrip-div">
+                                <p>
+                                    El Lavarropas Automático de Carga Frontal 8 Kg está diseñado para brindarte eficiencia, practicidad y un lavado superior en cada uso.<br> 
+                                    Su capacidad de 8 kilos lo hace ideal para familias medianas, y gracias a su clasificación energética A+++, cuida tanto el ambiente como tu factura de luz.<br> 
+                                    Con un moderno display LED táctil, podrás elegir entre 15 programas de lavado según tus necesidades: desde ciclos rápidos hasta opciones delicadas y antialérgicas. Además, cuenta con funciones inteligentes como inicio diferido y bloqueo infantil, para que tengas el control total del lavado en cualquier momento del día.
+                                </p>
+                            </div>
+                        </div>
+    `
+    aside.innerHTML = `
+    <div class="cuotas">
+                        <div class="cuotas__label">
+                            <span class="cuotas__texto">Cuotas: <span class="cuotas__numero" id="cuotasElegidas">1</span></span>
+                            <span class="cuotas__valor">$12</span>
+                        </div>
+
+                        <div class="cuotas__slider-container">
+                            <div class="cuotas__slider-track"></div>
+                            <div class="cuotas__fixed-thumb"></div>
+                            <input type="range" id="slider" class="cuotas__range" min="1" max="12" value="1" step="1">
+                        </div>
+                        <div class="cuotas__descripcion">
+                            De 1 a 12 cuotas sin interés
+                        </div>
+                    </div>
+                    <div>
+                        <h2>
+                            $4.324
+                        </h2>
+                    </div>
+                    <div class="main-aside--stock">
+                        <h2>
+                            Stock
+                        </h2>
+                        <div class="comprar">
+                            <div class="main-aside--stock--button" id="dropdown-button">
+                                <h2>Comprar 1</h2>
+                                <span class="main-aside--stock--arrow" id="dropdown-arrow">
+                                <img src="img/abajo.png" alt="expandir">
+                                </span>
+                            </div>
+                            <div class="main-aside--stock--menu" id="dropdown-menu">
+                                <div class="main-aside--stock--option" data-value="1">Comprar 1</div>
+                                <div class="main-aside--stock--option" data-value="2">Comprar 2</div>
+                                <div class="main-aside--stock--option" data-value="3">Comprar 3</div>
+                                <div class="main-aside--stock--option" data-value="4">Comprar 4</div>
+                                <div class="main-aside--stock--option" data-value="5">Comprar 5</div>
+                                <div class="main-aside--stock--option" data-value="6">Comprar 6</div>
+                                <div class="main-aside--stock--option" data-value="7">Comprar 7</div>
+                                <div class="main-aside--stock--option" data-value="8">Comprar 8</div>
+                                <div class="main-aside--stock--option" data-value="9">Comprar 9</div>
+                                <div class="main-aside--stock--option" data-value="10">Comprar 10</div>
+                                <div class="main-aside--stock--option" data-value="stock">Todo el stock disponible</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>
+                                Producto disponible 25
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="main-aside--buttons">
+                        <button>
+                            Agregar al carrito
+                        </button>
+                        <button>
+                            Comprar ahora
+                        </button>
+                    </div>
+                    <div class="main__aside--reseñas">
+                        <div class="main__aside--reseñas__container">
+                            <h2 class="main__aside--reseñas__titulo">Reseñas</h2>
+                            <div class="main__aside--reseñas__scroll-box">
+
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__aside--reseñas__card">
+                                    <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
+                                    <div class="main__aside--reseñas__title">Review title</div>
+                                    <div class="main__aside--reseñas__body">Review body</div>
+                                    <div class="main__aside--reseñas__footer">
+                                        <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
+                                        <div class="main__aside--reseñas__reviewer-info">
+                                            <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
+                                            <span class="main__aside--reseñas__review-date">Date</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    `
+  }
+
+  function verificarTamañoPantalla() {
+    if (window.innerWidth < 951) {
+      vistaMovil();
+    } else {
+      vistaEscritorio();
+    }
+  }
+
+  // Ejecutar al cargar la página
+  verificarTamañoPantalla();
+
+  // Ejecutar al cambiar el tamaño de la ventana
+  window.addEventListener('resize', verificarTamañoPantalla);
