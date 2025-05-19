@@ -17,37 +17,10 @@ button2.addEventListener('click', () => {
   image2.src = Vuelta2 ? imageUp : imageDown;
 });
 
-
-const carousel = document.querySelector('.carousel');
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
-
-let scrollAmount = 0;
-
-nextButton.onclick = () => {
-  carousel.scrollBy({ left: 625, behavior: 'smooth' });
-};
-
-prevButton.onclick = () => {
-  carousel.scrollBy({ left: -625, behavior: 'smooth' });
-};
-
-
 function toggleMenu() {
   const mobileMenu = document.querySelector('.mobile-menu');
   mobileMenu.classList.toggle('open');
 }
-
-button1.addEventListener('click', () => {
-  Vuelta1 = !Vuelta1;
-  image1.src = Vuelta1 ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
-});
-
-button2.addEventListener('click', () => {
-  Vuelta2 = !Vuelta2;
-  image2.src = Vuelta2 ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
-});
-
 
 const button1Mobile = document.getElementById('Cate-mobile');
 const image1Mobile = document.getElementById('buttonImg1-mobile');
