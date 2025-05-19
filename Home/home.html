@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+  <header class="--header">
+    <img src="imagenes/logo.png" alt="Logo de la empresa" class="header__img">
+    <nav class="header__nav">
+      <div class="header__nav-div header__nav-div--search">
+        <button class="header__nav-div-button">
+          <img src="imagenes/search.png" alt="search" class="header__nav-div-button-search">
+        </button>
+        <input type="text" placeholder="" class="header__nav-div-input">
+      </div>
+      <div class="header__nav-links-wrapper">
+        <div class="header__nav-div header__nav-div--links">
+          <a href="home.html" class="header__nav-div-a">
+            Inicio
+          </a>
+          <button id="Cate" class="header__nav-div--links-button">
+            Categorias
+            <img id="buttonImg1" src="imagenes/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+          </button>
+          <button id="Produc" class="header__nav-div--links-button">
+            Productos
+            <img id="buttonImg2" src="imagenes/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+          </button>
+        </div>
+        <div class="header__nav-div header__nav-div--login">
+          <img src="imagenes/User.png" alt="usuario" class="header__nav-div--login--img">
+          <a href="login.html" class="header__nav-div--login-a">Login</a>
+          <a href=""><img src="imagenes/carrito.png" alt="carrito" class="header__nav-div--login-img"></a>
+          <a href=""><img src="imagenes/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
+        </div>
+      </div>
+      <button class="hamburger-menu" onclick="toggleMenu()">
+        &#9776; </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu">
+    <button class="close-menu" onclick="toggleMenu()">
+      &times; </button>
+    <a href="home.html" class="header__nav-div-a-mobile">Inicio</a>
+    <button id="Cate-mobile" class="header__nav-div--links-button-mobile">
+      Categorias
+      <img id="buttonImg1-mobile" src="imagenes/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+    </button>
+    <button id="Produc-mobile" class="header__nav-div--links-button-mobile">
+      Productos
+      <img id="buttonImg2-mobile" src="imagenes/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+    </button>
+    <div class="header__nav-div header__nav-div--login-mobile">
+      <img src="imagenes/User.png" alt="usuario" class="header__nav-div--login--img">
+      <a href="login.html" class="header__nav-div--login-a">Login</a>
+      <a href=""><img src="imagenes/carrito.png" alt="carrito" class="header__nav-div--login-img"></a>
+      <a href=""><img src="imagenes/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
+    </div>
+  </div>
+
+  <section class="banner">
+    <div class="banner-text">
+      <h1>Cafetera</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus reprehenderit explicabo cum ut
+        quisquam esse omnis animi vitae culpa. Praesentium aut itaque mollitia amet culpa eos architecto eum quis.</p>
+      <button>COMPRA YÁ</button>
+    </div>
+    <div class="banner-image">
+      <img
+        src="imagenes/cafetera-smartlife-3-en-1-comp-caps-nespresso-y-dolce-gusto-S_2X_865042-MLU73696077954_012024-Y.jpg"
+        alt="Cafetera">
+    </div>
+  </section>
+
+
+  <section class="productos">
+    <h2>Productos destacados</h2>
+    <div class="carousel-container">
+      <button id="prev">&#10094;</button>
+      <div class="carousel">
+        <div class="producto-card">
+          <img
+            src="imagenes/cafetera-smartlife-3-en-1-comp-caps-nespresso-y-dolce-gusto-S_2X_865042-MLU73696077954_012024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/batidora-planetaria-colucci-1200w-bowl-ac-inox-5-lts-6-vel-color-rojo-frecuencia-50hz-S_2X_652039-MLU78473431215_082024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/batidora-planetaria-colucci-1200w-bowl-ac-inox-5-lts-6-vel-color-rojo-frecuencia-50hz-S_2X_652039-MLU78473431215_082024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+        <div class="producto-card">
+          <img
+            src="imagenes/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
+            alt="Producto">
+          <h3>Texto</h3>
+          <p>$0</p>
+          <p>Body text.</p>
+        </div>
+
+      </div>
+      <button id="next">&#10095;</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Redes Sociales</h4>
+        <a>X</a>
+        <a>Instagram</a>
+        <a>Youtube</a>
+      </div>
+      <div class="footer-section">
+        <h4>Ayuda</h4>
+        <a>Seguridad</a>
+        <a>Comprar</a>
+        <a>Vender</a>
+        <a>Centro de problemas</a>
+      </div>
+      <div class="footer-section">
+        <h4>Mi Cuenta</h4>
+        <a>Resumen</a>
+        <a>Vender</a>
+        <a>Favoritos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="home.js"></script>
+</body>
+
+</html>

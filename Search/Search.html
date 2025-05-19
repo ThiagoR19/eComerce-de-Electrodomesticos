@@ -37,11 +37,33 @@
       <div class="header__nav-div header__nav-div--login">
         <img src="./Fotos/User.png" alt="usuario" class="header__nav-div--login--img">
         <a href="login.html" class="header__nav-div--login-a">Login</a>
-        <a href="../Carrito/Carrito.html"><img src="./Fotos/carrito.png" alt="carrito" class="header__nav-div--login-img"></a>
+        <a href="../Carrito/Carrito.html"><img src="./Fotos/carrito.png" alt="carrito"
+            class="header__nav-div--login-img"></a>
         <a href=""><img src="./Fotos/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
       </div>
+      <button class="hamburger-menu" onclick="toggleMenu()">
+        &#9776; </button>
     </nav>
   </header>
+  <div class="mobile-menu">
+    <button class="close-menu" onclick="toggleMenu()">
+      &times; </button>
+    <a href="home.html" class="header__nav-div-a-mobile">Inicio</a>
+    <button id="Cate-mobile" class="header__nav-div--links-button-mobile">
+      Categorias
+      <img id="buttonImg1-mobile" src="imagenes/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+    </button>
+    <button id="Produc-mobile" class="header__nav-div--links-button-mobile">
+      Productos
+      <img id="buttonImg2-mobile" src="imagenes/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+    </button>
+    <div class="header__nav-div header__nav-div--login-mobile">
+      <img src="imagenes/User.png" alt="usuario" class="header__nav-div--login--img">
+      <a href="login.html" class="header__nav-div--login-a">Login</a>
+      <a href=""><img src="imagenes/carrito.png" alt="carrito" class="header__nav-div--login-img"></a>
+      <a href=""><img src="imagenes/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
+    </div>
+  </div>
   <main>
     <aside>
       <div class="aside__div">

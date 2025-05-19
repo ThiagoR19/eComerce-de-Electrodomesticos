@@ -18,16 +18,6 @@ button2.addEventListener('click', () => {
 });
 
 
-const productos = document.getElementsByClassName('section__div-div')
-
-for (let i = 0; i < productos.length; i++) {
-  productos[i].addEventListener('click', () => {
-    window.location.href = "../Descripcion/Descripcion.html";
-  })
-
-}
-
-
 const carousel = document.querySelector('.carousel');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
