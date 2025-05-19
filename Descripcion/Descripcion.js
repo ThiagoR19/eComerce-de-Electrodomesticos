@@ -21,12 +21,12 @@ function toggleMenu() {
 
 button1.addEventListener('click', () => {
   Vuelta1 = !Vuelta1;
-  image1.src = Vuelta1 ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
+  image1.src = Vuelta1 ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
 button2.addEventListener('click', () => {
   Vuelta2 = !Vuelta2;
-  image2.src = Vuelta2 ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
+  image2.src = Vuelta2 ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
 
@@ -40,12 +40,12 @@ let Vuelta2Mobile = false;
 
 button1Mobile.addEventListener('click', () => {
   Vuelta1Mobile = !Vuelta1Mobile;
-  image1Mobile.src = Vuelta1Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
+  image1Mobile.src = Vuelta1Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
 button2Mobile.addEventListener('click', () => {
   Vuelta2Mobile = !Vuelta2Mobile;
-  image2Mobile.src = Vuelta2Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
+  image2Mobile.src = Vuelta2Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
 const button1 = document.getElementById('Cate');
@@ -54,8 +54,8 @@ const button2 = document.getElementById('Produc');
 const image2 = document.getElementById('buttonImg2');
 const images = document.querySelectorAll('.objeto__article-div-div-img');
 const arrow = document.getElementById('arrow');
-const imageDown = 'img/expandir.png';
-const imageUp = 'img/contraer.png';
+const imageDown = 'Fotos/expandir.png';
+const imageUp = 'Fotos/contraer.png';
 
 let Vuelta1 = false;
 let Vuelta2 = false;
@@ -185,7 +185,7 @@ function vistaMovil() {
                             <div class="main-aside--stock--button" id="dropdown-button">
                                 <h2>Comprar 1</h2>
                                 <span class="main-aside--stock--arrow" id="dropdown-arrow">
-                                <img src="img/abajo.png" alt="expandir">
+                                <img src="Fotos/abajo.png" alt="expandir">
                                 </span>
                             </div>
                             <div class="main-aside--stock--menu" id="dropdown-menu">
@@ -390,7 +390,7 @@ function vistaEscritorio() {
                             <div class="main-aside--stock--button" id="dropdown-button">
                                 <h2>Comprar 1</h2>
                                 <span class="main-aside--stock--arrow" id="dropdown-arrow">
-                                <img src="img/abajo.png" alt="expandir">
+                                <img src="Fotos/abajo.png" alt="expandir">
                                 </span>
                             </div>
                             <div class="main-aside--stock--menu" id="dropdown-menu">

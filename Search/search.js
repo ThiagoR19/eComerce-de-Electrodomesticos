@@ -27,7 +27,6 @@ for (let i = 0; i < productos.length; i++) {
 
 }
 
-
 const carousel = document.querySelector('.carousel');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
@@ -50,14 +49,23 @@ function toggleMenu() {
 
 button1.addEventListener('click', () => {
   Vuelta1 = !Vuelta1;
-  image1.src = Vuelta1 ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
+  image1.src = Vuelta1 ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
 button2.addEventListener('click', () => {
   Vuelta2 = !Vuelta2;
-  image2.src = Vuelta2 ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
+  image2.src = Vuelta2 ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
+button1Mobile.addEventListener('click', () => {
+  Vuelta1Mobile = !Vuelta1Mobile;
+  image1Mobile.src = Vuelta1Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
+});
+
+button2Mobile.addEventListener('click', () => {
+  Vuelta2Mobile = !Vuelta2Mobile;
+  image2Mobile.src = Vuelta2Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
+});
 
 const button1Mobile = document.getElementById('Cate-mobile');
 const image1Mobile = document.getElementById('buttonImg1-mobile');
@@ -67,12 +75,3 @@ const image2Mobile = document.getElementById('buttonImg2-mobile');
 let Vuelta1Mobile = false;
 let Vuelta2Mobile = false;
 
-button1Mobile.addEventListener('click', () => {
-  Vuelta1Mobile = !Vuelta1Mobile;
-  image1Mobile.src = Vuelta1Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
-});
-
-button2Mobile.addEventListener('click', () => {
-  Vuelta2Mobile = !Vuelta2Mobile;
-  image2Mobile.src = Vuelta2Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
-});
