@@ -162,7 +162,7 @@ const button1 = document.getElementById('Cate');
                         <button>
                             Agregar al carrito
                         </button>
-                        <button>
+                        <button onclick="IrAlCarito()">
                             Comprar ahora
                         </button>
                     </div>
@@ -367,7 +367,7 @@ const button1 = document.getElementById('Cate');
                         <button>
                             Agregar al carrito
                         </button>
-                        <button>
+                        <button onclick="IrAlCarito()">
                             Comprar ahora
                         </button>
                     </div>
@@ -467,3 +467,7 @@ const button1 = document.getElementById('Cate');
 
   // Ejecutar al cambiar el tamaño de la ventana
   window.addEventListener('resize', verificarTamañoPantalla);
+
+  function IrAlCarito(){
+        window.location.href = "../Carrito/Carrito.html"
+    }
