@@ -215,10 +215,7 @@ body {
   .carousel {
     flex-wrap: nowrap;
   }
-  .mobile-menu {
-    width: 50%;
-    padding-top: 60px;
-  }
+  
 }
 
 @media (max-width: 768px) {

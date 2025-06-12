@@ -41,8 +41,6 @@ h1 {
   align-items: stretch;
 }
 
-
-
 .article__div-img {
   height: 150px;
   margin: 0 10px;
@@ -197,7 +195,6 @@ aside {
   width: 100%;
 }
 
-
 @media (max-width: 950px) {
 
   #main__Carrito {
@@ -249,7 +246,6 @@ aside {
   article {
     box-shadow: none;
   }
-
 }
 
 @keyframes fadeIn {
