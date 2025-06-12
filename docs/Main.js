@@ -80,127 +80,107 @@ button2.addEventListener('click', () => {
   image2.src = Vuelta2 ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
-//  Carrito 
-
-const imageDown = './Fotos/expandir.png';
-const imageUp = './Fotos/contraer.png';
-
-button1.addEventListener('click', () => {
-  Vuelta1 = !Vuelta1;
-  image1.src = Vuelta1 ? imageUp : imageDown;
-});
-button2.addEventListener('click', () => {
-  Vuelta2 = !Vuelta2;
-  image2.src = Vuelta2 ? imageUp : imageDown;
-});
-
+const imageDown = './Fotos/expandir.png'
+const imageUp = './Fotos/contraer.png'
 
 button1Mobile.addEventListener('click', () => {
-  Vuelta1Mobile = !Vuelta1Mobile;
-  image1Mobile.src = Vuelta1Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
-});
+  Vuelta1Mobile = !Vuelta1Mobile
+  image1Mobile.src = Vuelta1Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png'
+})
 
 button2Mobile.addEventListener('click', () => {
-  Vuelta2Mobile = !Vuelta2Mobile;
-  image2Mobile.src = Vuelta2Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png';
-});
+  Vuelta2Mobile = !Vuelta2Mobile
+  image2Mobile.src = Vuelta2Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png'
+})
 
 // Descripcion
 
-const images = document.querySelectorAll('.objeto__article-div-div-img');
-const arrow = document.getElementById('arrow');
+const images = document.querySelectorAll('.objeto__article-div-div-img')
+const arrow = document.getElementById('arrow')
 
-button1.addEventListener('click', () => {
-  Vuelta1 = !Vuelta1;
-  image1.src = Vuelta1 ? imageUp : imageDown;
-});
-button2.addEventListener('click', () => {
-  Vuelta2 = !Vuelta2;
-  image2.src = Vuelta2 ? imageUp : imageDown;
-});
 arrow.addEventListener('mousedown', () => {
-  arrow.style.backgroundColor = '#F1F3F5';
-});
+  arrow.style.backgroundColor = '#F1F3F5'
+})
 
 arrow.addEventListener('mouseup', () => {
-  arrow.style.backgroundColor = '#003366';
-});
+  arrow.style.backgroundColor = '#003366'
+})
 
 arrow.addEventListener('mouseleave', () => {
-  arrow.style.backgroundColor = '#003366';
-});
+  arrow.style.backgroundColor = '#003366'
+})
 
 images.forEach(img => {
   img.addEventListener('click', () => {
-    images.forEach(i => i.classList.remove('selected'));
-    img.classList.add('selected');
-  });
-});
+    images.forEach(i => i.classList.remove('selected'))
+    img.classList.add('selected')
+  })
+})
 
 function scrollCarousel() {
-  const container = document.getElementById('carousel');
-  container.scrollBy({ left: 150, behavior: 'smooth' });
+  const container = document.getElementById('carousel')
+  container.scrollBy({ left: 150, behavior: 'smooth' })
 }
-const btn = document.getElementById("next-btn");
-const container = document.getElementById("product-container");
+const btn = document.getElementById("next-btn")
+const container = document.getElementById("product-container")
 
 btn.addEventListener("mousedown", () => {
-  btn.style.backgroundColor = "#FFFFFF";
-});
+  btn.style.backgroundColor = "#FFFFFF"
+})
 
 btn.addEventListener("mouseup", () => {
-  btn.style.backgroundColor = "#005b96";
-});
+  btn.style.backgroundColor = "#005b96"
+})
 
 btn.addEventListener("mouseleave", () => {
-  btn.style.backgroundColor = "#005b96";
-});
+  btn.style.backgroundColor = "#005b96"
+})
 
 btn.addEventListener("click", () => {
-  const scrollAmount = container.offsetWidth * 0.8;
+  const scrollAmount = container.offsetWidth * 0.8
   container.scrollBy({
     left: scrollAmount,
     behavior: 'smooth'
-  });
-});
-const slider = document.getElementById('slider');
-const cuotasElegidas = document.getElementById('cuotasElegidas');
+  })
+})
+const slider = document.getElementById('slider')
+const cuotasElegidas = document.getElementById('cuotasElegidas')
 
 slider.addEventListener('input', () => {
-  cuotasElegidas.textContent = slider.value;
-});
-const button = document.getElementById('dropdown-button');
-const menu = document.getElementById('dropdown-menu');
-const arrow2 = document.getElementById('dropdown-arrow');
-const title = button.querySelector('h2');
+  cuotasElegidas.textContent = slider.value
+})
+const button = document.getElementById('dropdown-button')
+const menu = document.getElementById('dropdown-menu')
+const arrow2 = document.getElementById('dropdown-arrow')
+const title = button.querySelector('h2')
 
 button.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
-  button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px';
-});
+  menu.classList.toggle('active')
+  arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)'
+  button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px'
+})
 
 document.querySelectorAll('.main-aside--stock--option').forEach(option => {
   option.addEventListener('click', () => {
-    const value = option.getAttribute('data-value');
+    const value = option.getAttribute('data-value')
     if (value === 'stock') {
-      title.textContent = 'Comprar todo...';
+      title.textContent = 'Comprar todo...'
     } else {
-      title.textContent = `Comprar ${value}`;
+      title.textContent = `Comprar ${value}`
     }
-    menu.classList.remove('active');
-    arrow2.style.transform = 'rotate(0deg)';
-    button.style.borderRadius = '8px';
-  });
-});
+    menu.classList.remove('active')
+    arrow2.style.transform = 'rotate(0deg)'
+    button.style.borderRadius = '8px'
+  })
+})
 
 window.addEventListener('click', e => {
   if (!document.querySelector('.comprar').contains(e.target)) {
-    menu.classList.remove('active');
-    arrow2.style.transform = 'rotate(0deg)';
-    button.style.borderRadius = '8px';
+    menu.classList.remove('active')
+    arrow2.style.transform = 'rotate(0deg)'
+    button.style.borderRadius = '8px'
   }
-});
+})
 
 var aside = document.getElementById("aside")
 var descripcion = document.getElementById("Descripcion")
@@ -555,61 +535,40 @@ function vistaEscritorio() {
 
 function verificarTamañoPantalla() {
   if (window.innerWidth < 951) {
-    vistaMovil();
+    vistaMovil()
   } else {
-    vistaEscritorio();
+    vistaEscritorio()
   }
 }
 
 // Ejecutar al cargar la página
-verificarTamañoPantalla();
+verificarTamañoPantalla()
 
 // Ejecutar al cambiar el tamaño de la ventana
-window.addEventListener('resize', verificarTamañoPantalla);
+window.addEventListener('resize', verificarTamañoPantalla)
 
 function IrAlCarito() {
   window.location.href = "../Carrito/Carrito.html"
 }
 
-// Search
-
-// Nahuel
-
 button1.addEventListener('click', () => {
-  Vuelta1 = !Vuelta1;
-  image1.src = Vuelta1 ? imageUp : imageDown;
-});
+  Vuelta1 = !Vuelta1
+  image1.src = Vuelta1 ? imageUp : imageDown
+})
 button2.addEventListener('click', () => {
-  Vuelta2 = !Vuelta2;
-  image2.src = Vuelta2 ? imageUp : imageDown;
-});
-
+  Vuelta2 = !Vuelta2
+  image2.src = Vuelta2 ? imageUp : imageDown
+})
 
 const productos = document.getElementsByClassName('section__div-div')
-
-// Thiago
 
 for (let i = 0; i < productos.length; i++) {
   productos[i].addEventListener('click', () => {
     window.location.href = "../Descripcion/Descripcion.html";
   })
-
 }
-
-// Negro
 
 function toggleMenu() {
   const mobileMenu = document.querySelector('.mobile-menu');
   mobileMenu.classList.toggle('open');
 }
-
-button1Mobile.addEventListener('click', () => {
-  Vuelta1Mobile = !Vuelta1Mobile;
-  image1Mobile.src = Vuelta1Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
-});
-
-button2Mobile.addEventListener('click', () => {
-  Vuelta2Mobile = !Vuelta2Mobile;
-  image2Mobile.src = Vuelta2Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
-});
-
