@@ -94,6 +94,7 @@
   text-decoration: none;
   border: 2px solid transparent;
   transition: border-color .5s;
+  cursor: pointer;
 }
 
 .header__nav-div-a:hover {

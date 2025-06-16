@@ -27,13 +27,13 @@ article {
 
 h1 {
   padding: 50px 0;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 30px;
 }
 
 .article__div {
   display: flex;
   justify-content: center;
-  height: 100%;
   box-shadow: 0px 0px 2px #757575;
   margin: 10px 0;
   padding: 20px;
@@ -42,7 +42,7 @@ h1 {
 }
 
 .article__div-img {
-  height: 150px;
+  height: 100%;
   margin: 0 10px;
   align-self: center;
 }
@@ -105,6 +105,8 @@ h1 {
   border-radius: 8px;
   font-size: 15px;
   border: none;
+  cursor: pointer;
+  transition: box-shadow .5s;
 }
 
 .article__div-div-div-div-button1,
@@ -114,6 +116,14 @@ h1 {
   padding: 5px 20px;
   border: none;
   font-size: 20px;
+  cursor: pointer;
+  transition: box-shadow .5s;
+}
+
+.article__div-div-div-div-button1:hover,
+.article__div-div-div-div-button2:hover,
+.article__div-div-div-button:hover {
+  box-shadow: 0 0 10px #003366;
 }
 
 .article__div-div-div-div-button1 {
@@ -152,6 +162,7 @@ aside {
 .aside__div2 {
   display: flex;
   height: 75%;
+  width: 95%;
   flex-direction: column;
 }
 
@@ -192,6 +203,7 @@ aside {
 
 .aside__div-img {
   padding: 5px 0;
+  margin-right: 50px;
   width: 100%;
 }
 

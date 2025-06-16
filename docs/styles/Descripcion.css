@@ -356,14 +356,15 @@
   align-items: center;
   margin-top: 3.36vw;
   margin-bottom: 3.32vw;
+  padding: 0 30px;
 }
 
 .main-aside--buttons>button {
-  width: 12.79vw;
-  height: 4.32vw;
+  padding: 10px;
   border-radius: 0.46vw;
   border: none;
   font-size: 1.39vw;
+  margin: 2px;
 }
 
 .main-aside--buttons>button:first-child {
