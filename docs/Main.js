@@ -12,12 +12,13 @@ const styleTag = document.getElementById('styles')
 let mains = [mainHome,mainCarrito,mainSearch,mainDescripcion]
 
 
-// Le doy a todos un class none, excepto al home (mainHome[0])
+// Le doy a todos un class 'none', excepto al home (mainHome[0])
 for (let i = 0; i < mains.length; i++) {
   mains[i].classList.add('none')
 } 
 mains[0].classList.remove('none')
 
+// Esta funcion recibe un texto que indica el main que se quiere mostrar, y un array con todos los mains
 function mostrarMain(mainAMostrar,mains) {
   styleTag.setAttribute('href',`./styles/${mainAMostrar}.css`)
   mains.forEach(element => {
@@ -29,9 +30,7 @@ function mostrarMain(mainAMostrar,mains) {
   });
 }
 
-
-
-
+//Parte de ALGUIEN (nose)
 
 // Home
 
