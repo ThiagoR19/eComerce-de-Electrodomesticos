@@ -1,16 +1,21 @@
+// Parte de Thiago
+
+// Seleccion de todos los mains en el index.html
 const mainHome = document.getElementById('main__Home')
 const mainCarrito = document.getElementById('main__Carrito')
 const mainSearch = document.getElementById('main__Search')
 const mainDescripcion = document.getElementById('main__Descripcion')
 
+// Seleccion de la etiqueta link con id styles
 const styleTag = document.getElementById('styles')
 
 let mains = [mainHome,mainCarrito,mainSearch,mainDescripcion]
 
+
+// Le doy a todos un class none, excepto al home (mainHome[0])
 for (let i = 0; i < mains.length; i++) {
   mains[i].classList.add('none')
 } 
-
 mains[0].classList.remove('none')
 
 function mostrarMain(mainAMostrar,mains) {
@@ -23,6 +28,10 @@ function mostrarMain(mainAMostrar,mains) {
     }
   });
 }
+
+
+
+
 
 // Home
 
