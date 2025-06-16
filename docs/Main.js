@@ -69,7 +69,7 @@ button2Mobile.addEventListener('click', () => {
   image2Mobile.src = Vuelta2Mobile ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
 
-
+//header esto sirve para dar vuelta el simbolo de expancio de categorias,etc
 const button1 = document.getElementById('Cate');
 const image1 = document.getElementById('buttonImg1');
 const button2 = document.getElementById('Produc');
@@ -87,6 +87,11 @@ button2.addEventListener('click', () => {
   Vuelta2 = !Vuelta2;
   image2.src = Vuelta2 ? 'Fotos/contraer.png' : 'Fotos/expandir.png';
 });
+button2.addEventListener('click', () => {
+  Vuelta2 = !Vuelta2
+  image2.src = Vuelta2 ? imageUp : imageDown
+})
+//fin js header
 
 const imageDown = './Fotos/expandir.png'
 const imageUp = './Fotos/contraer.png'
@@ -101,8 +106,8 @@ button2Mobile.addEventListener('click', () => {
   image2Mobile.src = Vuelta2Mobile ? 'imagenes/contraer.png' : 'imagenes/expandir.png'
 })
 
-// Descripcion
-
+// Descripcion 
+//carrusel de imagenes de producto y su seleccion
 const images = document.querySelectorAll('.objeto__article-div-div-img')
 const arrow = document.getElementById('arrow')
 
@@ -129,6 +134,8 @@ function scrollCarousel() {
   const container = document.getElementById('carousel')
   container.scrollBy({ left: 150, behavior: 'smooth' })
 }
+//fin js carry de producto
+
 const btn = document.getElementById("next-btn")
 const container = document.getElementById("product-container")
 
@@ -151,18 +158,22 @@ btn.addEventListener("click", () => {
     behavior: 'smooth'
   })
 })
+
+//Descripcion js barra de cuotas
 const slider = document.getElementById('slider')
 const cuotasElegidas = document.getElementById('cuotasElegidas')
 
 slider.addEventListener('input', () => {
   cuotasElegidas.textContent = slider.value
 })
+//fin js barra de cuotas
+// Descripcion Eleccion de stock
 const button = document.getElementById('dropdown-button')
 const menu = document.getElementById('dropdown-menu')
 const arrow2 = document.getElementById('dropdown-arrow')
 const title = button.querySelector('h2')
 
-button.addEventListener('click', () => {
+button.addEventListener('click', () => {console.log("activado")
   menu.classList.toggle('active')
   arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)'
   button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px'
@@ -182,6 +193,7 @@ document.querySelectorAll('.main-aside--stock--option').forEach(option => {
   })
 })
 
+
 window.addEventListener('click', e => {
   if (!document.querySelector('.comprar').contains(e.target)) {
     menu.classList.remove('active')
@@ -189,10 +201,12 @@ window.addEventListener('click', e => {
     button.style.borderRadius = '8px'
   }
 })
+//fin eleccion de stock
 
+//Descripccion movimiento en el estado movil
 var aside = document.getElementById("aside")
 var descripcion = document.getElementById("Descripcion")
-
+ 
 function vistaMovil() {
   descripcion.innerHTML = `
     <div class="cuotas">
@@ -540,7 +554,9 @@ function vistaEscritorio() {
                     </div>
     `
 }
+//fin de paso a movil
 
+//verificacion de tamaño de la pantalla
 function verificarTamañoPantalla() {
   if (window.innerWidth < 951) {
     vistaMovil()
@@ -559,10 +575,7 @@ button1.addEventListener('click', () => {
   Vuelta1 = !Vuelta1
   image1.src = Vuelta1 ? imageUp : imageDown
 })
-button2.addEventListener('click', () => {
-  Vuelta2 = !Vuelta2
-  image2.src = Vuelta2 ? imageUp : imageDown
-})
+
 
 function toggleMenu() {
   const mobileMenu = document.querySelector('.mobile-menu');
