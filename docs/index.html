@@ -17,9 +17,13 @@
       <nav class="header__nav">
         <div class="header__nav-div header__nav-div--search">
           <button class="header__nav-div-button">
-            <img src="Fotos/search.png" alt="search" class="header__nav-div-button-search">
+            <img src="Fotos/search.png" alt="search" class="header__nav-div-button-search" onclick="mostrarMain('search',mains)">
           </button>
+<<<<<<< HEAD
           <input type="text" placeholder="Buscar..." class="header__nav-div-input">
+=======
+          <input type="text" placeholder="" class="header__nav-div-input" onkeydown="mostrarMain('search',mains)">
+>>>>>>> 68c40befc5601ccb6f2da3d1feb8ce65466e19b2
         </div>
         <div class="header__nav-links-wrapper">
           <div class="header__nav-div header__nav-div--links">
@@ -75,7 +79,7 @@
         <h1>Cafetera</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus reprehenderit explicabo cum ut
           quisquam esse omnis animi vitae culpa. Praesentium aut itaque mollitia amet culpa eos architecto eum quis.</p>
-        <button onclick="location.href='../Descripcion/Descripcion.html'">COMPRA YÁ</button>
+        <button onclick="mostrarMain('Descripcion',mains)">COMPRA YÁ</button>
       </div>
       <div class="banner-image">
         <img
@@ -624,14 +628,14 @@
         <div class="section__div">
           <div class="section__div-div">
             <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
+            <div class="section__div-div-div" onclick="mostrarMain('Descripcion',mains)">
               <h4>Articulo 1</h4>
               <label>$19</label>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
                 explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
             </div>
           </div>
-          <div class="section__div-div">
+          <div class="section__div-div" onclick="mostrarMain('Descripcion',mains)">
             <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
             <div class="section__div-div-div">
               <h4>Articulo 1</h4>
