@@ -112,7 +112,7 @@ section {
   flex-direction: column;
   height: 50%;
   padding: 20px 5px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .section__div-div-div--fc {

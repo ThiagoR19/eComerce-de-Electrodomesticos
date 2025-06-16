@@ -19,6 +19,7 @@ body {
   background: white;
   animation: fadeIn 1s ease;
   height: 70vh;
+  margin-bottom: 80px;
 }
 
 .banner-text {
