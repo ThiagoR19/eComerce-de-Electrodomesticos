@@ -15,11 +15,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 50px 150px;
+  margin: 50px 150px;
   background: white;
   animation: fadeIn 1s ease;
   height: 70vh;
-  margin-bottom: 80px;
 }
 
 .banner-text {
