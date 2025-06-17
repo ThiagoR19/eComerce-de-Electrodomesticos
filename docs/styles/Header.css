@@ -7,6 +7,34 @@
   align-items: center;
 }
 
+input, textarea {
+  caret-color: #536676;
+}
+
+.subrayado {
+  position: relative;
+  display: inline-block;
+  color: #002651;
+  text-decoration: none;
+}
+
+.subrayado::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #002651;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.subrayado:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
 .header__img {
   margin: 25px 20px 25px 50px;
   height: 6.075vw;
@@ -57,18 +85,19 @@
   width: 30.96vw;
   border: none;
   border-radius: 0 35px 35px 0;
-  background-color: #D9D9D9;
+  background-color: #d6dce1;
   font-size: 1.145vw;
   padding: 0 20px;
+  color: #002651;
 }
 
 .header__nav-div-input:hover {
-  border: 2px solid black;
+  border: none;
 }
 
 .header__nav-div-input:focus {
   outline: none;
-  border: 2px solid black;
+  border: none;
 }
 
 
@@ -92,14 +121,9 @@
   margin-right: 2.256vw;
   color: #003366;
   text-decoration: none;
-  border: 2px solid transparent;
-  transition: border-color .5s;
   cursor: pointer;
 }
 
-.header__nav-div-a:hover {
-  border-color: transparent transparent #003366 transparent;
-}
 
 .header__nav-div-button-img {
   height: 0.85vw;
@@ -116,14 +140,11 @@
   background-color: #F1F3F5;
   color: #003366;
   cursor: pointer;
-  border: 2px solid transparent;
   transition: border-color .5s;
   padding-bottom: 2px;
+  border: none;
 }
 
-.header__nav-div--links-button:hover{ 
-  border-color: transparent transparent #003366 transparent; 
-}
 
 .header__nav-div--login {
   color: #003366;
@@ -142,12 +163,6 @@
   margin-left: 0.984vw;
   margin-right: 1.099vw;
   text-decoration: none;
-  border: 2px solid transparent;
-  transition: border-color .5s;
-}
-
-.header__nav-div--login-a:hover {
-  border-color: transparent transparent #003366 transparent;
 }
 
 .header__nav-div--login-img {

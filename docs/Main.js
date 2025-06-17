@@ -14,13 +14,20 @@ const inicio = document.getElementById('inicio')
 const reviewCard = document.getElementById('main__aside--reseñas__scroll-box')
 const descripcionContainer = document.getElementById('objeto__descrip')
 const infoPrincipal = document.getElementById('objeto__article')
-const asideCuotas = document.getElementById('asideCuotas')
+const asideCuotas = document.getElementById('cuotasBox')
+const iconoCarrito = document.getElementById('carrito')
+const publi3 = document.getElementById('main__img')
 
 const mains = [mainHome, mainCarrito, mainSearch, mainDescripcion]
 
 iconoSearch.addEventListener('click', () => mostrarMain('Search', mains))
 comprarYa.addEventListener('click', () => mostrarMain('Carrito', mains))
 inicio.addEventListener('click', () => mostrarMain('Home', mains))
+iconoCarrito.addEventListener('click', () => mostrarMain('Carrito', mains))
+
+publi3.addEventListener('click', () => {
+  publi3.classList.add('eliminar')
+})
 
 Productos.forEach(element => {
   const div = document.createElement('div')
@@ -137,7 +144,7 @@ function mostrarDetallesDeCompra (element) {
               De 1 a ${element.cuotas} cuotas ${intereses} interés
             </div>
           </div>
-          <div>
+          <div class="cuotas__precio">
             <h2>$${element.precio}</h2>
           </div>
           <div class="main-aside--stock">

@@ -118,6 +118,11 @@ section {
   overflow-y: hidden;
 }
 
+.section__div-div-div h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 .section__div-div-div--fc {
   display: flex;
   height: 50%;
@@ -133,8 +138,10 @@ section {
 }
 
 .section__div-div-div label {
-  font-weight: bold;
+  font-weight: 500;
   margin: 5px 0;
+  font-size: 20px;
+  color: #004a94;
 }
 
 @media (max-width: 1100px) {

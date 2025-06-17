@@ -22,20 +22,20 @@
         </div>
         <div class="header__nav-links-wrapper">
           <div class="header__nav-div header__nav-div--links">
-            <a id="inicio" class="header__nav-div-a">Inicio</a>
-            <button id="Cate" class="header__nav-div--links-button">
+            <a id="inicio" class="header__nav-div-a subrayado">Inicio</a>
+            <button id="Cate" class="header__nav-div--links-button subrayado">
               Categorias
               <img id="buttonImg1" src="Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
             </button>
-            <button id="Produc" class="header__nav-div--links-button">
+            <button id="Produc" class="header__nav-div--links-button subrayado">
               Productos
               <img id="buttonImg2" src="Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
             </button>
           </div>
           <div class="header__nav-div header__nav-div--login">
             <img src="Fotos/User.png" alt="usuario" class="header__nav-div--login--img">
-            <a href="login.html" class="header__nav-div--login-a">Login</a>
-            <a onclick="mostrarMain('Carrito',mains)"><img id="header__nav-div-div-img" src="Fotos/carrito.png" alt="carrito"
+            <a href="login.html" class="header__nav-div--login-a subrayado">Login</a>
+            <a id="carrito"><img id="header__nav-div-div-img" src="Fotos/carrito.png" alt="carrito"
                 class="header__nav-div--login-img"></a>
             <a href=""><img id="header__nav-div-div-img" src="Fotos/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
           </div>
@@ -163,17 +163,17 @@
       <div class="despair">
         <section class="objeto">
           <article id="objeto__article" class="objeto__article"></article>
-          <article id="objeto__descrip" class="objeto__descrip" id="Descripcion"></article>
+          <div id="cuotasBox"></div>
         </section>
-        <aside class="main__aside" id="aside">
-          <div id="asideCuotas"></div>
+        <section id="descripcionYReseñas">
+          <article id="objeto__descrip" class="objeto__descrip" id="Descripcion"></article>
           <div class="main__aside--reseñas">
             <div class="main__aside--reseñas__container">
               <h2 class="main__aside--reseñas__titulo">Reseñas</h2>
               <div id="main__aside--reseñas__scroll-box" class="main__aside--reseñas__scroll-box"></div>
             </div>
           </div>
-        </aside>
+        </section>
       </div>
       <section class="destacados">
         <article class="destacados__article">
@@ -230,7 +230,7 @@
     </main>
 
     <main id="main__Carrito">
-      <img class="main__img" src="./Fotos/publi3.png" alt="Publicidad 3">
+      <img id="main__img" class="main__img" src="./Fotos/publi3.png" alt="Publicidad 3">
       <article>
         <h1>Todos los productos</h1>
         <div class="article__div">
@@ -360,7 +360,7 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Categorias</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todas</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
@@ -369,7 +369,7 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Modelo</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todos</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
@@ -378,7 +378,7 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Color</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todos</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
@@ -387,7 +387,7 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Peso</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todos</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
@@ -396,7 +396,7 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Marca</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todas</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
@@ -405,7 +405,7 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Tamaño</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todos</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
@@ -414,17 +414,17 @@
         <div class="aside__div">
           <h4 class="aside__div-h4">Material</h4>
           <select class="aside__div-select">
-            <option value="">Ninguno</option>
+            <option value="">Todos</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
             <option value="">Marca</option>
           </select>
         </div>
         <div class="aside__div">
-          <input class="aside__div-input" type="number" placeholder="0">
+          <input class="aside__div-input" type="number" placeholder="$0">
           <div class="aside__div-div--last"></div>
           <div class="aside__div-div--last"></div>
-          <input class="aside__div-input" type="number" placeholder="0">
+          <input class="aside__div-input" type="number" placeholder="$0">
         </div>
       </aside>
       <section>
