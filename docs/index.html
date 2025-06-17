@@ -8,7 +8,7 @@
     <link id="styles" rel="stylesheet" href="./styles/Home.css">
     <link rel="stylesheet" href="./styles/Footer.css">
     <link rel="stylesheet" href="./styles/Header.css">
-    <script src="Main.js" defer></script>
+    <script type="module" src="Main.js" defer></script>
   </head>
   <body>
     <header class="--header">
@@ -16,15 +16,13 @@
       <nav class="header__nav">
         <div class="header__nav-div header__nav-div--search">
           <button class="header__nav-div-button">
-            <img src="Fotos/search.png" alt="search" class="header__nav-div-button-search" onclick="mostrarMain('search',mains)">
+            <img id="iconoSearch" src="Fotos/search.png" alt="search" class="header__nav-div-button-search">
           </button>
           <input type="text" placeholder="Buscar..." class="header__nav-div-input">
         </div>
         <div class="header__nav-links-wrapper">
           <div class="header__nav-div header__nav-div--links">
-            <a onclick="mostrarMain('Home',mains)" class="header__nav-div-a">
-              Inicio
-            </a>
+            <a id="inicio" class="header__nav-div-a">Inicio</a>
             <button id="Cate" class="header__nav-div--links-button">
               Categorias
               <img id="buttonImg1" src="Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
@@ -74,7 +72,7 @@
         <h1>Cafetera</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, <br> ducimus reprehenderit explicabo cum ut
           quisquam esse omnis animi vitae culpa. <br> Praesentium aut itaque mollitia amet culpa eos architecto eum quis.</p>
-        <button onclick="mostrarMain('Descripcion',mains)">COMPRA YÁ</button>
+        <button id='comprarYa'>COMPRA YÁ</button>
       </div>
       <div class="banner-image">
         <img
@@ -164,205 +162,15 @@
     <main id="main__Descripcion">
       <div class="despair">
         <section class="objeto">
-          <article class="objeto__article">
-            <div>
-              <h3>
-                Lavarropas Automático Inverter Samsung Carga Frontal 9.5kg 1400rpm Blanco
-              </h3>
-            </div>
-            <div class="hijo">
-              <img src="Fotos/download 1.png" alt="imagen principal" class="hijoimg">
-            </div>
-            <div>
-              <div class="objeto__article-div-div" id="carousel">
-                <img src="Fotos/lava7.png" class="objeto__article-div-div-img">
-                <img src="Fotos/lava2.webp" class="objeto__article-div-div-img">
-                <img src="Fotos/lava3.jpg" class="objeto__article-div-div-img">
-                <img src="Fotos/lava4.webp" class="objeto__article-div-div-img">
-                <img src="Fotos/lava5.webp" class="objeto__article-div-div-img">
-                <img src="Fotos/lava7.png" class="objeto__article-div-div-img">
-                <img src="Fotos/lava8.jpg" class="objeto__article-div-div-img">
-              </div>
-              <div class="objeto__article-div--arrow" id="arrow" onclick="scrollCarousel()">
-                <img src="Fotos/Allado.png" alt="mover">
-              </div>
-            </div>
-          </article>
-          <article class="objeto__descrip" id="Descripcion">
-            <div>
-              <h2>
-                Descripcion del producto
-              </h2>
-            </div>
-            <div class="objeto__descrip--descrip">
-              <div class="objeto__descrip--descrip-div">
-                <p>
-                  Características técnicas<br>
-                  ● Capacidad de lavado: 8 kg<br>
-                  ● Tipo de carga: Frontal<br>
-                  ● Velocidad de centrifugado: 1200 RPM<br>
-                  ● Programas de lavado: 15 (Rápido, Eco, Ropa delicada, Lana, Antialérgico, etc.)<br>
-                  ● Tecnología de lavado: EcoWash con control automático de agua<br>
-                  ● Nivel de ruido: 59 dB (lavado) / 76 dB (centrifugado)<br>
-                  ● Eficiencia energética: A+++<br>
-                  ● Funciones especiales: Bloqueo infantil, inicio diferido (hasta 24 hs), protección contra
-                  sobrecarga<br>
-                  ● Pantalla: Display LED táctil
-                </p>
-              </div>
-              <div class="objeto__descrip--descrip-div">
-                <p>
-                  El Lavarropas Automático de Carga Frontal 8 Kg está diseñado para brindarte eficiencia, practicidad y un
-                  lavado superior en cada uso.<br>
-                  Su capacidad de 8 kilos lo hace ideal para familias medianas, y gracias a su clasificación energética
-                  A+++, cuida tanto el ambiente como tu factura de luz.<br>
-                  Con un moderno display LED táctil, podrás elegir entre 15 programas de lavado según tus necesidades:
-                  desde ciclos rápidos hasta opciones delicadas y antialérgicas. Además, cuenta con funciones inteligentes
-                  como inicio diferido y bloqueo infantil, para que tengas el control total del lavado en cualquier
-                  momento del día.
-                </p>
-              </div>
-            </div>
-          </article>
+          <article id="objeto__article" class="objeto__article"></article>
+          <article id="objeto__descrip" class="objeto__descrip" id="Descripcion"></article>
         </section>
         <aside class="main__aside" id="aside">
-          <div class="cuotas">
-            <div class="cuotas__label">
-              <span class="cuotas__texto">Cuotas: <span class="cuotas__numero" id="cuotasElegidas">1</span></span>
-              <span class="cuotas__valor">$12</span>
-            </div>
-
-            <div class="cuotas__slider-container">
-              <div class="cuotas__slider-track"></div>
-              <div class="cuotas__fixed-thumb"></div>
-              <input type="range" id="slider" class="cuotas__range" min="1" max="12" value="1" step="1">
-            </div>
-            <div class="cuotas__descripcion">
-              De 1 a 12 cuotas sin interés
-            </div>
-          </div>
-          <div>
-            <h2>
-              $4.324
-            </h2>
-          </div>
-          <div class="main-aside--stock">
-            <h2>
-              Stock
-            </h2>
-            <div class="comprar">
-              <div class="main-aside--stock--button" id="dropdown-button">
-                <h2>Comprar 1</h2>
-                <span class="main-aside--stock--arrow" id="dropdown-arrow">
-                  <img src="Fotos/abajo.png" alt="expandir">
-                </span>
-              </div>
-              <div class="main-aside--stock--menu" id="dropdown-menu">
-                <div class="main-aside--stock--option" data-value="1">Comprar 1</div>
-                <div class="main-aside--stock--option" data-value="2">Comprar 2</div>
-                <div class="main-aside--stock--option" data-value="3">Comprar 3</div>
-                <div class="main-aside--stock--option" data-value="4">Comprar 4</div>
-                <div class="main-aside--stock--option" data-value="5">Comprar 5</div>
-                <div class="main-aside--stock--option" data-value="6">Comprar 6</div>
-                <div class="main-aside--stock--option" data-value="7">Comprar 7</div>
-                <div class="main-aside--stock--option" data-value="8">Comprar 8</div>
-                <div class="main-aside--stock--option" data-value="9">Comprar 9</div>
-                <div class="main-aside--stock--option" data-value="10">Comprar 10</div>
-                <div class="main-aside--stock--option" data-value="stock">Todo el stock disponible</div>
-              </div>
-            </div>
-            <div>
-              <h3>
-                Producto disponible 25
-              </h3>
-            </div>
-          </div>
-          <div class="main-aside--buttons">
-            <button>
-              Agregar al carrito
-            </button>
-            <button onclick="IrAlCarito()">
-              Comprar ahora
-            </button>
-          </div>
+          <div id="asideCuotas"></div>
           <div class="main__aside--reseñas">
             <div class="main__aside--reseñas__container">
               <h2 class="main__aside--reseñas__titulo">Reseñas</h2>
-              <div class="main__aside--reseñas__scroll-box">
-
-                <div class="main__aside--reseñas__card">
-                  <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
-                  <div class="main__aside--reseñas__title">Review title</div>
-                  <div class="main__aside--reseñas__body">Review body</div>
-                  <div class="main__aside--reseñas__footer">
-                    <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
-                    <div class="main__aside--reseñas__reviewer-info">
-                      <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
-                      <span class="main__aside--reseñas__review-date">Date</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="main__aside--reseñas__card">
-                  <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
-                  <div class="main__aside--reseñas__title">Review title</div>
-                  <div class="main__aside--reseñas__body">Review body</div>
-                  <div class="main__aside--reseñas__footer">
-                    <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
-                    <div class="main__aside--reseñas__reviewer-info">
-                      <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
-                      <span class="main__aside--reseñas__review-date">Date</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="main__aside--reseñas__card">
-                  <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
-                  <div class="main__aside--reseñas__title">Review title</div>
-                  <div class="main__aside--reseñas__body">Review body</div>
-                  <div class="main__aside--reseñas__footer">
-                    <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
-                    <div class="main__aside--reseñas__reviewer-info">
-                      <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
-                      <span class="main__aside--reseñas__review-date">Date</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="main__aside--reseñas__card">
-                  <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
-                  <div class="main__aside--reseñas__title">Review title</div>
-                  <div class="main__aside--reseñas__body">Review body</div>
-                  <div class="main__aside--reseñas__footer">
-                    <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
-                    <div class="main__aside--reseñas__reviewer-info">
-                      <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
-                      <span class="main__aside--reseñas__review-date">Date</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="main__aside--reseñas__card">
-                  <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
-                  <div class="main__aside--reseñas__title">Review title</div>
-                  <div class="main__aside--reseñas__body">Review body</div>
-                  <div class="main__aside--reseñas__footer">
-                    <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
-                    <div class="main__aside--reseñas__reviewer-info">
-                      <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
-                      <span class="main__aside--reseñas__review-date">Date</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="main__aside--reseñas__card">
-                  <div class="main__aside--reseñas__stars">☆ ☆ ☆ ☆ ☆</div>
-                  <div class="main__aside--reseñas__title">Review title</div>
-                  <div class="main__aside--reseñas__body">Review body</div>
-                  <div class="main__aside--reseñas__footer">
-                    <img src="https://i.pravatar.cc/30?img=1" alt="avatar">
-                    <div class="main__aside--reseñas__reviewer-info">
-                      <span class="main__aside--reseñas__reviewer-name">Reviewer name</span>
-                      <span class="main__aside--reseñas__review-date">Date</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div id="main__aside--reseñas__scroll-box" class="main__aside--reseñas__scroll-box"></div>
             </div>
           </div>
         </aside>
@@ -620,116 +428,7 @@
         </div>
       </aside>
       <section>
-        <div class="section__div">
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div" onclick="mostrarMain('Descripcion',mains)">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div" onclick="mostrarMain('Descripcion',mains)">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-          <div class="section__div-div">
-            <div class="section__div-div-div--fc"><img src="./Fotos/img.png" alt=""></div>
-            <div class="section__div-div-div">
-              <h4>Articulo 1</h4>
-              <label>$19</label>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iste eius atque cupiditate odit ipsa
-                explicabo dignissimos hic laboriosam nemo inventore perferendis, quisquam, nam facilis </p>
-            </div>
-          </div>
-        </div>
+        <div class="section__div" id="section__div"></div>
       </section>
     </main>
 
