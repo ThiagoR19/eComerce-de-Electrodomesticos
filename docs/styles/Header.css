@@ -7,7 +7,8 @@
   align-items: center;
 }
 
-input, textarea {
+input,
+textarea {
   caret-color: #536676;
 }
 
@@ -63,8 +64,7 @@ input, textarea {
 
 #header__nav-div-div-img:hover {
   filter:
-          drop-shadow(0 0 20px #00acdc)
-          drop-shadow(0 0 30px #00acdc);
+    drop-shadow(0 0 20px #00acdc) drop-shadow(0 0 30px #00acdc);
 }
 
 .header__nav-div-button {
