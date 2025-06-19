@@ -40,15 +40,15 @@
             <a href=""><img id="header__nav-div-div-img" src="Fotos/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
           </div>
         </div>
-        <button class="hamburger-menu" onclick="toggleMenu()">
+        <button class="hamburger-menu">
           &#9776; </button>
       </nav>
     </header>
 
     <div class="mobile-menu">
-      <button class="close-menu" onclick="toggleMenu()">
+      <button class="close-menu">
         &times; </button>
-      <a href="home.html" class="header__nav-div-a-mobile">Inicio</a>
+      <a id="inicioHeaderMenu" class="header__nav-div-a-mobile">Inicio</a>
       <button id="Cate-mobile" class="header__nav-div--links-button-mobile">
         Categorias
         <img id="buttonImg1-mobile" src="Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
@@ -86,73 +86,7 @@
       <h2>Productos destacados</h2>
       <div class="carousel-container">
         <button id="prev">&#10094;</button>
-        <div class="carousel">
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/cafetera-smartlife-3-en-1-comp-caps-nespresso-y-dolce-gusto-S_2X_865042-MLU73696077954_012024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/batidora-planetaria-colucci-1200w-bowl-ac-inox-5-lts-6-vel-color-rojo-frecuencia-50hz-S_2X_652039-MLU78473431215_082024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/batidora-planetaria-colucci-1200w-bowl-ac-inox-5-lts-6-vel-color-rojo-frecuencia-50hz-S_2X_652039-MLU78473431215_082024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-          <div class="producto-card" onclick="mostrarMain('Descripcion',mains)">
-            <img
-              src="Fotos/aspiradora-robot-cecotec-conga-7490-immortal-genesis-negra-220v-S_2X_605870-MLU74996486553_032024-Y.jpg"
-              alt="Producto">
-            <h3>Texto</h3>
-            <p>$0</p>
-            <p>Body text.</p>
-          </div>
-
-        </div>
+        <div class="carousel" id="carrouselHome"></div>
         <button id="next">&#10095;</button>
       </div>
     </section>

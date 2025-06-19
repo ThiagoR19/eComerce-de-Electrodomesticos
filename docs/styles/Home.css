@@ -118,6 +118,7 @@ body {
   scroll-snap-align: center;
   margin: 10px;
   padding: 20px 30px;
+  overflow: hidden;
 }
 
 .producto-card:hover {
@@ -125,7 +126,7 @@ body {
 }
 
 .producto-card img {
-  height: 80%;
+  height: 60%;
   width: 100%;
   object-fit: contain;
   border-radius: 10px;
