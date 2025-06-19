@@ -631,11 +631,15 @@
     width: 100%;
   }
   .objeto__descrip--descrip-div {
-    width: 45%;
+    width: 90%;
+    margin: 20px 0;
+    align-self: center;
   }
 
   .objeto__descrip--descrip {
     place-content: center;
+    flex-direction: column;
+    padding: 30px;
   }
 
   .objeto__descrip>div:first-child {
