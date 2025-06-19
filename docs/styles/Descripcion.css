@@ -377,7 +377,6 @@
 .main__aside--reseñas__scroll-box {
   max-height: 43.51vw;
   overflow-y: auto;
-  padding-right: 8px;
 }
 
 .main__aside--reseñas__card {
@@ -452,6 +451,7 @@
   align-items: start;
   justify-content: space-evenly;
   margin-top: 40px;
+  padding: 0 30px;
 }
 
 .destacados {
@@ -485,7 +485,6 @@
   margin-right: 100px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  height: 100%;
 }
 
 .destacados__article-div-div::-webkit-scrollbar {
@@ -493,21 +492,25 @@
 }
 
 .destacado__article-div-div-div {
-  width: 400px;
   background: #fff;
   border: 1px solid #eee;
-  border-radius: 10px;
+  border-radius: 20px;
   text-align: start;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgb(225, 225, 225);
   transition: transform 0.3s;
   flex-shrink: 0;
   scroll-snap-align: center;
-  margin: 10px 10px 10px 0;
+  margin: 10px 25px 10px 5px;
   padding: 20px 30px;
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .destacado__article-div-div-div img {
-  height: 70%;
+  height: 50%;
   width: 100%;
   object-fit: contain;
   border-radius: 10px;
@@ -515,19 +518,21 @@
 }
 
 .destacado__article-div-div-div-text {
-  font-weight: bold;
+  font-weight: 500;
   margin-top: 8px;
+  font-size: 20px;
 }
 
 .destacado__article-div-div-div-precio {
   color: black;
   font-weight: 600;
   margin: 4px 0;
+  font-size: 20px;
 }
 
 .destacado__article-div-div-div-descr {
   color: #777;
-  font-size: 0.81vw;
+  font-size: 20px;
 }
 
 .destacados__article-div {
@@ -662,11 +667,6 @@
   .destacados__article>div:nth-child(1)>h2 {
     font-size: 30px;
   }
-
-  .destacado__article-div-div-div {
-    width: 400px;
-  }
-
   .main-aside--buttons {
     flex-direction: column;
     align-items: center;

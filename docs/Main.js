@@ -19,6 +19,7 @@ const iconoCarrito = document.getElementById('carrito')
 const publi3 = document.getElementById('main__img')
 const carrouselHome = document.getElementById('carrouselHome')
 const inicioHeaderMenu = document.getElementById('inicioHeaderMenu')
+const carrouselDescripcion = document.getElementById('product-container')
 
 const mains = [mainHome, mainCarrito, mainSearch, mainDescripcion]
 
@@ -69,26 +70,38 @@ function mostrarMain (mainAMostrar, mains) {
   // }
 }
 
-function mostrarCarrousel (Productos) {
-  const productosOrdenados = Productos.sort((a, b) => a.stock - b.stock)
-  const productosDestacados = productosOrdenados.slice(0, 7)
+const productosOrdenados = Productos.sort((a, b) => a.stock - b.stock)
+const productosDestacados = productosOrdenados.slice(0, 7)
 
-  productosDestacados.forEach(element => {
-    const div = document.createElement('DIV')
-    div.classList.add('producto-card')
-    div.innerHTML = `<img
+productosDestacados.forEach(element => {
+  const div = document.createElement('DIV')
+  div.classList.add('producto-card')
+  div.innerHTML = `<img
               src="./Fotos/${element.imagenes[0]}${element.id}.jpg"
               alt="Producto">
             <h3>${element.nombre}</h3>
             <p>$${element.precio}</p>
             <p>${element.principalDescripcion}</p>`
-    div.addEventListener('click', () => {
-      mostrarMain('Descripcion', mains)
-      descripcionDeUnProducto(element)
-    })
-    carrouselHome.appendChild(div)
+  div.addEventListener('click', () => {
+    mostrarMain('Descripcion', mains)
+    descripcionDeUnProducto(element)
   })
-} mostrarCarrousel(Productos)
+  carrouselHome.appendChild(div)
+})
+
+productosDestacados.forEach(element => {
+  const div = document.createElement('DIV')
+  div.classList.add('destacado__article-div-div-div')
+  div.innerHTML = `<img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Producto">
+                <div class="destacado__article-div-div-div-text">${element.nombre}</div>
+                <div class="destacado__article-div-div-div-precio">$${element.precio}</div>
+                <div class="destacado__article-div-div-div-descr">${element.principalDescripcion}</div>`
+  div.addEventListener('click', () => {
+    mostrarMain('Descripcion', mains)
+    descripcionDeUnProducto(element)
+  })
+  carrouselDescripcion.appendChild(div)
+})
 
 function descripcionDeUnProducto (element) {
   mostrarReviews(element.reseñas)
