@@ -58,7 +58,7 @@ body {
 
 .banner-image {
   flex: 1;
-  height: 100%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,6 @@ body {
   padding: 20px;
   text-align: center;
   background-color: #F1F3F5;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -108,7 +107,7 @@ body {
 }
 
 .producto-card {
-  width: 23%;
+  width: 300px;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 10px;
@@ -133,8 +132,9 @@ body {
   align-self: center;
 }
 
-.producto-card p {
+.producto-card p:last-child {
   color: rgb(83, 83, 83);
+  margin-bottom: 10px;
 }
 
 #next {
@@ -153,7 +153,6 @@ body {
   font-weight: lighter;
 }
 
-
 #prev {
   left: 10px;
 }
@@ -163,6 +162,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .carousel-container {
     flex-direction: row;
     align-items: center;
@@ -182,20 +182,16 @@ body {
   .producto-card {
     min-width: 100%;
     max-width: 100%;
-    scroll-snap-align: center;
     padding: 5%;
-
   }
 
   h3 {
     font-size: 1.5em;
     margin-left: 0%;
-    margin-top: 35%;
   }
 
   .producto-card img {
     max-height: 58vh;
-
   }
 
   #prev,
@@ -204,7 +200,6 @@ body {
     padding: 8px 12px;
   }
 }
-
 
 @keyframes fadeIn {
   from {
@@ -216,23 +211,34 @@ body {
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1160px) {
   .banner {
     flex-direction: column;
+    height: auto;
+    margin: 30px 40px;
   }
   .carousel {
     flex-wrap: nowrap;
   }
-  
-}
+  .carousel-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+  }
 
-@media (max-width: 768px) {
-  .banner {
-    flex-direction: column;
-  }
   .carousel {
-    flex-wrap: now;
+    flex-direction: row;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 100%;
   }
+
+  .producto-card {
+    display: flex;
+    flex-direction: column;
+  }  
 }
 
 .none {
