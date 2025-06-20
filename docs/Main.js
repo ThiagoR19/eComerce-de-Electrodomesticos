@@ -218,7 +218,7 @@ function mostrarDetallesDeCompra (element) {
             <button>
               Agregar al carrito
             </button>
-            <button onclick="IrAlCarito()">
+            <button id="comprarAhora">
               Comprar ahora
             </button>`
 
@@ -230,6 +230,8 @@ function mostrarDetallesDeCompra (element) {
     elegidas.innerText = slide.value
   })
   // fin de codigo de cuotas
+  const comprarAhora = document.getElementById('comprarAhora')
+  comprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
 
   // codigo para menu desplegable de stock
   const button = document.getElementById('dropdown-button')
