@@ -290,6 +290,7 @@ function mostrarCarrito(){
   for (let i = 0; i < carrito.length;i++){
     console.log("vuelta"+ i)
     console.log (carrito[i])
+    //insertAdjacentHTML añade directamente y no refresca todo el DOM como el +=, beforeend es la ubicacion del cambio
     lista.insertAdjacentHTML('beforeend',`
         <div class="article__div" id="produc${i}">
           <input type="checkbox" class="article__div-input" checked>
@@ -306,15 +307,17 @@ function mostrarCarrito(){
               <button class="article__div-div-div-button" id="eliminar${i}">Eliminar</button>
               <div class="article__div-div-div-div">
                 <p class="article__div-div-div-div-p">$${(carrito[i].eleme.precio)*carrito[i].cant}</p>
-                <button class="article__div-div-div-div-button1">-</button>
-                <strong class="article__div-div-div-div-strong">${carrito[i].cant}</strong>
-                <button class="article__div-div-div-div-button2">+</button>
+                <button class="article__div-div-div-div-button1" id="buttonR${i}">-</button>
+                <strong class="article__div-div-div-div-strong" id="cant${i}">${carrito[i].cant}</strong>
+                <button class="article__div-div-div-div-button2" id="buttonS${i}">+</button>
               </div>
             </div>
           </div>
       </div>
     `)
     document.getElementById(`eliminar${i}`).addEventListener('click', () => eliminacion(i))
+    document.getElementById(`buttonS${i}`).addEventListener('click', function () {RandS(i, this.id,`buttonR${i}`)});
+    document.getElementById(`buttonR${i}`).addEventListener('click', function () {RandS(i, this.id,`buttonS${i}`)});
   }
 
 }
@@ -324,9 +327,39 @@ function eliminacion(carritoPos){
   produc.remove()
   carrito.splice((carritoPos-1),1)
   console.log(carrito)
+}
 
+function RandS(pos,boton,contraBoton){
+  let cantidad = document.getElementById(`cant${pos}`)
+  const contra = document.getElementById(contraBoton)
+  const booton = document.getElementById(boton)
+  
+  if (boton ==`buttonS${pos}`){
+    
+    if (parseInt(parseInt(carrito[pos].cant) + 1)<=carrito[pos].eleme.stock){
 
+       carrito[pos].cant = parseInt(parseInt(carrito[pos].cant)+ 1)
+       contra.classList.remove("noHayMas")
+       
+    }
+    else{
+      booton.classList.add("noHayMas")
+      contra.classList.remove("noHayMas")
+    }
+  }
+  else{
+    if ((carrito[pos].cant - 1)>0){
+       carrito[pos].cant -= 1
+       contra.classList.remove("noHayMas")
+    }
+    else{
+      booton.classList.add("noHayMas")
+      contra.classList.remove("noHayMas")
+    }
+    
 
+  }
+  cantidad.innerText = carrito[pos].cant
 }
 function aComprar(element, cantidad){
   let produc = {

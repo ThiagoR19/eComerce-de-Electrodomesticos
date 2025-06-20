@@ -129,6 +129,9 @@ h1 {
   cursor: pointer;
   transition: box-shadow .5s;
 }
+.noHayMas{
+  background-color: #dedede;
+}
 .article__div-div-div-div-strong{
   background-color: #003366;
   color: white;
