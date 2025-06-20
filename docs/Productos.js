@@ -1561,7 +1561,7 @@ export const Productos = [
     nombre: 'Ventilador de Pie Liliana VTP2016 3 Velocidades 16 Pulgadas',
     stock: 50,
     intereses: false,
-    cuotas: 0,
+    cuotas: 1,
     descripcion: 'Ventilador de pie de 16 pulgadas con 3 velocidades y oscilación automática. Motor silencioso y base estable.',
     principalDescripcion: 'Ventilador de pie 16" con 3 velocidades, oscilación y motor silencioso',
     propiedades: 'Tamaño: 16 pulgadas<br>Velocidades: 3<br>Oscilación: Automática<br>Altura: Regulable 110-130 cm<br>Motor: Silencioso<br>Base: Reforzada<br>Control: Perillas frontales<br>Cable: 1.5m',
