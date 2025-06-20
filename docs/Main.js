@@ -216,7 +216,7 @@ function mostrarDetallesDeCompra (element) {
             </div>
           </div>
           <div class="main-aside--buttons">
-            <button>
+            <button id="agrego">
               Agregar al carrito
             </button>
             <button id="ComprarAhora">
@@ -274,7 +274,9 @@ function mostrarDetallesDeCompra (element) {
   //fin de codigo para 
   
   //eventos para la compra 
+  const agrego = document.getElementById("agrego")
   const ComprarAhora = document.getElementById("ComprarAhora")
+  agrego.addEventListener('click', () => aComprar(element,value))
   ComprarAhora.addEventListener('click', () => aComprar(element,value))
   ComprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
   
