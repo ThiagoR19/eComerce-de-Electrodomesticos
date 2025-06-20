@@ -32,7 +32,8 @@ inicioHeaderMenu.addEventListener('click', () => mostrarMain('Home', mains))
 publi3.addEventListener('click', () => {
   publi3.classList.add('eliminar')
 })
-
+var carrito = []
+var value = 1
 Productos.forEach(element => {
   const div = document.createElement('div')
   div.classList.add('section__div-div')
@@ -65,9 +66,9 @@ function mostrarMain (mainAMostrar, mains) {
       element.classList.add('none')
     }
   })
-  // if (mainAMostrar === 'Descripcion') {
-  //   funcionalidadDeLaDescripcion()
-  // }
+  if (mainAMostrar =="Carrito"){
+    mostrarCarrito()
+  }
 }
 
 const productosOrdenados = Productos.sort((a, b) => a.stock - b.stock)
@@ -211,11 +212,12 @@ function mostrarDetallesDeCompra (element) {
             <button>
               Agregar al carrito
             </button>
-            <button onclick="IrAlCarito()">
+            <button id="ComprarAhora">
               Comprar ahora
             </button>`
 
   asideCuotas.appendChild(div)
+
   //codigo para actualizar las cuotas elegidas
   const slide = document.getElementById("slider");
   const elegidas = document.getElementById("cuotasElegidas")
@@ -226,46 +228,61 @@ function mostrarDetallesDeCompra (element) {
 
   //codigo para menu desplegable de stock
   const button = document.getElementById('dropdown-button');
-const menu = document.getElementById('dropdown-menu');
-const arrow2 = document.getElementById('dropdown-arrow');
-const title = button.querySelector('h2');
-//codigo para aparecer el menu de stock y dar vuelta la felchita
-button.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
-  button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px';
-});
-//creacion de elementos del menu comprar
-let añadir = ``
-for (let i=1; i < (element.stock + 1) ; i++){
-  if (i==element.stock){
-    añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar todo el stock disponible</div>`
-  }
-  else{
-    añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar ${i}</div>`
-  }
-}
-menu.innerHTML = añadir
-// fin del codgio para elementos del menu comprar
-
-//asignacion de compra a boton 
-document.querySelectorAll('.main-aside--stock--option').forEach(option => {
-  option.addEventListener('click', () => {
-    const value = option.getAttribute('data-value');
-    if (value == element.stock) {
-      title.textContent = 'Comprar todo...';
-    } else {
-      title.textContent = `Comprar ${value}`;
-    }
-    menu.classList.remove('active');
-    arrow2.style.transform = 'rotate(0deg)';
-    button.style.borderRadius = '8px';
+  const menu = document.getElementById('dropdown-menu');
+  const arrow2 = document.getElementById('dropdown-arrow');
+  const title = button.querySelector('h2');
+  //codigo para aparecer el menu de stock y dar vuelta la felchita
+  button.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+    button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px';
   });
-});
-//fin de codigo para 
+  //creacion de elementos del menu comprar
+  let añadir = ``
+  for (let i=1; i < (element.stock + 1) ; i++){
+    if (i==element.stock){
+      añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar todo el stock disponible</div>`
+    }
+    else{
+      añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar ${i}</div>`
+    }
+  }
+  menu.innerHTML = añadir
+  // fin del codgio para elementos del menu comprar
+
+  //asignacion de compra a boton 
+  document.querySelectorAll('.main-aside--stock--option').forEach(option => {
+    option.addEventListener('click', () => {
+      value = option.getAttribute('data-value');
+      if (value == element.stock) {
+        title.textContent = 'Comprar todo...';
+      } else {
+        title.textContent = `Comprar ${value}`;
+      }
+      menu.classList.remove('active');
+      arrow2.style.transform = 'rotate(0deg)';
+      button.style.borderRadius = '8px';
+    });
+  });
+  //fin de codigo para 
+  
+  //eventos para la compra 
+  const ComprarAhora = document.getElementById("ComprarAhora")
+  ComprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
+  ComprarAhora.addEventListener('click', () => aComprar(element,value))
+  //fin de eventos para la compra de productos 
 }
-
-
+function mostrarCarrito(){
+  
+}
+function aComprar(element, cantidad){
+  let produc = {
+    id:element.id,
+    cant:cantidad
+  }
+  carrito.push(produc)
+  
+}
 // Parte de ALGUIEN (nose)
 
 // Home

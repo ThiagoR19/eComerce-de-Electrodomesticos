@@ -120,11 +120,17 @@ h1 {
 .article__div-div-div-div-button2 {
   background-color: #003366;
   color: white;
-  padding: 5px 20px;
+  padding: 5px 15px;
   border: none;
   font-size: 20px;
   cursor: pointer;
   transition: box-shadow .5s;
+}
+.article__div-div-div-div-strong{
+  background-color: #003366;
+  color: white;
+  padding: 5px 0px;
+  font-size:20px;
 }
 
 .article__div-div-div-div-button1:hover,
