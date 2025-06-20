@@ -17,12 +17,12 @@ const infoPrincipal = document.getElementById('objeto__article')
 const asideCuotas = document.getElementById('cuotasBox')
 const iconoCarrito = document.getElementById('carrito')
 const publi3 = document.getElementById('main__img')
-const carrouselHome = document.getElementById('carrouselHome')
 const inicioHeaderMenu = document.getElementById('inicioHeaderMenu')
-const carrouselDescripcion = document.getElementById('product-container')
 const banner = document.getElementById('banner')
+const carrouselHome = document.getElementById('carrouselHome')
+const carrouselDescripcion = document.getElementById('product-container')
 
-const mains = [mainHome, mainCarrito, mainSearch, mainDescripcion]
+export const mains = [mainHome, mainCarrito, mainSearch, mainDescripcion]
 
 iconoSearch.addEventListener('click', () => mostrarMain('Search', mains))
 inicio.addEventListener('click', () => mostrarMain('Home', mains))
@@ -59,7 +59,7 @@ for (let i = 0; i < mains.length; i++) {
 }
 mains[0].classList.remove('none')
 
-function mostrarMain (mainAMostrar, mains) {
+export function mostrarMain (mainAMostrar, mains) {
   styleTag.setAttribute('href', `../styles/${mainAMostrar}.css`)
   mains.forEach(element => {
     if (element.id === `main__${mainAMostrar}`) {
@@ -80,11 +80,11 @@ productosDestacados.forEach(element => {
   const div = document.createElement('DIV')
   div.classList.add('producto-card')
   div.innerHTML = `<img
-              src="../Fotos/${element.imagenes[0]}${element.id}.jpg"
-              alt="Producto">
-            <h3>${element.nombre}</h3>
-            <p>$${element.precio}</p>
-            <p>${element.principalDescripcion}</p>`
+                src="../Fotos/${element.imagenes[0]}${element.id}.jpg"
+                alt="Producto">
+              <h3>${element.nombre}</h3>
+              <p>$${element.precio}</p>
+              <p>${element.principalDescripcion}</p>`
   div.addEventListener('click', () => {
     mostrarMain('Descripcion', mains)
     descripcionDeUnProducto(element)
@@ -96,9 +96,9 @@ productosDestacados.forEach(element => {
   const div = document.createElement('DIV')
   div.classList.add('destacado__article-div-div-div')
   div.innerHTML = `<img src="../Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Producto">
-                <div class="destacado__article-div-div-div-text">${element.nombre}</div>
-                <div class="destacado__article-div-div-div-precio">$${element.precio}</div>
-                <div class="destacado__article-div-div-div-descr">${element.principalDescripcion}</div>`
+                  <div class="destacado__article-div-div-div-text">${element.nombre}</div>
+                  <div class="destacado__article-div-div-div-precio">$${element.precio}</div>
+                  <div class="destacado__article-div-div-div-descr">${element.principalDescripcion}</div>`
   div.addEventListener('click', () => {
     mostrarMain('Descripcion', mains)
     descripcionDeUnProducto(element)
