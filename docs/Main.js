@@ -32,8 +32,8 @@ inicioHeaderMenu.addEventListener('click', () => mostrarMain('Home', mains))
 publi3.addEventListener('click', () => {
   publi3.classList.add('eliminar')
 })
-var carrito = []
-var value = 1
+const carrito = []
+let value = 1
 Productos.forEach(element => {
   const div = document.createElement('div')
   div.classList.add('section__div-div')
@@ -66,7 +66,7 @@ function mostrarMain (mainAMostrar, mains) {
       element.classList.add('none')
     }
   })
-  if (mainAMostrar =="Carrito"){
+  if (mainAMostrar === 'Carrito') {
     mostrarCarrito()
   }
 }
@@ -225,75 +225,73 @@ function mostrarDetallesDeCompra (element) {
 
   asideCuotas.appendChild(div)
 
-  //codigo para actualizar las cuotas elegidas
-  const slide = document.getElementById("slider");
-  const elegidas = document.getElementById("cuotasElegidas")
-  slide.addEventListener("input", () => {
-    elegidas.innerText= slide.value
-  });
-  //fin de codigo de cuotas
+  // codigo para actualizar las cuotas elegidas
+  const slide = document.getElementById('slider')
+  const elegidas = document.getElementById('cuotasElegidas')
+  slide.addEventListener('input', () => {
+    elegidas.innerText = slide.value
+  })
+  // fin de codigo de cuotas
 
-  //codigo para menu desplegable de stock
-  const button = document.getElementById('dropdown-button');
-  const menu = document.getElementById('dropdown-menu');
-  const arrow2 = document.getElementById('dropdown-arrow');
-  const title = button.querySelector('h2');
-  //codigo para aparecer el menu de stock y dar vuelta la felchita
+  // codigo para menu desplegable de stock
+  const button = document.getElementById('dropdown-button')
+  const menu = document.getElementById('dropdown-menu')
+  const arrow2 = document.getElementById('dropdown-arrow')
+  const title = button.querySelector('h2')
+  // codigo para aparecer el menu de stock y dar vuelta la felchita
   button.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
-    button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px';
-  });
-  //creacion de elementos del menu comprar
-  let añadir = ``
-  for (let i=1; i < (element.stock + 1) ; i++){
-    if (i==element.stock){
+    menu.classList.toggle('active')
+    arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)'
+    button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px'
+  })
+  // creacion de elementos del menu comprar
+  let añadir = ''
+  for (let i = 1; i < (element.stock + 1); i++) {
+    if (i === element.stock) {
       añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar todo el stock disponible</div>`
-    }
-    else{
+    } else {
       añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar ${i}</div>`
     }
   }
   menu.innerHTML = añadir
   // fin del codgio para elementos del menu comprar
 
-  //asignacion de compra a boton 
+  // asignacion de compra a boton
   document.querySelectorAll('.main-aside--stock--option').forEach(option => {
     option.addEventListener('click', () => {
-      value = option.getAttribute('data-value');
-      if (value == element.stock) {
-        title.textContent = 'Comprar todo...';
+      value = option.getAttribute('data-value')
+      if (value === element.stock) {
+        title.textContent = 'Comprar todo...'
       } else {
-        title.textContent = `Comprar ${value}`;
+        title.textContent = `Comprar ${value}`
       }
-      menu.classList.remove('active');
-      arrow2.style.transform = 'rotate(0deg)';
-      button.style.borderRadius = '8px';
-    });
-  });
-  //fin de codigo para 
-  
-  //eventos para la compra 
-  const agrego = document.getElementById("agrego")
-  const ComprarAhora = document.getElementById("ComprarAhora")
-  agrego.addEventListener('click', () => aComprar(element,value))
-  ComprarAhora.addEventListener('click', () => aComprar(element,value))
+      menu.classList.remove('active')
+      arrow2.style.transform = 'rotate(0deg)'
+      button.style.borderRadius = '8px'
+    })
+  })
+  // fin de codigo para
+
+  // eventos para la compra
+  const agrego = document.getElementById('agrego')
+  const ComprarAhora = document.getElementById('ComprarAhora')
+  agrego.addEventListener('click', () => aComprar(element, value))
+  ComprarAhora.addEventListener('click', () => aComprar(element, value))
   ComprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
-  
-  //fin de eventos para la compra de productos 
+
+  // fin de eventos para la compra de productos
 }
-function mostrarCarrito(){
-  console.log("a generar")
-  const lista = document.getElementById("listaProduc")
-  lista.innerHTML= `<h1>Todos los productos</h1>`
+function mostrarCarrito () {
+  console.log('a generar')
+  const lista = document.getElementById('listaProduc')
+  lista.innerHTML = '<h1>Todos los productos</h1>'
 
-
-  console.log (carrito.length)
-  for (let i = 0; i < carrito.length;i++){
-    console.log("vuelta"+ i)
-    console.log (carrito[i])
-    //insertAdjacentHTML añade directamente y no refresca todo el DOM como el +=, beforeend es la ubicacion del cambio
-    lista.insertAdjacentHTML('beforeend',`
+  console.log(carrito.length)
+  for (let i = 0; i < carrito.length; i++) {
+    console.log('vuelta' + i)
+    console.log(carrito[i])
+    // insertAdjacentHTML añade directamente y no refresca todo el DOM como el +=, beforeend es la ubicacion del cambio
+    lista.insertAdjacentHTML('beforeend', `
         <div class="article__div" id="produc${i}">
           <input type="checkbox" class="article__div-input" checked>
           <img src="./Fotos/${carrito[i].eleme.imagenes[1]}${carrito[i].eleme.id}.jpg" class="article__div-img" alt="">
@@ -308,7 +306,7 @@ function mostrarCarrito(){
             <div class="article__div-div-div">
               <button class="article__div-div-div-button" id="eliminar${i}">Eliminar</button>
               <div class="article__div-div-div-div">
-                <p class="article__div-div-div-div-p">$${(carrito[i].eleme.precio)*carrito[i].cant}</p>
+                <p class="article__div-div-div-div-p">$${(carrito[i].eleme.precio) * carrito[i].cant}</p>
                 <button class="article__div-div-div-div-button1" id="buttonR${i}">-</button>
                 <strong class="article__div-div-div-div-strong" id="cant${i}">${carrito[i].cant}</strong>
                 <button class="article__div-div-div-div-button2" id="buttonS${i}">+</button>
@@ -318,59 +316,50 @@ function mostrarCarrito(){
       </div>
     `)
     document.getElementById(`eliminar${i}`).addEventListener('click', () => eliminacion(i))
-    document.getElementById(`buttonS${i}`).addEventListener('click', function () {RandS(i, this.id,`buttonR${i}`)});
-    document.getElementById(`buttonR${i}`).addEventListener('click', function () {RandS(i, this.id,`buttonS${i}`)});
+    document.getElementById(`buttonS${i}`).addEventListener('click', function () { RandS(i, this.id, `buttonR${i}`) })
+    document.getElementById(`buttonR${i}`).addEventListener('click', function () { RandS(i, this.id, `buttonS${i}`) })
   }
-
 }
-function eliminacion(carritoPos){
-  console.log("a eliminar")
-  let produc = document.getElementById(`produc${carritoPos}`)
+function eliminacion (carritoPos) {
+  console.log('a eliminar')
+  const produc = document.getElementById(`produc${carritoPos}`)
   produc.remove()
-  carrito.splice((carritoPos-1),1)
+  carrito.splice((carritoPos - 1), 1)
   console.log(carrito)
 }
 
-function RandS(pos,boton,contraBoton){
-  let cantidad = document.getElementById(`cant${pos}`)
+function RandS (pos, boton, contraBoton) {
+  const cantidad = document.getElementById(`cant${pos}`)
   const contra = document.getElementById(contraBoton)
   const booton = document.getElementById(boton)
-  
-  if (boton ==`buttonS${pos}`){
-    
-    if (parseInt(parseInt(carrito[pos].cant) + 1)<=carrito[pos].eleme.stock){
 
-       carrito[pos].cant = parseInt(parseInt(carrito[pos].cant)+ 1)
-       contra.classList.remove("noHayMas")
-       
+  if (boton === `buttonS${pos}`) {
+    if (parseInt(parseInt(carrito[pos].cant) + 1) <= carrito[pos].eleme.stock) {
+      carrito[pos].cant = parseInt(parseInt(carrito[pos].cant) + 1)
+      contra.classList.remove('noHayMas')
+    } else {
+      booton.classList.add('noHayMas')
+      contra.classList.remove('noHayMas')
     }
-    else{
-      booton.classList.add("noHayMas")
-      contra.classList.remove("noHayMas")
+  } else {
+    if ((carrito[pos].cant - 1) > 0) {
+      carrito[pos].cant -= 1
+      contra.classList.remove('noHayMas')
+    } else {
+      booton.classList.add('noHayMas')
+      contra.classList.remove('noHayMas')
     }
-  }
-  else{
-    if ((carrito[pos].cant - 1)>0){
-       carrito[pos].cant -= 1
-       contra.classList.remove("noHayMas")
-    }
-    else{
-      booton.classList.add("noHayMas")
-      contra.classList.remove("noHayMas")
-    }
-    
-
   }
   cantidad.innerText = carrito[pos].cant
 }
-function aComprar(element, cantidad){
-  let produc = {
-    eleme:element,
-    cant:cantidad
+function aComprar (element, cantidad) {
+  const produc = {
+    eleme: element,
+    cant: cantidad
   }
   carrito.push(produc)
-  console.log (carrito)
-  console.log ("grejgoiaebnvaebvfiowqebfnoefvb qefajl")
+  console.log(carrito)
+  console.log('grejgoiaebnvaebvfiowqebfnoefvb qefajl')
 }
 // Parte de ALGUIEN (nose)
 
