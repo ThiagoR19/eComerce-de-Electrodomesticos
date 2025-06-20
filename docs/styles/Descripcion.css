@@ -265,7 +265,6 @@
 .comprar {
   position: relative;
   width: 60%;
-  padding: 20px 0;
 }
 
 .main-aside--stock--button {
@@ -297,11 +296,12 @@
   position: absolute;
   top: 100%;
   left: 0;
-  max-width: 100%;
-  min-width: 17.19vw;
-  background-color: #002F6C;
+  width: 100%;
+  max-height: 40vh;
+  background-color: #002651;
   border-radius: 0 0 8px 8px;
-  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
   display: none;
   z-index: 100;
 }

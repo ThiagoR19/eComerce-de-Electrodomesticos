@@ -174,13 +174,13 @@ function mostrarDetallesDeCompra (element) {
   div.innerHTML = `
  <div class="cuotas__label">
               <span class="cuotas__texto">Cuotas: <span class="cuotas__numero" id="cuotasElegidas">1</span></span>
-              <span class="cuotas__valor">$12</span>
+              <span class="cuotas__valor">${element.cuotas}</span>
             </div>
 
             <div class="cuotas__slider-container">
               <div class="cuotas__slider-track"></div>
               <div class="cuotas__fixed-thumb"></div>
-              <input type="range" id="slider" class="cuotas__range" min="1" max="12" value="1" step="1">
+              <input type="range" id="slider" class="cuotas__range" min="1" max="${element.cuotas}" value="1" step="1">
             </div>
             <div class="cuotas__descripcion">
               De 1 a ${element.cuotas} cuotas ${intereses} interés
@@ -201,17 +201,6 @@ function mostrarDetallesDeCompra (element) {
                 </span>
               </div>
               <div class="main-aside--stock--menu" id="dropdown-menu">
-                <div class="main-aside--stock--option" data-value="1">Comprar 1</div>
-                <div class="main-aside--stock--option" data-value="2">Comprar 2</div>
-                <div class="main-aside--stock--option" data-value="3">Comprar 3</div>
-                <div class="main-aside--stock--option" data-value="4">Comprar 4</div>
-                <div class="main-aside--stock--option" data-value="5">Comprar 5</div>
-                <div class="main-aside--stock--option" data-value="6">Comprar 6</div>
-                <div class="main-aside--stock--option" data-value="7">Comprar 7</div>
-                <div class="main-aside--stock--option" data-value="8">Comprar 8</div>
-                <div class="main-aside--stock--option" data-value="9">Comprar 9</div>
-                <div class="main-aside--stock--option" data-value="10">Comprar 10</div>
-                <div class="main-aside--stock--option" data-value="stock">Todo el stock disponible</div>
               </div>
             </div>
             <div>
@@ -225,8 +214,57 @@ function mostrarDetallesDeCompra (element) {
             <button onclick="IrAlCarito()">
               Comprar ahora
             </button>`
+
   asideCuotas.appendChild(div)
+  //codigo para actualizar las cuotas elegidas
+  const slide = document.getElementById("slider");
+  const elegidas = document.getElementById("cuotasElegidas")
+  slide.addEventListener("input", () => {
+    elegidas.innerText= slide.value
+  });
+  //fin de codigo de cuotas
+
+  //codigo para menu desplegable de stock
+  const button = document.getElementById('dropdown-button');
+const menu = document.getElementById('dropdown-menu');
+const arrow2 = document.getElementById('dropdown-arrow');
+const title = button.querySelector('h2');
+//codigo para aparecer el menu de stock y dar vuelta la felchita
+button.addEventListener('click', () => {
+  menu.classList.toggle('active');
+  arrow2.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+  button.style.borderRadius = menu.classList.contains('active') ? '8px 8px 0 0' : '8px';
+});
+//creacion de elementos del menu comprar
+let añadir = ``
+for (let i=1; i < (element.stock + 1) ; i++){
+  if (i==element.stock){
+    añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar todo el stock disponible</div>`
+  }
+  else{
+    añadir += `<div class="main-aside--stock--option" data-value="${i}">Comprar ${i}</div>`
+  }
 }
+menu.innerHTML = añadir
+// fin del codgio para elementos del menu comprar
+
+//asignacion de compra a boton 
+document.querySelectorAll('.main-aside--stock--option').forEach(option => {
+  option.addEventListener('click', () => {
+    const value = option.getAttribute('data-value');
+    if (value == element.stock) {
+      title.textContent = 'Comprar todo...';
+    } else {
+      title.textContent = `Comprar ${value}`;
+    }
+    menu.classList.remove('active');
+    arrow2.style.transform = 'rotate(0deg)';
+    button.style.borderRadius = '8px';
+  });
+});
+//fin de codigo para 
+}
+
 
 // Parte de ALGUIEN (nose)
 
