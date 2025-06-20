@@ -14,6 +14,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Cocina","Alta Gama"],
     marca: 'Gafa',
     modelo: 'HGF-357',
     color: ['Blanco'],
@@ -50,7 +51,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Economico","Limpieza", "Calidad Precio"],
     marca: 'Drean',
     modelo: 'Next 8.05 Eco',
     color: ['Blanco'],
@@ -88,7 +89,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Calidad Precio"],
     marca: 'BGH',
     modelo: 'Quick Chef B223D',
     color: ['Negro'],
@@ -119,7 +120,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Calefaccion","Bienestar","Confort"],
     marca: 'Surrey',
     modelo: '553AIQ1201E',
     color: ['Blanco'],
@@ -156,7 +157,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina", "Economico","Confort"],
     marca: 'Philips',
     modelo: 'Daily HR2105',
     color: ['Blanco', 'Verde'],
@@ -187,7 +188,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Limpieza","Prestigioso", "Confort"],
     marca: 'Drean',
     modelo: 'Dish 12.1',
     color: ['Blanco'],
@@ -218,7 +219,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Limpieza","Calidad Precio"],
     marca: 'Drean',
     modelo: 'Gold Blue 6.07',
     color: ['Blanco'],
@@ -249,7 +250,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina"," Alta Gama","Economico", "Calefaccion"],
     marca: 'Domec',
     modelo: 'CXUPV',
     color: ['Blanco'],
@@ -280,7 +281,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina", "Alta Gama"],
     marca: 'Philips',
     modelo: 'HD8651',
     color: ['Negro', 'Plateado'],
@@ -311,7 +312,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Limpieza"],
     marca: 'Electrolux',
     modelo: 'Flex FLXS08',
     color: ['Azul', 'Gris'],
@@ -342,7 +343,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Limpieza","Economico","Confort"],
     marca: 'Black+Decker',
     modelo: 'X1050',
     color: ['Azul', 'Blanco'],
@@ -373,8 +374,9 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Economico","Calidad Precio"],
     marca: 'Gafa',
+    categorias:[],
     modelo: 'HGF H400AB',
     color: ['Blanco'],
     peso: [85, 'kg'],
@@ -404,7 +406,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina"],
     marca: 'Philips',
     modelo: 'Daily HR7320',
     color: ['Blanco'],
@@ -435,6 +437,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Confort"],
     marca: 'Liliana',
     modelo: 'VT3256',
     color: ['Blanco'],
@@ -465,7 +468,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Economico"],
     marca: 'Philips',
     modelo: 'HR3740',
     color: ['Blanco', 'Rojo'],
@@ -496,7 +499,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Bienestar","Confort","Cocina"],
     marca: 'PSA',
     modelo: '3 Etapas',
     color: ['Blanco'],
@@ -533,7 +536,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Calidad Precio"],
     marca: 'Philips',
     modelo: 'Daily HD2581',
     color: ['Blanco', 'Negro'],
@@ -564,7 +567,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina"],
     marca: 'Philips',
     modelo: 'Viva HR1836',
     color: ['Negro', 'Plateado'],
@@ -595,6 +598,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Calefaccion","Living","Prestigioso","Confort"],
     marca: 'Emegi',
     modelo: '3000TB',
     color: ['Blanco'],
@@ -625,7 +629,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Limpieza","Bienestar"],
     marca: 'Franke',
     modelo: 'Tender 60',
     color: ['Acero inoxidable'],
@@ -656,7 +660,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Bienestar"],
     marca: 'Philips',
     modelo: 'Essential HD9200',
     color: ['Negro', 'Blanco'],
@@ -693,7 +697,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+    categorias:["Cocina","Economico","Bienestar"],
     marca: 'Liliana',
     modelo: 'Smart Prep AM318',
     color: ['Blanco', 'Rojo'],
@@ -724,7 +728,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Prestigioso","Calefaccion","Cocina"],
     marca: 'Liliana',
     modelo: 'AO938',
     color: ['Negro'],
@@ -755,7 +759,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina","Economico"],
     marca: 'Philips',
     modelo: 'ProMix HR1670',
     color: ['Blanco', 'Negro'],
@@ -786,7 +790,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina"],
     marca: 'Rheem',
     modelo: '80L Eléctrico',
     color: ['Blanco'],
@@ -817,7 +821,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Economico","Cocina"],
     marca: 'Drean',
     modelo: 'Secamatic',
     color: ['Blanco'],
@@ -848,7 +852,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Calefaccion0","Prestigioso","Confort","Bienestar"],
     marca: 'Philips',
     modelo: 'Indoor HD6370',
     color: ['Negro', 'Plateado'],
@@ -879,7 +883,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina","Economico"],
     marca: 'Philips',
     modelo: 'Daily HD9350',
     color: ['Blanco', 'Negro'],
@@ -910,7 +914,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Limpieza","Calidad Precio"],
     marca: 'LG',
     modelo: 'WD12600',
     color: ['Blanco', 'Acero inoxidable'],
@@ -941,7 +945,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina","Economico","Calefaccion"],
     marca: 'Liliana',
     modelo: 'AE500',
     color: ['Blanco', 'Negro'],
@@ -972,7 +976,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina","Prestigioso"],
     marca: 'Samsung',
     modelo: 'RT38K5932SL',
     color: ['Inox'],
@@ -1009,7 +1013,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Limpieza","Economico"],
     marca: 'Drean',
     modelo: 'Next 8.12 Eco',
     color: ['Blanco'],
@@ -1040,7 +1044,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina"],
     marca: 'Electrolux',
     modelo: 'EMD20G3MLW',
     color: ['Blanco'],
@@ -1071,7 +1075,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Confort","Bienestar","Alta Gama"],
     marca: 'Midea',
     modelo: 'MSR-12HRDN1',
     color: ['Blanco'],
@@ -1102,7 +1106,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina"],
     marca: 'Philips',
     modelo: 'HR2157',
     color: ['Negro', 'Transparente'],
@@ -1133,6 +1137,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Cocina","Calefaccion"],
     marca: 'Atma',
     modelo: 'HE4010E',
     color: ['Negro'],
@@ -1163,6 +1168,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Limpieza","Calidad Precio"],
     marca: 'Electrolux',
     modelo: 'SA20',
     color: ['Azul', 'Gris'],
@@ -1193,6 +1199,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Cocina","Alta Gama"],
     marca: 'Oster',
     modelo: 'BVSTEM6601',
     color: ['Negro', 'Plateado'],
@@ -1223,7 +1230,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina"],
     marca: 'Peabody',
     modelo: 'PE-BM9108',
     color: ['Blanco'],
@@ -1254,7 +1261,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Limpieza","Alta Gama"],
     marca: 'Drean',
     modelo: 'DLV-126',
     color: ['Blanco'],
@@ -1285,7 +1292,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina"],
     marca: 'Philips',
     modelo: 'HR7320',
     color: ['Blanco'],
@@ -1316,7 +1323,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina","Calidad Precio"],
     marca: 'Atma',
     modelo: 'TO8003E',
     color: ['Acero inoxidable'],
@@ -1347,7 +1354,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Calidad Precio","Cocina"],
     marca: 'Black+Decker',
     modelo: 'FP1600B',
     color: ['Negro'],
@@ -1378,6 +1385,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
+    categorias:["Cocina","Confort","Calidad Precio"],
     marca: 'Atma',
     modelo: 'SM8800E',
     color: ['Negro', 'Plateado'],
@@ -1408,7 +1416,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Limpieza","Confort","Calidad Precio"],
     marca: 'Drean',
     modelo: 'Gold Blue 6.06 Eco',
     color: ['Blanco'],
@@ -1439,7 +1447,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina"],
     marca: 'Philips',
     modelo: 'HD9350/90',
     color: ['Acero inoxidable'],
@@ -1470,7 +1478,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cocina","Bienestar"],
     marca: 'PSA',
     modelo: 'Nexus 7',
     color: ['Blanco'],
@@ -1501,7 +1509,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Cosina","bienestar"],
     marca: 'Philips',
     modelo: 'HD9200/91',
     color: ['Negro'],
@@ -1532,7 +1540,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Limpieza","Confort"],
     marca: 'Black+Decker',
     modelo: 'IR03V',
     color: ['Azul', 'Blanco'],
@@ -1563,7 +1571,7 @@ export const Productos = [
       'Principal',
       '1Carru', '2Carru', '3Carru'
     ],
-
+categorias:["Confort","Biestar"],
     marca: 'Liliana',
     modelo: 'VTP2016',
     color: ['Blanco'],

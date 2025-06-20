@@ -285,14 +285,14 @@ function mostrarCarrito(){
   const lista = document.getElementById("listaProduc")
   lista.innerHTML= `<h1>Todos los productos</h1>`
 
-  let añadir = ``
+
   console.log (carrito.length)
   for (let i = 0; i < carrito.length;i++){
     console.log("vuelta"+ i)
     console.log (carrito[i])
-    añadir += `
+    lista.insertAdjacentHTML('beforeend',`
         <div class="article__div" id="produc${i}">
-          <input type="checkbox" class="article__div-input">
+          <input type="checkbox" class="article__div-input" checked>
           <img src="./Fotos/${carrito[i].eleme.imagenes[1]}${carrito[i].eleme.id}.jpg" class="article__div-img" alt="">
           <div class="article__div-div">
             <div class="article__div-div-div">
@@ -303,27 +303,31 @@ function mostrarCarrito(){
               </ul>
             </div>
             <div class="article__div-div-div">
-              <button class="article__div-div-div-button" onclick="eliminacion(${i})">Eliminar</button>
+              <button class="article__div-div-div-button" id="eliminar${i}">Eliminar</button>
               <div class="article__div-div-div-div">
-                <p class="article__div-div-div-div-p">$190.000</p>
+                <p class="article__div-div-div-div-p">$${(carrito[i].eleme.precio)*carrito[i].cant}</p>
                 <button class="article__div-div-div-div-button1">-</button>
-                <strong class="article__div-div-div-div-strong"></strong>
+                <strong class="article__div-div-div-div-strong">${carrito[i].cant}</strong>
                 <button class="article__div-div-div-div-button2">+</button>
               </div>
             </div>
           </div>
       </div>
-    `
+    `)
+    document.getElementById(`eliminar${i}`).addEventListener('click', () => eliminacion(i))
   }
-  console.log ("empezemos")
-  lista.innerHTML += añadir
+
 }
-//function eliminacion(carritoPos){
-//  let produc = document.getElementById(`produc${carritoPos}`)
-//  produc.remove()
-//  carrito.splice(carritoPos,1)
-//
-//}
+function eliminacion(carritoPos){
+  console.log("a eliminar")
+  let produc = document.getElementById(`produc${carritoPos}`)
+  produc.remove()
+  carrito.splice((carritoPos-1),1)
+  console.log(carrito)
+
+
+
+}
 function aComprar(element, cantidad){
   let produc = {
     eleme:element,
