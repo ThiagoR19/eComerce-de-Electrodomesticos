@@ -175,7 +175,7 @@ function mostrarInfoPrincipal (element) {
             <img src="../Fotos/${element.imagenes[3]}${element.id}.jpg" class="objeto__article-div-div-img">
             <img src="../Fotos/${element.imagenes[4]}${element.id}.jpg" class="objeto__article-div-div-img">
         </div>
-    <div class="objeto__article-div--arrow" id="arrow" onclick="scrollCarousel()"><img src="Fotos/Allado.png" alt="mover"></div>`
+    <div class="objeto__article-div--arrow" id="arrow" onclick="scrollCarousel()"><img src="../Fotos/Allado.png" alt="mover"></div>`
   const fotosCarrousel = document.querySelectorAll('.objeto__article-div-div-img')
   fotosCarrousel.forEach(imagen => {
     imagen.addEventListener('click', () => {
@@ -233,7 +233,7 @@ function mostrarDetallesDeCompra (element) {
               <div class="main-aside--stock--button" id="dropdown-button">
                 <h2>Comprar 1</h2>
                 <span class="main-aside--stock--arrow" id="dropdown-arrow">
-                  <img src="Fotos/abajo.png" alt="expandir">
+                  <img src="../Fotos/abajo.png" alt="expandir">
                 </span>
               </div>
               <div class="main-aside--stock--menu" id="dropdown-menu">
