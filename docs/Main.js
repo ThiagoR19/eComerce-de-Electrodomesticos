@@ -275,20 +275,63 @@ function mostrarDetallesDeCompra (element) {
   
   //eventos para la compra 
   const ComprarAhora = document.getElementById("ComprarAhora")
-  ComprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
   ComprarAhora.addEventListener('click', () => aComprar(element,value))
+  ComprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
+  
   //fin de eventos para la compra de productos 
 }
 function mostrarCarrito(){
-  
+  console.log("a generar")
+  const lista = document.getElementById("listaProduc")
+  lista.innerHTML= `<h1>Todos los productos</h1>`
+
+  let añadir = ``
+  console.log (carrito.length)
+  for (let i = 0; i < carrito.length;i++){
+    console.log("vuelta"+ i)
+    console.log (carrito[i])
+    añadir += `
+        <div class="article__div" id="produc${i}">
+          <input type="checkbox" class="article__div-input">
+          <img src="./Fotos/${carrito[i].eleme.imagenes[1]}${carrito[i].eleme.id}.jpg" class="article__div-img" alt="">
+          <div class="article__div-div">
+            <div class="article__div-div-div">
+              <h2 class="article__div-div-div-h2"></h2>
+              <ul class="article__div-div-dic-ul">
+                <li class="article__div-div-div-ul-li">${carrito[i].eleme.principalDescripcion}${carrito[i].eleme.id}. es de ${carrito[i].eleme.material}
+                </li>
+              </ul>
+            </div>
+            <div class="article__div-div-div">
+              <button class="article__div-div-div-button" onclick="eliminacion(${i})">Eliminar</button>
+              <div class="article__div-div-div-div">
+                <p class="article__div-div-div-div-p">$190.000</p>
+                <button class="article__div-div-div-div-button1">-</button>
+                <strong class="article__div-div-div-div-strong"></strong>
+                <button class="article__div-div-div-div-button2">+</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    `
+  }
+  console.log ("empezemos")
+  lista.innerHTML += añadir
 }
+//function eliminacion(carritoPos){
+//  let produc = document.getElementById(`produc${carritoPos}`)
+//  produc.remove()
+//  carrito.splice(carritoPos,1)
+//
+//}
 function aComprar(element, cantidad){
   let produc = {
-    id:element.id,
+    eleme:element,
     cant:cantidad
   }
   carrito.push(produc)
-  
+  console.log (carrito)
+  console.log ("grejgoiaebnvaebvfiowqebfnoefvb qefajl")
 }
 // Parte de ALGUIEN (nose)
 
