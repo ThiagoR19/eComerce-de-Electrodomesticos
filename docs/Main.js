@@ -147,6 +147,13 @@ function mostrarInfoPrincipal (element) {
             <img src="./Fotos/${element.imagenes[4]}${element.id}.jpg" class="objeto__article-div-div-img">
         </div>
     <div class="objeto__article-div--arrow" id="arrow" onclick="scrollCarousel()"><img src="Fotos/Allado.png" alt="mover"></div>`
+  const fotosCarrousel = document.querySelectorAll('.objeto__article-div-div-img')
+  fotosCarrousel.forEach(imagen => {
+    imagen.addEventListener('click', () => {
+      const urlImagen = imagen.getAttribute('src')
+      infoPrincipal.querySelector('.hijo img').setAttribute('src', urlImagen)
+    })
+  })
 }
 
 function mostrarDescripcion (element) {
