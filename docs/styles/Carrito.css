@@ -50,10 +50,11 @@ h1 {
 }
 
 .article__div-img {
-  height: auto;
+  max-height: 200px;
   width: 25vh;
   margin: 0 10px;
   align-self: center;
+  object-fit: contain;
 }
 
 .article__div-input {

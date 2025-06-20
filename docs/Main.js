@@ -9,7 +9,6 @@ const mainDescripcion = document.getElementById('main__Descripcion')
 const iconoSearch = document.getElementById('iconoSearch')
 const styleTag = document.getElementById('styles')
 const productosContainer = document.getElementById('section__div')
-const comprarYa = document.getElementById('comprarYa')
 const inicio = document.getElementById('inicio')
 const reviewCard = document.getElementById('main__aside--reseñas__scroll-box')
 const descripcionContainer = document.getElementById('objeto__descrip')
@@ -20,11 +19,11 @@ const publi3 = document.getElementById('main__img')
 const carrouselHome = document.getElementById('carrouselHome')
 const inicioHeaderMenu = document.getElementById('inicioHeaderMenu')
 const carrouselDescripcion = document.getElementById('product-container')
+const banner = document.getElementById('banner')
 
 const mains = [mainHome, mainCarrito, mainSearch, mainDescripcion]
 
 iconoSearch.addEventListener('click', () => mostrarMain('Search', mains))
-comprarYa.addEventListener('click', () => mostrarMain('Carrito', mains))
 inicio.addEventListener('click', () => mostrarMain('Home', mains))
 iconoCarrito.addEventListener('click', () => mostrarMain('Carrito', mains))
 inicioHeaderMenu.addEventListener('click', () => mostrarMain('Home', mains))
@@ -32,8 +31,10 @@ inicioHeaderMenu.addEventListener('click', () => mostrarMain('Home', mains))
 publi3.addEventListener('click', () => {
   publi3.classList.add('eliminar')
 })
+
 const carrito = []
 let value = 1
+
 Productos.forEach(element => {
   const div = document.createElement('div')
   div.classList.add('section__div-div')
@@ -103,6 +104,32 @@ productosDestacados.forEach(element => {
   })
   carrouselDescripcion.appendChild(div)
 })
+
+const productosConMasStock = Productos.sort((a, b) => b.stock - a.stock)
+const productoConMasStock = productosConMasStock.slice(0, 1)
+
+mostarHome(productoConMasStock[0])
+
+function mostarHome (element) {
+  const div1 = document.createElement('div')
+  div1.classList.add('banner-text')
+  const div2 = document.createElement('div')
+  div2.classList.add('banner-image')
+
+  div1.innerHTML = `
+    <h1>${element.nombre}</h1>
+    <p>${element.principalDescripcion}</p>
+    <button id='comprarYa'>COMPRA YÁ</button>`
+  div2.innerHTML = `<img src="./Fotos/${element.imagenes[1]}${element.id}.jpg" alt="${element.nombre}">`
+  banner.appendChild(div1)
+  banner.appendChild(div2)
+
+  const comprarYa = document.getElementById('comprarYa')
+  comprarYa.addEventListener('click', () => {
+    mostrarMain('Descripcion', mains)
+    descripcionDeUnProducto(element)
+  })
+}
 
 function descripcionDeUnProducto (element) {
   mostrarReviews(element.reseñas)
@@ -281,12 +308,11 @@ function mostrarDetallesDeCompra (element) {
 
   // fin de eventos para la compra de productos
 }
+
 function mostrarCarrito () {
-  console.log('a generar')
   const lista = document.getElementById('listaProduc')
   lista.innerHTML = '<h1>Todos los productos</h1>'
 
-  console.log(carrito.length)
   for (let i = 0; i < carrito.length; i++) {
     console.log('vuelta' + i)
     console.log(carrito[i])
@@ -320,6 +346,7 @@ function mostrarCarrito () {
     document.getElementById(`buttonR${i}`).addEventListener('click', function () { RandS(i, this.id, `buttonS${i}`) })
   }
 }
+
 function eliminacion (carritoPos) {
   console.log('a eliminar')
   const produc = document.getElementById(`produc${carritoPos}`)
@@ -352,6 +379,7 @@ function RandS (pos, boton, contraBoton) {
   }
   cantidad.innerText = carrito[pos].cant
 }
+
 function aComprar (element, cantidad) {
   const produc = {
     eleme: element,

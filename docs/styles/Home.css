@@ -18,7 +18,7 @@ body {
   margin: 50px 150px;
   background: white;
   animation: fadeIn 1s ease;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .banner-text {
@@ -65,7 +65,7 @@ body {
 }
 
 .banner-image img {
-  height: 90%;
+  height: 600px;
 }
 
 .productos {
