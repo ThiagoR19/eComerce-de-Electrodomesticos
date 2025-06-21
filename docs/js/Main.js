@@ -301,6 +301,7 @@ function mostrarDetallesDeCompra (element) {
   // eventos para la compra
   const agrego = document.getElementById('agrego')
   const ComprarAhora = document.getElementById('ComprarAhora')
+  value = 1
   agrego.addEventListener('click', () => aComprar(element, value))
   ComprarAhora.addEventListener('click', () => aComprar(element, value))
   ComprarAhora.addEventListener('click', () => mostrarMain('Carrito', mains))
@@ -308,85 +309,137 @@ function mostrarDetallesDeCompra (element) {
   // fin de eventos para la compra de productos
 }
 
-function mostrarCarrito () {
-  const lista = document.getElementById('listaProduc')
-  lista.innerHTML = '<h1>Todos los productos</h1>'
+function mostrarCarrito() {
+  const lista = document.getElementById('listaProduc');
+  lista.innerHTML = '<h1>Todos los productos</h1>';
 
-  for (let i = 0; i < carrito.length; i++) {
-    console.log('vuelta' + i)
-    console.log(carrito[i])
+  carrito.forEach((item, index) => {
+    const id = item.eleme.id;
     // insertAdjacentHTML añade directamente y no refresca todo el DOM como el +=, beforeend es la ubicacion del cambio
     lista.insertAdjacentHTML('beforeend', `
-        <div class="article__div" id="produc${i}">
-          <input type="checkbox" class="article__div-input" checked>
-          <img src="./Fotos/${carrito[i].eleme.imagenes[1]}${carrito[i].eleme.id}.jpg" class="article__div-img" alt="">
-          <div class="article__div-div">
-            <div class="article__div-div-div">
-              <h2 class="article__div-div-div-h2"></h2>
-              <ul class="article__div-div-dic-ul">
-                <li class="article__div-div-div-ul-li">${carrito[i].eleme.principalDescripcion}${carrito[i].eleme.id}. es de ${carrito[i].eleme.material}
-                </li>
-              </ul>
-            </div>
-            <div class="article__div-div-div">
-              <button class="article__div-div-div-button" id="eliminar${i}">Eliminar</button>
-              <div class="article__div-div-div-div">
-                <p class="article__div-div-div-div-p">$${(carrito[i].eleme.precio) * carrito[i].cant}</p>
-                <button class="article__div-div-div-div-button1" id="buttonR${i}">-</button>
-                <strong class="article__div-div-div-div-strong" id="cant${i}">${carrito[i].cant}</strong>
-                <button class="article__div-div-div-div-button2" id="buttonS${i}">+</button>
-              </div>
+      <div class="article__div" id="produc${id}">
+        <input type="checkbox" class="article__div-input" checked>
+        <img src="./Fotos/${item.eleme.imagenes[1]}${id}.jpg" class="article__div-img" alt="">
+        <div class="article__div-div">
+          <div class="article__div-div-div">
+            <ul class="article__div-div-dic-ul">
+              <li class="article__div-div-div-ul-li">${item.eleme.principalDescripcion}${id}. es de ${item.eleme.material}</li>
+            </ul>
+          </div>
+          <div class="article__div-div-div">
+            <button class="article__div-div-div-button" id="eliminar${id}">Eliminar</button>
+            <div class="article__div-div-div-div">
+              <p class="article__div-div-div-div-p" id="precio${id}">$${item.eleme.precio * item.cant}</p>
+              <button class="article__div-div-div-div-button1" id="buttonR${id}">-</button>
+              <strong class="article__div-div-div-div-strong" id="cant${id}">${item.cant}</strong>
+              <button class="article__div-div-div-div-button2" id="buttonS${id}">+</button>
             </div>
           </div>
+        </div>
       </div>
-    `)
-    document.getElementById(`eliminar${i}`).addEventListener('click', () => eliminacion(i))
-    document.getElementById(`buttonS${i}`).addEventListener('click', function () { RandS(i, this.id, `buttonR${i}`) })
-    document.getElementById(`buttonR${i}`).addEventListener('click', function () { RandS(i, this.id, `buttonS${i}`) })
-  }
+    `);
+
+    document.getElementById(`eliminar${id}`).addEventListener('click', () => eliminacionPorId(id));
+    document.getElementById(`buttonS${id}`).addEventListener('click', () => RandSPorId(id, `buttonS${id}`, `buttonR${id}`));
+    document.getElementById(`buttonR${id}`).addEventListener('click', () => RandSPorId(id, `buttonR${id}`, `buttonS${id}`));
+  });
+
+  actualizacionDeCompra();
 }
 
-function eliminacion (carritoPos) {
+function eliminacionPorId(id) {
   console.log('a eliminar')
-  const produc = document.getElementById(`produc${carritoPos}`)
-  produc.remove()
-  carrito.splice((carritoPos - 1), 1)
-  console.log(carrito)
+  const index = carrito.findIndex(item => item.eleme.id === id);
+  if (index !== -1) {
+    carrito.splice(index, 1);
+    document.getElementById(`produc${id}`).remove();
+    actualizacionDeCompra();
+  }
 }
 
-function RandS (pos, boton, contraBoton) {
-  const cantidad = document.getElementById(`cant${pos}`)
-  const contra = document.getElementById(contraBoton)
-  const booton = document.getElementById(boton)
+function RandSPorId(id, botonId, contraBotonId) {
+  const index = carrito.findIndex(item => item.eleme.id === id);
+  if (index === -1) return;
 
-  if (boton === `buttonS${pos}`) {
-    if (parseInt(parseInt(carrito[pos].cant) + 1) <= carrito[pos].eleme.stock) {
-      carrito[pos].cant = parseInt(parseInt(carrito[pos].cant) + 1)
-      contra.classList.remove('noHayMas')
-    } else {
-      booton.classList.add('noHayMas')
-      contra.classList.remove('noHayMas')
+  const item = carrito[index];
+  const cantidad = document.getElementById(`cant${id}`);
+  const contra = document.getElementById(contraBotonId);
+  const boton = document.getElementById(botonId);
+  const precio = document.getElementById(`precio${id}`);
+
+  if (botonId === `buttonS${id}`) {
+    if (item.cant + 1 <= item.eleme.stock) {
+      item.cant += 1;
+      contra.classList.remove('noHayMas');
+    } 
+    else {
+      boton.classList.add('noHayMas');
     }
-  } else {
-    if ((carrito[pos].cant - 1) > 0) {
-      carrito[pos].cant -= 1
-      contra.classList.remove('noHayMas')
-    } else {
-      booton.classList.add('noHayMas')
-      contra.classList.remove('noHayMas')
+  } 
+  else {
+    if (item.cant - 1 > 0) {
+      item.cant -= 1;
+      contra.classList.remove('noHayMas');
+    } 
+    else {
+      boton.classList.add('noHayMas');
     }
   }
-  cantidad.innerText = carrito[pos].cant
+
+  cantidad.innerText = item.cant;
+  precio.innerText = `$${item.eleme.precio * item.cant}`;
+  actualizacionDeCompra();
+}
+
+function actualizacionDeCompra(){
+  const cantiProduc = document.getElementById("cantProduc");
+  const total = document.getElementById("total");
+  let suma = 0;
+
+  cantiProduc.innerText = `Productos (${carrito.length})`;
+  for (let item of carrito) {
+    suma += item.eleme.precio * item.cant;
+  }
+
+  total.innerText = `$${suma}`;
 }
 
 function aComprar (element, cantidad) {
-  const produc = {
-    eleme: element,
-    cant: cantidad
+  if (carrito.length>=1){
+    console.log("aprobado")
+    carrito.forEach((item)=>{
+      console.log("intento")
+      console.log (item.eleme.id)
+      console.log (element.id)
+      if (item.eleme.id === element.id){
+        item.cant = Number(item.cant) + Number(cantidad)
+        console.log("es igual")
+      }
+      else{
+        console.log("No es igual")
+        const produc = {
+        eleme: element,
+        cant: cantidad
+        }
+        carrito.push(produc)
+        console.log(carrito)
+        actualizacionDeCompra()
+      }
+    })
   }
-  carrito.push(produc)
-  console.log(carrito)
-  console.log('grejgoiaebnvaebvfiowqebfnoefvb qefajl')
+  else{
+    console.log ("no aprobado")
+    const produc = {
+      eleme: element,
+      cant: cantidad
+      }
+      carrito.push(produc)
+      console.log(carrito)
+      actualizacionDeCompra()
+  }
+  
+  
+  
 }
 
 funcionalidadHeader()
