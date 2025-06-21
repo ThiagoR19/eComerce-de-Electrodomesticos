@@ -1,5 +1,3 @@
-// Parte de Thiago
-
 import { funcionalidadHeader } from './header.js'
 import { Productos } from './Productos.js'
 
