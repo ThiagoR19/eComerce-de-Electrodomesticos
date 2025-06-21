@@ -130,15 +130,17 @@ h1 {
   cursor: pointer;
   transition: box-shadow .5s;
 }
-.noHayMas{
-  background-color: #dedede;
-}
 .article__div-div-div-div-strong{
   background-color: #003366;
   color: white;
   padding: 5px 0px;
   font-size:20px;
 }
+
+.noHayMas{
+  background-color: #9e9e9e;
+}
+
 
 .article__div-div-div-div-button1:hover,
 .article__div-div-div-div-button2:hover,

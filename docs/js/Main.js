@@ -318,7 +318,7 @@ function mostrarCarrito() {
     // insertAdjacentHTML añade directamente y no refresca todo el DOM como el +=, beforeend es la ubicacion del cambio
     lista.insertAdjacentHTML('beforeend', `
       <div class="article__div" id="produc${id}">
-        <input type="checkbox" class="article__div-input" checked>
+        <input type="checkbox" class="article__div-input" checked id="check${id}">
         <img src="./Fotos/${item.eleme.imagenes[1]}${id}.jpg" class="article__div-img" alt="">
         <div class="article__div-div">
           <div class="article__div-div-div">
@@ -338,15 +338,52 @@ function mostrarCarrito() {
         </div>
       </div>
     `);
-
+    const check = document.getElementById(`check${id}`)
+    const buton1 = document.getElementById(`buttonS${id}`)
+    const buton2 = document.getElementById(`buttonR${id}`)
+    const strong = document.getElementById(`cant${id}`)
+    check.checked = item.che
+    if (item.che == false){
+      buton1.classList.add("noHayMas")
+      buton2.classList.add("noHayMas")
+      strong.classList.add("noHayMas")
+    }
     document.getElementById(`eliminar${id}`).addEventListener('click', () => eliminacionPorId(id));
-    document.getElementById(`buttonS${id}`).addEventListener('click', () => RandSPorId(id, `buttonS${id}`, `buttonR${id}`));
-    document.getElementById(`buttonR${id}`).addEventListener('click', () => RandSPorId(id, `buttonR${id}`, `buttonS${id}`));
+    buton1.addEventListener('click', () => RandSPorId(id, `buttonS${id}`, `buttonR${id}`));
+    buton2.addEventListener('click', () => RandSPorId(id, `buttonR${id}`, `buttonS${id}`));
+    check.addEventListener('click', () => noContar(id));
   });
 
   actualizacionDeCompra();
 }
 
+function noContar(id){
+  console.log ("llamado")
+  const checkB = document.getElementById(`check${id}`)
+  const buton1 = document.getElementById(`buttonR${id}`)
+  const buton2 = document.getElementById(`buttonS${id}`)
+  const strong = document.getElementById(`cant${id}`)
+  carrito.forEach((item)=>{
+    let itemElegido = item.eleme.id
+    if (itemElegido == id){
+
+      item.che = !item.che
+
+      console.log (item.che)
+      if (Boolean(item.che) === false){
+        buton1.classList.add("noHayMas")
+        buton2.classList.add("noHayMas")
+        strong.classList.add("noHayMas")
+      }
+      else{
+        buton1.classList.remove("noHayMas")
+        buton2.classList.remove("noHayMas")
+        strong.classList.remove("noHayMas")
+      }
+    }
+  })
+  actualizacionDeCompra()
+}
 function eliminacionPorId(id) {
   console.log('a eliminar')
   const index = carrito.findIndex(item => item.eleme.id === id);
@@ -358,88 +395,79 @@ function eliminacionPorId(id) {
 }
 
 function RandSPorId(id, botonId, contraBotonId) {
-  const index = carrito.findIndex(item => item.eleme.id === id);
-  if (index === -1) return;
+  const resultado = carrito.find(item => item.eleme.id === id);
+  console.log (resultado)
+  if (resultado.che=== true){
+    const index = carrito.findIndex(item => item.eleme.id === id);
+    if (index === -1) return;
 
-  const item = carrito[index];
-  const cantidad = document.getElementById(`cant${id}`);
-  const contra = document.getElementById(contraBotonId);
-  const boton = document.getElementById(botonId);
-  const precio = document.getElementById(`precio${id}`);
+    const item = carrito[index];
+    const cantidad = document.getElementById(`cant${id}`);
+    const contra = document.getElementById(contraBotonId);
+    const boton = document.getElementById(botonId);
+    const precio = document.getElementById(`precio${id}`);
 
-  if (botonId === `buttonS${id}`) {
-    if (item.cant + 1 <= item.eleme.stock) {
-      item.cant += 1;
-      contra.classList.remove('noHayMas');
+    if (botonId === `buttonS${id}`) {
+      if (Number(Number(item.cant) + 1) <= Number(item.eleme.stock)) {
+        item.cant = Number(Number(item.cant) + 1);
+        contra.classList.remove('noHayMas');
+      } 
+      else {
+        boton.classList.add('noHayMas');
+      }
     } 
     else {
-      boton.classList.add('noHayMas');
+      if (item.cant - 1 > 0) {
+        item.cant -= 1;
+        contra.classList.remove('noHayMas');
+      } 
+      else {
+        boton.classList.add('noHayMas');
+      }
     }
-  } 
-  else {
-    if (item.cant - 1 > 0) {
-      item.cant -= 1;
-      contra.classList.remove('noHayMas');
-    } 
-    else {
-      boton.classList.add('noHayMas');
-    }
-  }
 
-  cantidad.innerText = item.cant;
-  precio.innerText = `$${item.eleme.precio * item.cant}`;
-  actualizacionDeCompra();
+    cantidad.innerText = item.cant;
+    precio.innerText = `$${item.eleme.precio * item.cant}`;
+    actualizacionDeCompra();
+    }
 }
 
 function actualizacionDeCompra(){
   const cantiProduc = document.getElementById("cantProduc");
   const total = document.getElementById("total");
   let suma = 0;
-
-  cantiProduc.innerText = `Productos (${carrito.length})`;
+  let cont = 0
+  carrito.forEach((item)=>{
+    if (item.che == true){
+      cont++
+    }
+  })
+  cantiProduc.innerText = `Productos (${cont})`;
   for (let item of carrito) {
-    suma += item.eleme.precio * item.cant;
+    if (item.che == true){
+      suma += item.eleme.precio * item.cant;
+    }
   }
 
   total.innerText = `$${suma}`;
 }
 
-function aComprar (element, cantidad) {
-  if (carrito.length>=1){
-    console.log("aprobado")
-    carrito.forEach((item)=>{
-      console.log("intento")
-      console.log (item.eleme.id)
-      console.log (element.id)
-      if (item.eleme.id === element.id){
-        item.cant = Number(item.cant) + Number(cantidad)
-        console.log("es igual")
-      }
-      else{
-        console.log("No es igual")
-        const produc = {
-        eleme: element,
-        cant: cantidad
-        }
-        carrito.push(produc)
-        console.log(carrito)
-        actualizacionDeCompra()
-      }
-    })
-  }
-  else{
-    console.log ("no aprobado")
+function aComprar(element, cantidad) {
+  const index = carrito.findIndex(item => item.eleme.id === element.id);
+
+  if (index !== -1) {
+    carrito[index].cant = Number(carrito[index].cant) + Number(cantidad);
+  } else {
     const produc = {
+      che: Boolean(true),
       eleme: element,
       cant: cantidad
-      }
-      carrito.push(produc)
-      console.log(carrito)
-      actualizacionDeCompra()
+    };
+    carrito.push(produc);
   }
-  
-  
-  
+
+  console.log(carrito);
+  actualizacionDeCompra();
 }
 
 funcionalidadHeader()
