@@ -40,7 +40,7 @@ Productos.forEach(element => {
   const div = document.createElement('div')
   div.classList.add('section__div-div')
   div.innerHTML = `
-        <div class="section__div-div-div--fc"><img src="../Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Imagen del producto ${element.id}">
+        <div class="section__div-div-div--fc"><img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Imagen del producto ${element.id}">
         </div>
         <div class="section__div-div-div">
             <h4>${element.nombre}</h4>
@@ -60,7 +60,7 @@ for (let i = 0; i < mains.length; i++) {
 mains[0].classList.remove('none')
 
 export function mostrarMain (mainAMostrar, mains) {
-  styleTag.setAttribute('href', `../styles/${mainAMostrar}.css`)
+  styleTag.setAttribute('href', `./styles/${mainAMostrar}.css`)
   mains.forEach(element => {
     if (element.id === `main__${mainAMostrar}`) {
       element.classList.remove('none')
@@ -80,7 +80,7 @@ productosDestacados.forEach(element => {
   const div = document.createElement('DIV')
   div.classList.add('producto-card')
   div.innerHTML = `<img
-                src="../Fotos/${element.imagenes[0]}${element.id}.jpg"
+                src="./Fotos/${element.imagenes[0]}${element.id}.jpg"
                 alt="Producto">
               <h3>${element.nombre}</h3>
               <p>$${element.precio}</p>
@@ -95,7 +95,7 @@ productosDestacados.forEach(element => {
 productosDestacados.forEach(element => {
   const div = document.createElement('DIV')
   div.classList.add('destacado__article-div-div-div')
-  div.innerHTML = `<img src="../Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Producto">
+  div.innerHTML = `<img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Producto">
                   <div class="destacado__article-div-div-div-text">${element.nombre}</div>
                   <div class="destacado__article-div-div-div-precio">$${element.precio}</div>
                   <div class="destacado__article-div-div-div-descr">${element.principalDescripcion}</div>`
@@ -121,7 +121,7 @@ function mostarHome (element) {
     <h1>${element.nombre}</h1>
     <p>${element.principalDescripcion}</p>
     <button id='comprarYa'>COMPRA YÁ</button>`
-  div2.innerHTML = `<img src="../Fotos/${element.imagenes[1]}${element.id}.jpg" alt="${element.nombre}">`
+  div2.innerHTML = `<img src="./Fotos/${element.imagenes[1]}${element.id}.jpg" alt="${element.nombre}">`
   banner.appendChild(div1)
   banner.appendChild(div2)
 
@@ -165,17 +165,17 @@ function mostrarInfoPrincipal (element) {
     <h3>${element.nombre}</h3>
   </div>
   <div class="hijo">
-    <img src="../Fotos/${element.imagenes[0]}${element.id}.jpg" alt="imagen principal" class="hijoimg">
+    <img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="imagen principal" class="hijoimg">
   </div>
     <div>
         <div class="objeto__article-div-div" id="carousel">
-            <img src="../Fotos/${element.imagenes[0]}${element.id}.jpg" class="objeto__article-div-div-img">
-            <img src="../Fotos/${element.imagenes[1]}${element.id}.jpg" class="objeto__article-div-div-img">
-            <img src="../Fotos/${element.imagenes[2]}${element.id}.jpg" class="objeto__article-div-div-img">
-            <img src="../Fotos/${element.imagenes[3]}${element.id}.jpg" class="objeto__article-div-div-img">
-            <img src="../Fotos/${element.imagenes[4]}${element.id}.jpg" class="objeto__article-div-div-img">
+            <img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" class="objeto__article-div-div-img">
+            <img src="./Fotos/${element.imagenes[1]}${element.id}.jpg" class="objeto__article-div-div-img">
+            <img src="./Fotos/${element.imagenes[2]}${element.id}.jpg" class="objeto__article-div-div-img">
+            <img src="./Fotos/${element.imagenes[3]}${element.id}.jpg" class="objeto__article-div-div-img">
+            <img src="./Fotos/${element.imagenes[4]}${element.id}.jpg" class="objeto__article-div-div-img">
         </div>
-    <div class="objeto__article-div--arrow" id="arrow" onclick="scrollCarousel()"><img src="../Fotos/Allado.png" alt="mover"></div>`
+    <div class="objeto__article-div--arrow" id="arrow" onclick="scrollCarousel()"><img src="./Fotos/Allado.png" alt="mover"></div>`
   const fotosCarrousel = document.querySelectorAll('.objeto__article-div-div-img')
   fotosCarrousel.forEach(imagen => {
     imagen.addEventListener('click', () => {
@@ -233,7 +233,7 @@ function mostrarDetallesDeCompra (element) {
               <div class="main-aside--stock--button" id="dropdown-button">
                 <h2>Comprar 1</h2>
                 <span class="main-aside--stock--arrow" id="dropdown-arrow">
-                  <img src="../Fotos/abajo.png" alt="expandir">
+                  <img src="./Fotos/abajo.png" alt="expandir">
                 </span>
               </div>
               <div class="main-aside--stock--menu" id="dropdown-menu">
@@ -321,7 +321,7 @@ function mostrarCarrito () {
     lista.insertAdjacentHTML('beforeend', `
         <div class="article__div" id="produc${i}">
           <input type="checkbox" class="article__div-input" checked>
-          <img src="../Fotos/${carrito[i].eleme.imagenes[1]}${carrito[i].eleme.id}.jpg" class="article__div-img" alt="">
+          <img src="./Fotos/${carrito[i].eleme.imagenes[1]}${carrito[i].eleme.id}.jpg" class="article__div-img" alt="">
           <div class="article__div-div">
             <div class="article__div-div-div">
               <h2 class="article__div-div-div-h2"></h2>
