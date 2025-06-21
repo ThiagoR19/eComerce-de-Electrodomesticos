@@ -69,6 +69,9 @@ export function mostrarMain (mainAMostrar, mains) {
   if (mainAMostrar === 'Carrito') {
     mostrarCarrito()
   }
+  if(mainAMostrar === `Search`){
+    mostrarSearch()
+  }
 }
 
 const productosOrdenados = Productos.sort((a, b) => a.stock - b.stock)
@@ -316,7 +319,7 @@ function mostrarCarrito() {
   carrito.forEach((item, index) => {
     const id = item.eleme.id;
     // insertAdjacentHTML añade directamente y no refresca todo el DOM como el +=, beforeend es la ubicacion del cambio
-    lista.insertAdjacentHTML('beforeend', `
+    lista.insertAdjacentHTML(`beforeend`, `
       <div class="article__div" id="produc${id}">
         <input type="checkbox" class="article__div-input" checked id="check${id}">
         <img src="./Fotos/${item.eleme.imagenes[1]}${id}.jpg" class="article__div-img" alt="">
@@ -469,5 +472,87 @@ function aComprar(element, cantidad) {
   console.log(carrito);
   actualizacionDeCompra();
 }
+
+function mostrarSearch(){
+  const selectCategorias = document.getElementById("Categorias");
+  const selectPrecio = document.getElementById("Precio");
+    const selectColor = document.getElementById("Color");
+  const selectPeso = document.getElementById("Peso");
+    const selectMarca = document.getElementById("Marca");
+  const selectTamaño = document.getElementById("Tamaño");
+    const selectMaterial = document.getElementById("Material");
+
+  let coloresAgregados = new Set();
+  let idIncremental = 1;
+  Productos.forEach((element) => {
+    if (Array.isArray(element.color)) {
+      element.color.forEach((color) => {
+        if (!coloresAgregados.has(color)) {
+          coloresAgregados.add(color);
+
+          const option = document.createElement("option");
+          option.value = idIncremental++;
+          option.textContent = color;
+
+          selectColor.appendChild(option);
+        }
+      });
+    }
+  });
+
+  let marcasAgregadas = new Set(); // Para evitar duplicados
+  let idMarca = 1;
+
+  Productos.forEach((element) => {
+    const marca = element.marca;
+
+    if (!marcasAgregadas.has(marca)) {
+      marcasAgregadas.add(marca);
+
+      const option = document.createElement("option");
+      option.value = idMarca++;
+      option.textContent = marca;
+
+      selectMarca.appendChild(option);
+    }
+  });
+
+  let materialesAgregados = new Set(); // Para evitar duplicados
+  let idMaterial = 1;
+
+  Productos.forEach((element) => {
+    const material = element.material;
+
+    if (!materialesAgregados.has(material)) {
+      materialesAgregados.add(material);
+
+      const option = document.createElement("option");
+      option.value = idMaterial++;
+      option.textContent = material;
+
+      selectMaterial.appendChild(option);
+    }
+  });
+}
+function iniciarFiltrado(){
+  Productos.forEach(element => {
+  const div = document.createElement('div')
+  div.classList.add('section__div-div')
+  div.innerHTML = `
+        <div class="section__div-div-div--fc"><img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Imagen del producto ${element.id}">
+        </div>
+        <div class="section__div-div-div">
+            <h4>${element.nombre}</h4>
+            <label>$${element.precio}</label>
+            <p>${element.descripcion}</p>
+        </div>`
+  div.addEventListener('click', () => {
+    mostrarMain('Descripcion', mains)
+    descripcionDeUnProducto(element)
+  })
+  productosContainer.appendChild(div)
+})
+}
+
 
 funcionalidadHeader()

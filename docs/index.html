@@ -143,33 +143,37 @@
       <aside>
         <div class="aside__div">
           <h4 class="aside__div-h4">Categorias</h4>
-          <select class="aside__div-select">
-            <option value="">Todas</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
+          <select class="aside__div-select" id="Categorias" onchange="iniciarFiltrado()">
+            <option value="0">Todas</option>
+            <option value="1">Cocina</option>
+            <option value="2">Living</option>
+            <option value="3">Limpieza</option>
+            <option value="4">Alta Gama</option>
+            <option value="5">Economico</option>
+            <option value="6">Calidad Precio</option>
+            <option value="7">Calefaccion</option>
+            <option value="8">Bienestar</option>
+            <option value="9">Prestigioso</option>
+            <option value="10">Confort</option>
           </select>
         </div>
         <div class="aside__div">
           <h4 class="aside__div-h4">Precio</h4>
-          <select class="aside__div-select">
-            <option value="">Todos</option>
-            <option value="">Ascendente</option>
-            <option value="">Descendente</option>
+          <select class="aside__div-select" id="Precio" onchange="iniciarFiltrado()">
+            <option value="0">Todos</option>
+            <option value="1">Ascendente</option>
+            <option value="2">Descendente</option>
           </select>
         </div>
         <div class="aside__div">
           <h4 class="aside__div-h4">Color</h4>
-          <select class="aside__div-select">
+          <select class="aside__div-select" id="Color" onchange="iniciarFiltrado()">
             <option value="">Todos</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
           </select>
         </div>
         <div class="aside__div">
           <h4 class="aside__div-h4">Peso</h4>
-          <select class="aside__div-select">
+          <select class="aside__div-select" id="Peso" onchange="iniciarFiltrado()">
             <option value="">Todos</option>
             <option value="">Ascendente</option>
             <option value="">Descendente</option>
@@ -177,29 +181,23 @@
         </div>
         <div class="aside__div">
           <h4 class="aside__div-h4">Marca</h4>
-          <select class="aside__div-select">
-            <option value="">Todas</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
+          <select class="aside__div-select" id="Marca" onchange="iniciarFiltrado()">
+            <option value="0">Todas</option>
           </select>
         </div>
         <div class="aside__div">
           <h4 class="aside__div-h4">Tamaño</h4>
-          <select class="aside__div-select">
-            <option value="">Todos</option>
-            <option value="">Alto (Mayor)</option>
-            <option value="">Ancho (Mayor)</option>
-            <option value="">Profundo (Mayor)</option>
+          <select class="aside__div-select" id="Tamaño" onchange="iniciarFiltrado()">
+            <option value="0">Todos</option>
+            <option value="1">Alto (Mayor)</option>
+            <option value="2">Ancho (Mayor)</option>
+            <option value="3">Profundo (Mayor)</option>
           </select>
         </div>
         <div class="aside__div">
           <h4 class="aside__div-h4">Material</h4>
-          <select class="aside__div-select">
-            <option value="">Todos</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
-            <option value="">Marca</option>
+          <select class="aside__div-select" id="Material" onchange="iniciarFiltrado()">
+            <option value="0">Todos</option>
           </select>
         </div>
         <div class="aside__div">
