@@ -57,7 +57,7 @@ for (let i = 0; i < mains.length; i++) {
 }
 mains[0].classList.remove('none')
 
-export function mostrarMain (mainAMostrar, mains) {
+export function mostrarMain(mainAMostrar, mains) {
   styleTag.setAttribute('href', `./styles/${mainAMostrar}.css`)
   mains.forEach(element => {
     if (element.id === `main__${mainAMostrar}`) {
@@ -66,10 +66,11 @@ export function mostrarMain (mainAMostrar, mains) {
       element.classList.add('none')
     }
   })
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   if (mainAMostrar === 'Carrito') {
     mostrarCarrito()
   }
-  if(mainAMostrar === `Search`){
+  if (mainAMostrar === `Search`) {
     mostrarSearch()
   }
 }
@@ -112,7 +113,7 @@ const productoConMasStock = productosConMasStock.slice(0, 1)
 
 mostarHome(productoConMasStock[0])
 
-function mostarHome (element) {
+function mostarHome(element) {
   const div1 = document.createElement('div')
   div1.classList.add('banner-text')
   const div2 = document.createElement('div')
@@ -133,14 +134,14 @@ function mostarHome (element) {
   })
 }
 
-function descripcionDeUnProducto (element) {
+function descripcionDeUnProducto(element) {
   mostrarReviews(element.reseñas)
   mostrarDescripcion(element)
   mostrarInfoPrincipal(element)
   mostrarDetallesDeCompra(element)
 }
 
-function mostrarReviews (reseñas) {
+function mostrarReviews(reseñas) {
   reviewCard.innerHTML = ''
   reseñas.forEach(reseña => {
     const div = document.createElement('div')
@@ -160,7 +161,7 @@ function mostrarReviews (reseñas) {
   })
 }
 
-function mostrarInfoPrincipal (element) {
+function mostrarInfoPrincipal(element) {
   infoPrincipal.innerHTML = `
   <div>
     <h3>${element.nombre}</h3>
@@ -186,7 +187,7 @@ function mostrarInfoPrincipal (element) {
   })
 }
 
-function mostrarDescripcion (element) {
+function mostrarDescripcion(element) {
   descripcionContainer.innerHTML = `
   <div>
     <h2>
@@ -203,7 +204,7 @@ function mostrarDescripcion (element) {
   </div>`
 }
 
-function mostrarDetallesDeCompra (element) {
+function mostrarDetallesDeCompra(element) {
   asideCuotas.innerHTML = ''
   const intereses = element.intereses ? 'con' : 'sin'
   const div = document.createElement('div')
@@ -349,7 +350,7 @@ function mostrarCarrito() {
     const buton2 = document.getElementById(`buttonR${id}`)
     const strong = document.getElementById(`cant${id}`)
     check.checked = item.che
-    if (item.che == false){
+    if (item.che == false) {
       buton1.classList.add("noHayMas")
       buton2.classList.add("noHayMas")
       strong.classList.add("noHayMas")
@@ -363,25 +364,25 @@ function mostrarCarrito() {
   actualizacionDeCompra();
 }
 
-function noContar(id){
-  console.log ("llamado")
+function noContar(id) {
+  console.log("llamado")
   const checkB = document.getElementById(`check${id}`)
   const buton1 = document.getElementById(`buttonR${id}`)
   const buton2 = document.getElementById(`buttonS${id}`)
   const strong = document.getElementById(`cant${id}`)
-  carrito.forEach((item)=>{
+  carrito.forEach((item) => {
     let itemElegido = item.eleme.id
-    if (itemElegido == id){
+    if (itemElegido == id) {
 
       item.che = !item.che
 
-      console.log (item.che)
-      if (Boolean(item.che) === false){
+      console.log(item.che)
+      if (Boolean(item.che) === false) {
         buton1.classList.add("noHayMas")
         buton2.classList.add("noHayMas")
         strong.classList.add("noHayMas")
       }
-      else{
+      else {
         buton1.classList.remove("noHayMas")
         buton2.classList.remove("noHayMas")
         strong.classList.remove("noHayMas")
@@ -402,8 +403,8 @@ function eliminacionPorId(id) {
 
 function RandSPorId(id, botonId, contraBotonId) {
   const resultado = carrito.find(item => item.eleme.id === id);
-  console.log (resultado)
-  if (resultado.che=== true){
+  console.log(resultado)
+  if (resultado.che === true) {
     const index = carrito.findIndex(item => item.eleme.id === id);
     if (index === -1) return;
 
@@ -417,16 +418,16 @@ function RandSPorId(id, botonId, contraBotonId) {
       if (Number(Number(item.cant) + 1) <= Number(item.eleme.stock)) {
         item.cant = Number(Number(item.cant) + 1);
         contra.classList.remove('noHayMas');
-      } 
+      }
       else {
         boton.classList.add('noHayMas');
       }
-    } 
+    }
     else {
       if (item.cant - 1 > 0) {
         item.cant -= 1;
         contra.classList.remove('noHayMas');
-      } 
+      }
       else {
         boton.classList.add('noHayMas');
       }
@@ -435,22 +436,22 @@ function RandSPorId(id, botonId, contraBotonId) {
     cantidad.innerText = item.cant;
     precio.innerText = `$${item.eleme.precio * item.cant}`;
     actualizacionDeCompra();
-    }
+  }
 }
 
-function actualizacionDeCompra(){
+function actualizacionDeCompra() {
   const cantiProduc = document.getElementById("cantProduc");
   const total = document.getElementById("total");
   let suma = 0;
   let cont = 0
-  carrito.forEach((item)=>{
-    if (item.che == true){
+  carrito.forEach((item) => {
+    if (item.che == true) {
       cont++
     }
   })
   cantiProduc.innerText = `Productos (${cont})`;
   for (let item of carrito) {
-    if (item.che == true){
+    if (item.che == true) {
       suma += item.eleme.precio * item.cant;
     }
   }
@@ -476,27 +477,27 @@ function aComprar(element, cantidad) {
   actualizacionDeCompra();
 }
 
-function mostrarSearch(){
+function mostrarSearch() {
   const selectColor = document.getElementById("Color");
   const selectMarca = document.getElementById("Marca");
   const selectMaterial = document.getElementById("Material");
   const mayor = document.getElementById("mayor")
   const menor = document.getElementById("menor")
-  
+
   menor.addEventListener("input", iniciarFiltrado)
   mayor.addEventListener("input", iniciarFiltrado)
 
   const filtros = [
-  "Categorias", "Precio", "Color", "Peso",
-  "Marca", "Tamaño", "Material"
-];
+    "Categorias", "Precio", "Color", "Peso",
+    "Marca", "Tamaño", "Material"
+  ];
 
-filtros.forEach(id => {
-  const filtro = document.getElementById(id);
-  if (filtro) {
-    filtro.addEventListener("change", iniciarFiltrado);
-  }
-});
+  filtros.forEach(id => {
+    const filtro = document.getElementById(id);
+    if (filtro) {
+      filtro.addEventListener("change", iniciarFiltrado);
+    }
+  });
   let coloresAgregados = new Set();
   let idIncremental = 1;
   Productos.forEach((element) => {
@@ -532,7 +533,7 @@ filtros.forEach(id => {
     }
   });
 
-  let materialesAgregados = new Set(); 
+  let materialesAgregados = new Set();
   let idMaterial = 1;
 
   Productos.forEach((element) => {
@@ -550,6 +551,7 @@ filtros.forEach(id => {
   });
 
 }
+
 function iniciarFiltrado() {
   const selectCategorias = document.getElementById("Categorias");
   const selectPrecio = document.getElementById("Precio");
@@ -590,7 +592,7 @@ function iniciarFiltrado() {
 
   if (selectPrecio.value === "1") {
     filtrados.sort((a, b) => a.precio - b.precio);
-  } 
+  }
   else if (selectPrecio.value === "2") {
     filtrados.sort((a, b) => b.precio - a.precio);
   }
@@ -601,7 +603,7 @@ function iniciarFiltrado() {
     // Ascendente
     const ordenados = [...Productos].sort((a, b) => a.peso[0] - b.peso[0]);
     idsFiltrados = ordenados.map(p => p.id);
-  } 
+  }
   else if (ordenPeso == "2") {
     // Descendente
     const ordenados = [...Productos].sort((a, b) => b.peso[0] - a.peso[0]);
@@ -614,29 +616,29 @@ function iniciarFiltrado() {
       idsFiltrados.sort((a, b) => {
         const prodA = Productos.find(p => p.id === a);
         const prodB = Productos.find(p => p.id === b);
-        return prodB.tamaño[1] - prodA.tamaño[1]; 
+        return prodB.tamaño[1] - prodA.tamaño[1];
       });
 
-    } 
+    }
     else if (opcionTamaño === 2) {
       idsFiltrados.sort((a, b) => {
         const prodA = Productos.find(p => p.id === a);
         const prodB = Productos.find(p => p.id === b);
-        return prodB.tamaño[2] - prodA.tamaño[2]; 
+        return prodB.tamaño[2] - prodA.tamaño[2];
       });
 
-    } 
+    }
     else if (opcionTamaño === 3) {
 
       idsFiltrados.sort((a, b) => {
         const prodA = Productos.find(p => p.id === a);
         const prodB = Productos.find(p => p.id === b);
-        return prodB.tamaño[3] - prodA.tamaño[3]; 
+        return prodB.tamaño[3] - prodA.tamaño[3];
       });
     }
   }
 
-  
+
   const precioMin = Number(menor.value) || 0;
   const precioMax = Number(mayor.value) || Infinity;
   idsFiltrados = idsFiltrados.filter(id => {
@@ -669,6 +671,18 @@ function iniciarFiltrado() {
     }
   });
 
+}
+
+const carousel = document.querySelector('.carousel')
+const prevButton = document.getElementById('prev')
+const nextButton = document.getElementById('next')
+
+nextButton.onclick = () => {
+  carousel.scrollBy({ left: 225, behavior: 'smooth' })
+}
+
+prevButton.onclick = () => {
+  carousel.scrollBy({ left: -225, behavior: 'smooth' })
 }
 
 funcionalidadHeader()

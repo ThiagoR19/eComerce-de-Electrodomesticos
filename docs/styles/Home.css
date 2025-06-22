@@ -92,6 +92,7 @@ body {
   justify-content: center;
   overflow: hidden;
   height: 80%;
+  padding: 0 20px;
 }
 
 .carousel {
@@ -100,10 +101,10 @@ body {
   overflow-x: auto;
   scrollbar-width: none;
   cursor: pointer;
-  margin-right: 100px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   height: 100%;
+  margin-right: 20px;
 }
 
 .producto-card {
@@ -139,7 +140,8 @@ body {
   margin-bottom: 10px;
 }
 
-#next {
+#next,
+#prev {
   position: relative;
   background: rgba(0, 51, 102, 0.8);
   color: #00CFFF;
@@ -147,20 +149,16 @@ body {
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 50px;
-  width: 180px;
-  height: 100px;
+  font-size: 30px;
+  width: 150px;
+  height: 80px;
   z-index: 2;
   transition: background 0.3s;
   font-weight: lighter;
 }
 
 #prev {
-  left: 10px;
-}
-
-#next {
-  right: 20px;
+  left: 0px;
 }
 
 @media (max-width: 768px) {
@@ -169,8 +167,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 0;
   }
 
   .carousel {
@@ -219,9 +216,11 @@ body {
     height: auto;
     margin: 30px 40px;
   }
+
   .carousel {
     flex-wrap: nowrap;
   }
+
   .carousel-container {
     flex-direction: row;
     align-items: center;
@@ -240,10 +239,9 @@ body {
   .producto-card {
     display: flex;
     flex-direction: column;
-  }  
+  }
 }
 
 .none {
   display: none;
 }
-

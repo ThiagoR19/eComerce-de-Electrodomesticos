@@ -1,240 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apliance Company</title>
-    <link rel="icon" href="./Fotos/logo.png">
-    <link id="styles" rel="stylesheet" href="./styles/Home.css">
-    <link rel="stylesheet" href="./styles/Footer.css">
-    <link rel="stylesheet" href="./styles/Header.css">
-    <script type="module" src="./js/Main.js" defer></script>
-  </head>
-  <body>
-    <header class="--header">
-      <img src="./Fotos/logo.png" alt="Logo de la empresa" class="header__img">
-      <nav class="header__nav">
-        <div class="header__nav-div header__nav-div--search">
-          <button class="header__nav-div-button">
-            <img id="iconoSearch" src="./Fotos/search.png" alt="search" class="header__nav-div-button-search">
-          </button>
-          <input type="text" placeholder="Buscar..." class="header__nav-div-input">
-        </div>
-        <div class="header__nav-links-wrapper">
-          <div class="header__nav-div header__nav-div--links">
-            <a id="inicio" class="header__nav-div-a subrayado">Inicio</a>
-            <button id="Cate" class="header__nav-div--links-button subrayado">
-              Categorias
-              <img id="buttonImg1" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
-            </button>
-            <button id="Produc" class="header__nav-div--links-button subrayado">
-              Productos
-              <img id="buttonImg2" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
-            </button>
-          </div>
-          <div class="header__nav-div header__nav-div--login">
-            <img src="./Fotos/User.png" alt="usuario" class="header__nav-div--login--img">
-            <a href="#" class="header__nav-div--login-a subrayado">Login</a>
-            <a id="carrito"><img id="header__nav-div-div-img" src="./Fotos/carrito.png" alt="carrito"
-                class="header__nav-div--login-img"></a>
-            <a href="#"><img id="header__nav-div-div-img" src="./Fotos/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
-          </div>
-        </div>
-        <button class="hamburger-menu">
-          &#9776; </button>
-      </nav>
-    </header>
 
-    <div class="mobile-menu">
-      <button class="close-menu">
-        &times; </button>
-      <a id="inicioHeaderMenu" class="header__nav-div-a-mobile">Inicio</a>
-      <button id="Cate-mobile" class="header__nav-div--links-button-mobile">
-        Categorias
-        <img id="buttonImg1-mobile" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
-      </button>
-      <button id="Produc-mobile" class="header__nav-div--links-button-mobile">
-        Productos
-        <img id="buttonImg2-mobile" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
-      </button>
-      <div class="header__nav-div header__nav-div--login-mobile">
-        <img src="./Fotos/User.png" alt="usuario" class="header__nav-div--login--img">
-        <a href="login.html" class="header__nav-div--login-a">Login</a>
-        <a href=""><img src="./Fotos/carrito.png" alt="carrito" class="header__nav-div--login-img"></a>
-        <a href=""><img src="./Fotos/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apliance Company</title>
+  <link rel="icon" href="./Fotos/logo.png">
+  <link id="styles" rel="stylesheet" href="./styles/Home.css">
+  <link rel="stylesheet" href="./styles/Footer.css">
+  <link rel="stylesheet" href="./styles/Header.css">
+  <script type="module" src="./js/Main.js" defer></script>
+</head>
+
+<body>
+  <header class="--header">
+    <img src="./Fotos/logo.png" alt="Logo de la empresa" class="header__img">
+    <nav class="header__nav">
+      <div class="header__nav-div header__nav-div--search">
+        <button class="header__nav-div-button">
+          <img id="iconoSearch" src="./Fotos/search.png" alt="search" class="header__nav-div-button-search">
+        </button>
+        <input type="text" placeholder="Buscar..." class="header__nav-div-input">
+      </div>
+      <div class="header__nav-links-wrapper">
+        <div class="header__nav-div header__nav-div--links">
+          <a id="inicio" class="header__nav-div-a subrayado">Inicio</a>
+          <button id="Cate" class="header__nav-div--links-button subrayado">
+            Categorias
+            <img id="buttonImg1" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+          </button>
+          <button id="Produc" class="header__nav-div--links-button subrayado">
+            Productos
+            <img id="buttonImg2" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+          </button>
+        </div>
+        <div class="header__nav-div header__nav-div--login">
+          <img src="./Fotos/User.png" alt="usuario" class="header__nav-div--login--img">
+          <a href="#" class="header__nav-div--login-a subrayado">Login</a>
+          <a href="#" id="carrito"><img id="header__nav-div-div-img" src="./Fotos/carrito.png" alt="carrito"
+              class="header__nav-div--login-img"></a>
+          <a href="#"><img id="header__nav-div-div-img" src="./Fotos/Bell.png" alt="notificaciones"
+              class="header__nav-div--login-img"></a>
+        </div>
+      </div>
+      <button class="hamburger-menu">
+        &#9776; </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu">
+    <button class="close-menu">
+      &times; </button>
+    <a id="inicioHeaderMenu" class="header__nav-div-a-mobile">Inicio</a>
+    <button id="Cate-mobile" class="header__nav-div--links-button-mobile">
+      Categorias
+      <img id="buttonImg1-mobile" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+    </button>
+    <button id="Produc-mobile" class="header__nav-div--links-button-mobile">
+      Productos
+      <img id="buttonImg2-mobile" src="./Fotos/expandir.png" alt="Ícono" class="header__nav-div-button-img" />
+    </button>
+    <div class="header__nav-div header__nav-div--login-mobile">
+      <img src="./Fotos/User.png" alt="usuario" class="header__nav-div--login--img">
+      <a href="login.html" class="header__nav-div--login-a">Login</a>
+      <a id="carritoMobile" href="#"><img src="./Fotos/carrito.png" alt="carrito"
+          class="header__nav-div--login-img"></a>
+      <a href="#"><img src=" ./Fotos/Bell.png" alt="notificaciones" class="header__nav-div--login-img"></a>
+    </div>
+  </div>
+
+  <main id="main__Home">
+
+    <section class="banner" id="banner"></section>
+    <section class="productos">
+      <h2>Productos destacados</h2>
+      <div class="carousel-container">
+        <button id="prev">&#10094;</button>
+        <div class="carousel" id="carrouselHome"></div>
+        <button id="next">&#10095;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <main id="main__Descripcion">
+    <div class="despair">
+      <section class="objeto">
+        <article id="objeto__article" class="objeto__article"></article>
+        <div id="cuotasBox"></div>
+      </section>
+      <section id="descripcionYReseñas">
+        <article id="objeto__descrip" class="objeto__descrip" id="Descripcion"></article>
+        <div class="main__aside--reseñas">
+          <div class="main__aside--reseñas__container">
+            <h2 class="main__aside--reseñas__titulo">Reseñas</h2>
+            <div id="main__aside--reseñas__scroll-box" class="main__aside--reseñas__scroll-box"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="destacados">
+      <article class="destacados__article">
+        <div>
+          <h2>
+            Productos Destacados
+          </h2>
+        </div>
+        <div class="destacados__article-div">
+          <div class="destacados__article-div-div" id="product-container"></div>
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <main id="main__Carrito">
+    <img id="main__img" class="main__img" src="./Fotos/publi3.png" alt="Publicidad 3">
+    <article id="listaProduc">
+      <h1>Todos los productos</h1>
+
+    </article>
+    <aside>
+      <div class="aside__div1">
+        <h2 class="aside__div-h2">Resumen de compra</h2>
+        <p class="aside__div-p" id="cantProduc">Productos (0)</p>
+        <div class="aside__div-div1">
+          <button class="aside__div-div-button">Envio a Bielke 747</button>
+          <button class="aside__div-div-button">Ingresar Cupón </button>
+        </div>
+        <div class="aside__div-div2">
+          <h3>TOTAL:</h3>
+          <h3 id="total"></h3>
+        </div>
+        <button class="aside__button">Comprar ahora</button>
+      </div>
+      <div class="aside__div2">
+        <img class="aside__div-img" src="./Fotos/publi1.webp" alt="">
+        <img class="aside__div-img" src="./Fotos/publi2.jpg" alt="">
+      </div>
+    </aside>
+  </main>
+
+  <main id="main__Search">
+    <aside>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Categorias</h4>
+        <select class="aside__div-select" id="Categorias">
+          <option value="0">Todas</option>
+          <option value="1">Cocina</option>
+          <option value="2">Living</option>
+          <option value="3">Limpieza</option>
+          <option value="4">Alta Gama</option>
+          <option value="5">Economico</option>
+          <option value="6">Calidad Precio</option>
+          <option value="7">Calefaccion</option>
+          <option value="8">Bienestar</option>
+          <option value="9">Prestigioso</option>
+          <option value="10">Confort</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Precio</h4>
+        <select class="aside__div-select" id="Precio">
+          <option value="0">Todos</option>
+          <option value="1">Ascendente</option>
+          <option value="2">Descendente</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Color</h4>
+        <select class="aside__div-select" id="Color">
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Peso</h4>
+        <select class="aside__div-select" id="Peso">
+          <option value="0">Todos</option>
+          <option value="1">Ascendente</option>
+          <option value="2">Descendente</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Marca</h4>
+        <select class="aside__div-select" id="Marca">
+          <option value="0">Todas</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Tamaño</h4>
+        <select class="aside__div-select" id="Tamaño">
+          <option value="0">Todos</option>
+          <option value="1">Alto (Mayor)</option>
+          <option value="2">Ancho (Mayor)</option>
+          <option value="3">Profundo (Mayor)</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <h4 class="aside__div-h4">Material</h4>
+        <select class="aside__div-select" id="Material">
+          <option value="0">Todos</option>
+        </select>
+      </div>
+      <div class="aside__div">
+        <input class="aside__div-input" type="number" placeholder="$0" id="menor">
+        <div class="aside__div-div--last"></div>
+        <div class="aside__div-div--last"></div>
+        <input class="aside__div-input" type="number" placeholder="$0" id="mayor">
+      </div>
+    </aside>
+    <section>
+      <div class="section__div" id="section__div"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Redes Sociales</h4>
+        <a>X</a>
+        <a>Instagram</a>
+        <a>Youtube</a>
+      </div>
+      <div class="footer-section">
+        <h4>Ayuda</h4>
+        <a>Seguridad</a>
+        <a>Comprar</a>
+        <a>Vender</a>
+        <a>Centro de problemas</a>
+      </div>
+      <div class="footer-section">
+        <h4>Mi Cuenta</h4>
+        <a>Resumen</a>
+        <a>Vender</a>
+        <a>Favoritos</a>
       </div>
     </div>
+  </footer>
 
-    <main id="main__Home">
+</body>
 
-      <section class="banner" id="banner"></section>
-      <section class="productos">
-        <h2>Productos destacados</h2>
-        <div class="carousel-container">
-          <button id="prev">&#10094;</button>
-          <div class="carousel" id="carrouselHome"></div>
-          <button id="next">&#10095;</button>
-        </div>
-      </section>
-
-    </main>
-
-    <main id="main__Descripcion">
-      <div class="despair">
-        <section class="objeto">
-          <article id="objeto__article" class="objeto__article"></article>
-          <div id="cuotasBox"></div>
-        </section>
-        <section id="descripcionYReseñas">
-          <article id="objeto__descrip" class="objeto__descrip" id="Descripcion"></article>
-          <div class="main__aside--reseñas">
-            <div class="main__aside--reseñas__container">
-              <h2 class="main__aside--reseñas__titulo">Reseñas</h2>
-              <div id="main__aside--reseñas__scroll-box" class="main__aside--reseñas__scroll-box"></div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <section class="destacados">
-        <article class="destacados__article">
-          <div>
-            <h2>
-              Productos Destacados
-            </h2>
-          </div>
-          <div class="destacados__article-div">
-            <div class="destacados__article-div-div" id="product-container"></div>
-            <button class="destacado__article-div-button" id="next-btn">
-              <img src="./Fotos/AlLadoGrande.png" alt="Flecha">
-            </button>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <main id="main__Carrito">
-      <img id="main__img" class="main__img" src="./Fotos/publi3.png" alt="Publicidad 3">
-      <article id="listaProduc">
-        <h1>Todos los productos</h1>
-        
-      </article>
-      <aside>
-        <div class="aside__div1">
-          <h2 class="aside__div-h2">Resumen de compra</h2>
-          <p class="aside__div-p" id="cantProduc">Productos (0)</p>
-          <div class="aside__div-div1">
-            <button class="aside__div-div-button">Envio a Bielke 747</button>
-            <button class="aside__div-div-button">Ingresar Cupón </button>
-          </div>
-          <div class="aside__div-div2">
-            <h3>TOTAL:</h3>
-            <h3 id="total"></h3>
-          </div>
-          <button class="aside__button">Comprar ahora</button>
-        </div>
-        <div class="aside__div2">
-          <img class="aside__div-img" src="./Fotos/publi1.webp" alt="">
-          <img class="aside__div-img" src="./Fotos/publi2.jpg" alt="">
-        </div>
-      </aside>
-    </main>
-
-    <main id="main__Search">
-      <aside>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Categorias</h4>
-          <select class="aside__div-select" id="Categorias">
-            <option value="0">Todas</option>
-            <option value="1">Cocina</option>
-            <option value="2">Living</option>
-            <option value="3">Limpieza</option>
-            <option value="4">Alta Gama</option>
-            <option value="5">Economico</option>
-            <option value="6">Calidad Precio</option>
-            <option value="7">Calefaccion</option>
-            <option value="8">Bienestar</option>
-            <option value="9">Prestigioso</option>
-            <option value="10">Confort</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Precio</h4>
-          <select class="aside__div-select" id="Precio" >
-            <option value="0">Todos</option>
-            <option value="1">Ascendente</option>
-            <option value="2">Descendente</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Color</h4>
-          <select class="aside__div-select" id="Color">
-            <option value="">Todos</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Peso</h4>
-          <select class="aside__div-select" id="Peso">
-            <option value="0">Todos</option>
-            <option value="1">Ascendente</option>
-            <option value="2">Descendente</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Marca</h4>
-          <select class="aside__div-select" id="Marca" >
-            <option value="0">Todas</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Tamaño</h4>
-          <select class="aside__div-select" id="Tamaño" >
-            <option value="0">Todos</option>
-            <option value="1">Alto (Mayor)</option>
-            <option value="2">Ancho (Mayor)</option>
-            <option value="3">Profundo (Mayor)</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <h4 class="aside__div-h4">Material</h4>
-          <select class="aside__div-select" id="Material" >
-            <option value="0">Todos</option>
-          </select>
-        </div>
-        <div class="aside__div">
-          <input class="aside__div-input" type="number" placeholder="$0" id="menor">
-          <div class="aside__div-div--last"></div>
-          <div class="aside__div-div--last"></div>
-          <input class="aside__div-input" type="number" placeholder="$0" id="mayor">
-        </div>
-      </aside>
-      <section>
-        <div class="section__div" id="section__div"></div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h4>Redes Sociales</h4>
-          <a>X</a>
-          <a>Instagram</a>
-          <a>Youtube</a>
-        </div>
-        <div class="footer-section">
-          <h4>Ayuda</h4>
-          <a>Seguridad</a>
-          <a>Comprar</a>
-          <a>Vender</a>
-          <a>Centro de problemas</a>
-        </div>
-        <div class="footer-section">
-          <h4>Mi Cuenta</h4>
-          <a>Resumen</a>
-          <a>Vender</a>
-          <a>Favoritos</a>
-        </div>
-      </div>
-    </footer>
-
-  </body>
 </html>
