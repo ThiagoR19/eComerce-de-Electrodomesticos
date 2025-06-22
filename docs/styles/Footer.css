@@ -25,6 +25,9 @@ footer {
 
 .footer-section a {
   margin: 5px 0;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width:768px) {

@@ -4,9 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   margin: 0;
+  scroll-behavior: smooth;
 }
-
-/* Codigo de mi página */
 
 #main__Search {
   display: flex;
