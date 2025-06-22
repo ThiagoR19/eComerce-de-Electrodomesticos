@@ -7,6 +7,8 @@
   scroll-behavior: smooth;
 }
 
+
+
 #main__Descripcion {
   display: flex;
   flex-direction: column;
@@ -266,7 +268,7 @@
 }
 
 .main-aside--stock div:last-child {
-  margin: 10px 0;
+  margin: 0;
 }
 
 .comprar {
