@@ -477,13 +477,15 @@ function aComprar(element, cantidad) {
 }
 
 function mostrarSearch(){
-  const selectCategorias = document.getElementById("Categorias");
-  const selectPrecio = document.getElementById("Precio");
-    const selectColor = document.getElementById("Color");
-  const selectPeso = document.getElementById("Peso");
-    const selectMarca = document.getElementById("Marca");
-  const selectTamaño = document.getElementById("Tamaño");
-    const selectMaterial = document.getElementById("Material");
+  const selectColor = document.getElementById("Color");
+  const selectMarca = document.getElementById("Marca");
+  const selectMaterial = document.getElementById("Material");
+  const mayor = document.getElementById("mayor")
+  const menor = document.getElementById("menor")
+  
+  menor.addEventListener("input", iniciarFiltrado)
+  mayor.addEventListener("input", iniciarFiltrado)
+
   const filtros = [
   "Categorias", "Precio", "Color", "Peso",
   "Marca", "Tamaño", "Material"
@@ -556,29 +558,28 @@ function iniciarFiltrado() {
   const selectMarca = document.getElementById("Marca");
   const selectTamaño = document.getElementById("Tamaño");
   const selectMaterial = document.getElementById("Material");
+  const productosContainer = document.getElementById('section__div');
+  const mayor = document.getElementById("mayor")
+  const menor = document.getElementById("menor")
 
   let filtrados = Productos.filter((element) => {
     let pasa = true;
 
-    // Filtrado por categoria
     const categoriaSeleccionada = selectCategorias.options[selectCategorias.selectedIndex].textContent;
     if (selectCategorias.value !== "0") {
       pasa = pasa && element.categorias.includes(categoriaSeleccionada);
     }
 
-    // Filtrado por color
     const colorSeleccionado = selectColor.options[selectColor.selectedIndex].textContent;
     if (colorSeleccionado !== "Todos") {
       pasa = pasa && element.color.includes(colorSeleccionado);
     }
 
-    // Filtrado por marca
     const marcaSeleccionada = selectMarca.options[selectMarca.selectedIndex].textContent;
     if (selectMarca.value !== "0") {
       pasa = pasa && element.marca === marcaSeleccionada;
     }
 
-    // Filtrado por material
     const materialSeleccionado = selectMaterial.options[selectMaterial.selectedIndex].textContent;
     if (selectMaterial.value !== "0") {
       pasa = pasa && element.material === materialSeleccionado;
@@ -587,7 +588,6 @@ function iniciarFiltrado() {
     return pasa;
   });
 
-  // Ordenamientos (solo ejemplo con precio y tamaño)
   if (selectPrecio.value === "1") {
     filtrados.sort((a, b) => a.precio - b.precio);
   } 
@@ -595,27 +595,56 @@ function iniciarFiltrado() {
     filtrados.sort((a, b) => b.precio - a.precio);
   }
   let idsFiltrados = filtrados.map(el => el.id);
+
   const ordenPeso = selectPeso.value;
-    if (ordenPeso == "1") {
-      // Ascendente
-      const ordenados = [...Productos].sort((a, b) => a.peso[0] - b.peso[0]);
-      idsFiltrados = ordenados.map(p => p.id);
+  if (ordenPeso == "1") {
+    // Ascendente
+    const ordenados = [...Productos].sort((a, b) => a.peso[0] - b.peso[0]);
+    idsFiltrados = ordenados.map(p => p.id);
+  } 
+  else if (ordenPeso == "2") {
+    // Descendente
+    const ordenados = [...Productos].sort((a, b) => b.peso[0] - a.peso[0]);
+    idsFiltrados = ordenados.map(p => p.id);
+  }
+
+  const opcionTamaño = Number(selectTamaño.value);
+  if (opcionTamaño !== 0) {
+    if (opcionTamaño === 1) {
+      idsFiltrados.sort((a, b) => {
+        const prodA = Productos.find(p => p.id === a);
+        const prodB = Productos.find(p => p.id === b);
+        return prodB.tamaño[1] - prodA.tamaño[1]; 
+      });
+
     } 
-    else if (ordenPeso == "2") {
-      // Descendente
-      const ordenados = [...Productos].sort((a, b) => b.peso[0] - a.peso[0]);
-      idsFiltrados = ordenados.map(p => p.id);
+    else if (opcionTamaño === 2) {
+      idsFiltrados.sort((a, b) => {
+        const prodA = Productos.find(p => p.id === a);
+        const prodB = Productos.find(p => p.id === b);
+        return prodB.tamaño[2] - prodA.tamaño[2]; 
+      });
+
+    } 
+    else if (opcionTamaño === 3) {
+
+      idsFiltrados.sort((a, b) => {
+        const prodA = Productos.find(p => p.id === a);
+        const prodB = Productos.find(p => p.id === b);
+        return prodB.tamaño[3] - prodA.tamaño[3]; 
+      });
     }
+  }
 
-  // Generar array de IDs
   
-  console.log("IDs filtrados:", idsFiltrados);
+  const precioMin = Number(menor.value) || 0;
+  const precioMax = Number(mayor.value) || Infinity;
+  idsFiltrados = idsFiltrados.filter(id => {
+    const producto = Productos.find(p => p.id === id);
+    return producto.precio >= precioMin && producto.precio <= precioMax;
+  });
 
-  // Acá puedes llamar a la función para renderizar los productos filtrados
-  // renderizarProductos(filtrados);
-  const productosContainer = document.getElementById('section__div');
   productosContainer.innerHTML = '';
-
   idsFiltrados.forEach(idFiltrado => {
     const element = Productos.find(producto => producto.id === idFiltrado);
     if (element) {
