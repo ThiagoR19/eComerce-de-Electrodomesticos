@@ -5,7 +5,6 @@ const mainHome = document.getElementById('main__Home')
 const mainCarrito = document.getElementById('main__Carrito')
 const mainSearch = document.getElementById('main__Search')
 const mainDescripcion = document.getElementById('main__Descripcion')
-const iconoSearch = document.getElementById('iconoSearch')
 const styleTag = document.getElementById('styles')
 const productosContainer = document.getElementById('section__div')
 const inicio = document.getElementById('inicio')
@@ -22,7 +21,6 @@ const carrouselDescripcion = document.getElementById('product-container')
 
 export const mains = [mainHome, mainCarrito, mainSearch, mainDescripcion]
 
-iconoSearch.addEventListener('click', () => mostrarMain('Search', mains))
 inicio.addEventListener('click', () => mostrarMain('Home', mains))
 iconoCarrito.addEventListener('click', () => mostrarMain('Carrito', mains))
 inicioHeaderMenu.addEventListener('click', () => mostrarMain('Home', mains))
@@ -391,6 +389,7 @@ function noContar(id) {
   })
   actualizacionDeCompra()
 }
+
 function eliminacionPorId(id) {
   console.log('a eliminar')
   const index = carrito.findIndex(item => item.eleme.id === id);
@@ -670,7 +669,6 @@ function iniciarFiltrado() {
       productosContainer.appendChild(div);
     }
   });
-
 }
 
 const carousel = document.querySelector('.carousel')
@@ -686,3 +684,53 @@ prevButton.onclick = () => {
 }
 
 funcionalidadHeader()
+
+document.addEventListener('DOMContentLoaded', () => {
+  const inputBusqueda = document.querySelector('.header__nav-div-input')
+  const contenedorResultados = document.getElementById('section__div')
+  const botonProductos = document.getElementById('Produc')
+  const botonProductosMobile = document.getElementById('Produc-mobile')
+
+  botonProductosMobile.addEventListener('click', () => mostrarMain('Search', mains))
+  botonProductos.addEventListener('click', () => mostrarMain('Search', mains))
+
+  inputBusqueda.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      mostrarMain('Search', mains)
+      const texto = e.target.value.trim().toLowerCase()
+      if (texto.length === 0) {
+        mostrarResultados(Productos)
+        return
+      }
+      const resultados = Productos.filter(producto =>
+        producto.nombre.toLowerCase().includes(texto) ||
+        producto.descripcion.toLowerCase().includes(texto) ||
+        producto.categorias.some(cat => cat.toLowerCase().includes(texto)) ||
+        producto.marca.toLowerCase().includes(texto)
+      )
+      mostrarResultados(resultados)
+    }
+  })
+
+  function mostrarResultados(resultados) {
+    contenedorResultados.innerHTML = ''
+    resultados.forEach(element => {
+      const div = document.createElement('div')
+      div.classList.add('section__div-div')
+      div.innerHTML = `
+        <div class="section__div-div-div--fc">
+          <img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Imagen del producto ${element.id}">
+        </div>
+        <div class="section__div-div-div">
+          <h4>${element.nombre}</h4>
+          <label>$${element.precio}</label>
+          <p>${element.descripcion}</p>
+        </div>`
+      div.addEventListener('click', () => {
+        mostrarMain('Descripcion', mains)
+        descripcionDeUnProducto(element)
+      })
+      contenedorResultados.appendChild(div)
+    })
+  }
+})
