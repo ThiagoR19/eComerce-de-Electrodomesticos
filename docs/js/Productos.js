@@ -1558,7 +1558,7 @@ export const Productos = [
   {
     id: 50,
     precio: 28000,
-    nombre: 'Ventilador de Pie Liliana VTP2016 3 Velocidades 16 Pulgadas',
+    nombre: 'Ventilador de Pie Liliana 3 Velocidades',
     stock: 50,
     intereses: false,
     cuotas: 1,

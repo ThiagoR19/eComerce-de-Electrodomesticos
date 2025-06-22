@@ -75,8 +75,8 @@ export function funcionalidadHeader() {
   })
 
   const carrito = document.getElementById('carritoMobile')
+  const imagenheader = document.getElementById('imagen__header')
 
-  carrito.addEventListener('click', () => {
-    mostrarMain('Carrito', mains)
-  })
+  carrito.addEventListener('click', () => mostrarMain('Carrito', mains))
+  imagenheader.addEventListener('click', () => mostrarMain('Home', mains))
 }
