@@ -224,7 +224,7 @@ function mostrarDetallesDeCompra (element) {
             </div>
           </div>
           <div class="cuotas__precio">
-            <h2>$${element.precio}</h2>
+            <h2 id="precio">$${element.precio}</h2>
           </div>
           <div class="main-aside--stock">
             <h2>
@@ -253,6 +253,7 @@ function mostrarDetallesDeCompra (element) {
             </button>`
 
   asideCuotas.appendChild(div)
+  const pre = document.getElementById("precio")
 
   // codigo para actualizar las cuotas elegidas
   const slide = document.getElementById('slider')
@@ -297,6 +298,8 @@ function mostrarDetallesDeCompra (element) {
       menu.classList.remove('active')
       arrow2.style.transform = 'rotate(0deg)'
       button.style.borderRadius = '8px'
+      const pre = document.getElementById("precio")
+      pre.innerText = `$${value * element.precio}`
     })
   })
   // fin de codigo para
@@ -481,7 +484,17 @@ function mostrarSearch(){
     const selectMarca = document.getElementById("Marca");
   const selectTamaño = document.getElementById("Tamaño");
     const selectMaterial = document.getElementById("Material");
+  const filtros = [
+  "Categorias", "Precio", "Color", "Peso",
+  "Marca", "Tamaño", "Material"
+];
 
+filtros.forEach(id => {
+  const filtro = document.getElementById(id);
+  if (filtro) {
+    filtro.addEventListener("change", iniciarFiltrado);
+  }
+});
   let coloresAgregados = new Set();
   let idIncremental = 1;
   Productos.forEach((element) => {
@@ -500,7 +513,7 @@ function mostrarSearch(){
     }
   });
 
-  let marcasAgregadas = new Set(); // Para evitar duplicados
+  let marcasAgregadas = new Set();
   let idMarca = 1;
 
   Productos.forEach((element) => {
@@ -517,7 +530,7 @@ function mostrarSearch(){
     }
   });
 
-  let materialesAgregados = new Set(); // Para evitar duplicados
+  let materialesAgregados = new Set(); 
   let idMaterial = 1;
 
   Productos.forEach((element) => {
@@ -533,26 +546,100 @@ function mostrarSearch(){
       selectMaterial.appendChild(option);
     }
   });
+
 }
-function iniciarFiltrado(){
-  Productos.forEach(element => {
-  const div = document.createElement('div')
-  div.classList.add('section__div-div')
-  div.innerHTML = `
-        <div class="section__div-div-div--fc"><img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Imagen del producto ${element.id}">
+function iniciarFiltrado() {
+  const selectCategorias = document.getElementById("Categorias");
+  const selectPrecio = document.getElementById("Precio");
+  const selectColor = document.getElementById("Color");
+  const selectPeso = document.getElementById("Peso");
+  const selectMarca = document.getElementById("Marca");
+  const selectTamaño = document.getElementById("Tamaño");
+  const selectMaterial = document.getElementById("Material");
+
+  let filtrados = Productos.filter((element) => {
+    let pasa = true;
+
+    // Filtrado por categoria
+    const categoriaSeleccionada = selectCategorias.options[selectCategorias.selectedIndex].textContent;
+    if (selectCategorias.value !== "0") {
+      pasa = pasa && element.categorias.includes(categoriaSeleccionada);
+    }
+
+    // Filtrado por color
+    const colorSeleccionado = selectColor.options[selectColor.selectedIndex].textContent;
+    if (colorSeleccionado !== "Todos") {
+      pasa = pasa && element.color.includes(colorSeleccionado);
+    }
+
+    // Filtrado por marca
+    const marcaSeleccionada = selectMarca.options[selectMarca.selectedIndex].textContent;
+    if (selectMarca.value !== "0") {
+      pasa = pasa && element.marca === marcaSeleccionada;
+    }
+
+    // Filtrado por material
+    const materialSeleccionado = selectMaterial.options[selectMaterial.selectedIndex].textContent;
+    if (selectMaterial.value !== "0") {
+      pasa = pasa && element.material === materialSeleccionado;
+    }
+
+    return pasa;
+  });
+
+  // Ordenamientos (solo ejemplo con precio y tamaño)
+  if (selectPrecio.value === "1") {
+    filtrados.sort((a, b) => a.precio - b.precio);
+  } 
+  else if (selectPrecio.value === "2") {
+    filtrados.sort((a, b) => b.precio - a.precio);
+  }
+  let idsFiltrados = filtrados.map(el => el.id);
+  const ordenPeso = selectPeso.value;
+    if (ordenPeso == "1") {
+      // Ascendente
+      const ordenados = [...Productos].sort((a, b) => a.peso[0] - b.peso[0]);
+      idsFiltrados = ordenados.map(p => p.id);
+    } 
+    else if (ordenPeso == "2") {
+      // Descendente
+      const ordenados = [...Productos].sort((a, b) => b.peso[0] - a.peso[0]);
+      idsFiltrados = ordenados.map(p => p.id);
+    }
+
+  // Generar array de IDs
+  
+  console.log("IDs filtrados:", idsFiltrados);
+
+  // Acá puedes llamar a la función para renderizar los productos filtrados
+  // renderizarProductos(filtrados);
+  const productosContainer = document.getElementById('section__div');
+  productosContainer.innerHTML = '';
+
+  idsFiltrados.forEach(idFiltrado => {
+    const element = Productos.find(producto => producto.id === idFiltrado);
+    if (element) {
+      const div = document.createElement('div');
+      div.classList.add('section__div-div');
+      div.insertAdjacentHTML('beforeend', `
+        <div class="section__div-div-div--fc">
+          <img src="./Fotos/${element.imagenes[0]}${element.id}.jpg" alt="Imagen del producto ${element.id}">
         </div>
         <div class="section__div-div-div">
-            <h4>${element.nombre}</h4>
-            <label>$${element.precio}</label>
-            <p>${element.descripcion}</p>
-        </div>`
-  div.addEventListener('click', () => {
-    mostrarMain('Descripcion', mains)
-    descripcionDeUnProducto(element)
-  })
-  productosContainer.appendChild(div)
-})
-}
+          <h4>${element.nombre}</h4>
+          <label>$${element.precio}</label>
+          <p>${element.descripcion}</p>
+        </div>`);
 
+      div.addEventListener('click', () => {
+        mostrarMain('Descripcion', mains);
+        descripcionDeUnProducto(element);
+      });
+
+      productosContainer.appendChild(div);
+    }
+  });
+
+}
 
 funcionalidadHeader()
