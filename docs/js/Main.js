@@ -709,7 +709,9 @@ document.addEventListener('DOMContentLoaded', () => {
         producto.nombre.toLowerCase().includes(texto) ||
         producto.descripcion.toLowerCase().includes(texto) ||
         producto.categorias.some(cat => cat.toLowerCase().includes(texto)) ||
-        producto.marca.toLowerCase().includes(texto)
+        producto.marca.toLowerCase().includes(texto) ||
+        producto.principalDescripcion.toLowerCase().includes(texto) ||
+        producto.propiedades.toLowerCase().includes(texto)
       )
       mostrarResultados(resultados)
     }
