@@ -462,10 +462,10 @@ function aComprar(element, cantidad) {
   const index = carrito.findIndex(item => item.eleme.id === element.id);
 
   if (index !== -1) {
-    if ( (Number(carrito[index].cant) + Number(cantidad)) <= element.stock){
+    if ((Number(carrito[index].cant) + Number(cantidad)) <= element.stock) {
       carrito[index].cant = Number(carrito[index].cant) + Number(cantidad);
     }
-  } 
+  }
   else {
     const produc = {
       che: Boolean(true),
@@ -747,7 +747,7 @@ btnCate.addEventListener('click', () => {
 });
 
 // Ocultar si se hace clic fuera
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   if (!btnCate.contains(e.target) && !menu.contains(e.target)) {
     menu.style.display = 'none';
     console.log
@@ -765,3 +765,58 @@ document.querySelectorAll('#menuDesplegable li').forEach((item) => {
     iniciarFiltrado(); // si tenés una función de filtrado
   });
 });
+
+// Función para crear y mostrar el cartel de notificaciones
+function mostrarCartelNotificaciones(esMobile = false) {
+  // Evitar duplicados
+  if (document.getElementById('cartel-notificaciones')) return;
+
+  const cartel = document.createElement('div');
+  cartel.id = 'cartel-notificaciones';
+  cartel.style.position = 'fixed';
+  cartel.style.top = esMobile ? '80px' : '70px';
+  cartel.style.right = esMobile ? '10%' : '40px';
+  cartel.style.background = '#fff';
+  cartel.style.border = '1px solid #003366';
+  cartel.style.borderRadius = '10px';
+  cartel.style.boxShadow = '0 2px 10px rgba(0,0,0,0.15)';
+  cartel.style.padding = '20px 40px 20px 20px';
+  cartel.style.zIndex = '2000';
+  cartel.style.display = 'flex';
+  cartel.style.alignItems = 'center';
+  cartel.style.gap = '20px';
+  cartel.style.fontSize = '1.2em';
+
+  const texto = document.createElement('span');
+  texto.textContent = 'No hay notificaciones';
+
+  const botonCerrar = document.createElement('button');
+  botonCerrar.textContent = '✖';
+  botonCerrar.style.background = 'none';
+  botonCerrar.style.border = 'none';
+  botonCerrar.style.fontSize = '1.5em';
+  botonCerrar.style.cursor = 'pointer';
+  botonCerrar.style.color = '#003366';
+
+  botonCerrar.onclick = () => cartel.remove();
+
+  cartel.appendChild(texto);
+  cartel.appendChild(botonCerrar);
+
+  document.body.appendChild(cartel);
+}
+
+// Campana escritorio
+const campana = document.querySelector('img[alt="notificaciones"].header__nav-div--login-img');
+if (campana) {
+  campana.addEventListener('click', () => mostrarCartelNotificaciones(false));
+}
+
+// Campana móvil
+const campanaMobile = document.querySelector('.mobile-menu img[alt="notificaciones"]');
+if (campanaMobile) {
+  campanaMobile.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mostrarCartelNotificaciones(true);
+  });
+}
