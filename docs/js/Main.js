@@ -462,8 +462,11 @@ function aComprar(element, cantidad) {
   const index = carrito.findIndex(item => item.eleme.id === element.id);
 
   if (index !== -1) {
-    carrito[index].cant = Number(carrito[index].cant) + Number(cantidad);
-  } else {
+    if ( (Number(carrito[index].cant) + Number(cantidad)) <= element.stock){
+      carrito[index].cant = Number(carrito[index].cant) + Number(cantidad);
+    }
+  } 
+  else {
     const produc = {
       che: Boolean(true),
       eleme: element,
