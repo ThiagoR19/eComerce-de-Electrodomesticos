@@ -734,3 +734,31 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 })
+
+const btnCate = document.getElementById('Cate');
+const menu = document.getElementById('menuDesplegable');
+
+// Alternar visibilidad
+btnCate.addEventListener('click', () => {
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+});
+
+// Ocultar si se hace clic fuera
+document.addEventListener('click', function(e) {
+  if (!btnCate.contains(e.target) && !menu.contains(e.target)) {
+    menu.style.display = 'none';
+    console.log
+  }
+});
+
+// Capturar la opción seleccionada (opcional)
+document.querySelectorAll('#menuDesplegable li').forEach((item) => {
+  item.addEventListener('click', () => {
+    console.log(`Seleccionaste la categoría: ${item.textContent} con valor ${item.dataset.value}`);
+    menu.style.display = 'none';
+    const selectCategorias = document.getElementById("Categorias");
+    selectCategorias.value = item.dataset.value
+    mostrarMain('Search', mains)
+    iniciarFiltrado(); // si tenés una función de filtrado
+  });
+});
